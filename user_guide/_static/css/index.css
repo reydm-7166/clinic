@@ -1,0 +1,54 @@
+body {
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+header h1, h2{
+    display: inline-block;
+}
+
+h2 {
+    position: absolute;
+    right: 25rem;
+    top: 1.5rem;
+}
+#logout {
+    position: absolute;
+    right: 5rem;
+    top: 1.5rem;
+}
+#logout a {
+    font-size: 25px;
+}
+main a {
+    color: blue;
+}
+
+/* main {
+    text-align: center;
+}
+div {
+    display: inline-block;
+}
+img {
+    height: 20rem;
+    width: 20rem;
+    margin: 1.5rem;
+    border-radius: .5rem;
+}
+h3 {
+    display: inline-block;
+}
+.submit {
+    background-color: blue;
+    color: white;
+    border-radius: .3rem;
+}
+input:not(.submit){
+    width: 5rem;
+    margin-right: 1rem;
+} */

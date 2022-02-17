@@ -1,0 +1,36 @@
+<?php
+
+    if(!isset($_SESSION)){
+        session_start();
+    }
+
+    if(isset($_POST['appointment'])){   
+        echo header("Location: schedule.php");
+        }
+
+    if(isset($_POST['adminlogin'])){   
+        echo header("Location: adminlogin.php");
+        }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index (SAMPLE)</title>
+</head>
+<body>
+    <?php if(isset($_SESSION['adminuser'])){ ?>
+        <?php echo "Welcome back, ". $_SESSION['adminuser']; header('Location: admin.html'); ?>
+    <?php } else { ?>
+        <?php   echo "please log in"; }?>
+    <h1> WELCOME TO OUR CLINIC </h1>
+    <form method="POST">
+        <input type="submit" name="appointment" value="SCHEDULE AN APPOINTMENT"></input><br/><br/><br/>
+        <input type="submit" name="adminlogin" value="ADMIN LOG IN"></input>
+
+    </form>
+</body>
+</html>

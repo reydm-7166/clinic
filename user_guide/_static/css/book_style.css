@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 4rem;
+}
+.notif {
+    width: 25%;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+form {
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: .5rem;
+    width: 25%;
+    text-align: right;
+    margin: auto;
+}
+form .center, #submit {
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: .7rem;
+}
+
+label {
+    margin-right: 2rem;
+}
+h1 {
+    text-align: center;
+}
+input:not(#submit) {
+    width: 60%;
+}
+

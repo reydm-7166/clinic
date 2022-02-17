@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 4rem;
+}
+.notif {
+    width: 25%;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+form {
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: .5rem;
+    width: 22%;
+    text-align: right;
+    margin: auto;
+}
+form *:not(h1) {
+    font-size: 1rem;
+}
+#login {
+
+    color: white;
+    background-color: blue;
+    border-radius: .2rem;
+    font-size: 18px;
+}
+label {
+    margin-right: 1rem;
+}
+h1 {
+    text-align: center;
+}
+input {
+    margin-right: 1rem;
+}
