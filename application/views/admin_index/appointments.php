@@ -46,7 +46,10 @@
                     <th>Approval</th>
                     <th>History</th>
                 </tr>
-                <?php $count = 1; foreach($this->session->userdata('output') as $data){ ?>
+                <?php if(empty($this->session->userdata('output'))) { // 
+                        } else {
+                    
+                        $count = 1; foreach($this->session->userdata('output') as $data){ ?>
                 <tr>
                     <td><?= $count++; ?></td>
                     <td><?= $data['name']; ?></td>
@@ -57,7 +60,7 @@
                     <td class="approval"><a href="approve">Approve</td>
                     <td class="history"><a href="">View</a></td>
                 </tr>   
-                <?php } ?>
+                <?php } } ?>
             </table>
         </div> 
     </main>

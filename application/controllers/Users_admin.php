@@ -8,7 +8,7 @@
         }
 
         public function get_data(){
-            $all_appointment_data[] = $this->User->get_all_data();
+            $all_appointment_data = $this->User->get_all_data();
 
             if($all_appointment_data){
                 // echo "<pre>";

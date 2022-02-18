@@ -7,7 +7,7 @@
             $this->load->model('Appointment');
         }
         public function get_data(){
-            $all_appointment_data[] = $this->Appointment->get_all_data();
+            $all_appointment_data = $this->Appointment->get_all_data();
             if($all_appointment_data){
                 // echo "<pre>";
                 //     print_r($all_appointment_data);
@@ -16,13 +16,5 @@
                 $this->load->view('/admin_index/appointments');
             }
         }
-
-        public function insert_receipt(){
-            $verify = $this->Appointment->insert_receipts($this->session->userdata('output'));                 // pass the data we fetch above (line 10) and insert it to receipts table
-            if($verify){
-                $this->session->set_flashdata('approved', 'Success! Moved to Appointment History!');
-                redirect('appointment');
-            }
-        } 
     }
 

@@ -17,37 +17,40 @@
         h3 {
             padding: 10px;
         }
-        
     </style>
 </head>
 <body>
     <?php $this->load->view('/admin_index/admin_headers'); ?>
 
     <main id="container">
-        <div> 
+        <form action="result.php" method="get" style="text-align: right">
+            <input type="text" name="search" id="search" value=""></input>
+            <input type="submit" name="search_btn" value="SEARCH"></input>
+        </form>
+        <div>
+            <div class="notif">
+                <?php if (isset($_SESSION['approved'])){ 
+                    echo "<h3 class='text-white ml-5 fs-1 text-center bg-success rounded'>" .$_SESSION['approved']. "</h3>"; 
+                    } unset($_SESSION['approved']); ?></h3>
+            </div>
+            
             <table class="customers">
                 <tr>
                     <th>Number</th>
-                    <th>Recipient Name</th>
-                    <th>Recipient Email</th>
-                    <th>Patient Name</th>
-                    <th>Patient Email</th>
-                    <th>Appointment Date</th>
-                    <th>Treatment Performed</th>
-                    <th>Treatment Cost</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Concern</th>
+                    <th>Date Preferred</th>
                     <th>Action</th>
                 </tr>
-                <?php if(!empty($this->session->userdata('receipt'))) { $count = 1; foreach($this->session->userdata('receipt') as $data){ ?>
+                <?php if(!empty($this->session->userdata('output'))) {$count = 1; foreach($this->session->userdata('output') as $data){ ?>
                 <tr>
                     <td><?= $count++; ?></td>
-                    <td><?= $data['recipient_name']; ?></td>
-                    <td><?= $data['recipient_email']; ?></td>
-                    <td><?= $data['patient_name']; ?></td>
-                    <td><?= $data['patient_email']; ?></td>
-                    <td><?= date("F j, Y g:i A",strtotime($data['appointment_date'])); ?></td>
-                    <td><?= $data['treatment_name'] ?></td>
-                    <td>$<?= $data['treatment_cost']?>.00</td>
-                    <td><a href="">Print/Email</a></td>
+                    <td><?= $data['name']; ?></td>
+                    <td class="emails"><a href=""><?= $data['email']; ?></a></td>
+                    <td><?= $data['concern']; ?></td>
+                    <td><?= date("F j, Y g:i A",strtotime($data['date'])); ?></td>
+                    <td><a href="approve">Finished</td>
                 </tr>   
                 <?php } } ?>
             </table>

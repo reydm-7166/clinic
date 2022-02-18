@@ -36,7 +36,7 @@
                     <th>Edit</th>
                     <th>Action</th>
                 </tr>
-                <?php $count = 1; foreach($this->session->userdata('output') as $data){ ?>
+                <?php if(!empty($this->session->userdata('output'))) {$count = 1; foreach($this->session->userdata('output') as $data){ ?>
                 <tr>
                     <td><?= $count++; ?></td>
                     <td><?= $data['id']; ?></td>
@@ -47,7 +47,7 @@
                     <td class="edit"><a href="">Edit</td>
                     <td class="bg-danger delete"><a href="">Delete</a></td>
                 </tr>   
-                <?php } ?>
+                <?php } }?>
             </table>
         </div> 
     </main>

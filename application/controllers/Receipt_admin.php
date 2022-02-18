@@ -7,7 +7,7 @@
             $this->load->model('Receipts');
         }
         public function get_data(){
-            $all_appointment_data[] = $this->Receipts->get_all_data();
+            $all_appointment_data = $this->Receipts->get_all_data();
             if($all_appointment_data){
                 // echo "<pre>";
                 //     print_r($all_appointment_data);

@@ -15,10 +15,10 @@
         <div class="panel">
             <h5><a href="dashboard">&ensp;Dashboard&ensp;</a></h5>
             <h5><a href="">&ensp;Chart&ensp;</a></h5>
-            <h5><a href="receipt">&ensp;Receipts&ensp;</a></h5>
+            <h5><a href="receipt">&ensp;All Receipts&ensp;</a></h5>
             <h5><a href="user">&ensp;User Accounts&ensp;</a></h5>
             <h5><a href="appointment">&ensp;Appointments&ensp;</a></h5>
-            <h5><a href="">&ensp;Approved Appointments&ensp;</a></h5>
+            <h5><a href="approved">&ensp;Approved Appointments&ensp;</a></h5>
             <h5 id="logout_admin"><a href="">Logout</a></h5>
         </div>
         

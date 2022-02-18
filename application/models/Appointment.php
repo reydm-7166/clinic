@@ -7,7 +7,7 @@
                                     customer_infos.email_address as billed_email, appointments.id AS appointment_id, CONCAT(appointments.patient_firstname, ' ', appointments.patient_lastname) AS name, 
                                     appointments.patient_email as email, treatments.treatment_name as concern ,appointments.appointment_date as date FROM appointments
                                     INNER JOIN treatments ON appointments.treatments_id = treatments.id
-                                    INNER JOIN customer_infos ON appointments.customers_info_id = customer_infos.id")->row_array();
+                                    INNER JOIN customer_infos ON appointments.customers_info_id = customer_infos.id")->result_array();
         }
         public function insert_receipts($insert){
             $query = "INSERT INTO `receipts`( `customer_id`, `appointment_id`, `billed_to`, `billed_email`) VALUES (?,?,?,?)";
