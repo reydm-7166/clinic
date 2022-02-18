@@ -15,20 +15,20 @@
             $verify = $this->Signin->check_login($credentials);
             
             if($verify){
-                $this->session->set_userdata('verify', $verify);
-                redirect('index');
+                $this->session->set_userdata('admin', $verify);
+                redirect('dashboard');
             }
             $_SESSION['notification_error'] = "Wrong Credentials!";
             redirect('signin');
         }
     }
+    public function dashboard(){
+        $this->load->view('/admin_index/index');
+    }
 
-    // public function user_home(){
-    //     $this->load->view('/clinic_index/index');
-    // }
-    // public function logout(){
-    //     $this->session->unset_userdata('verify');
-    //     redirect('signin');
-    // }
+    public function logout(){
+        $this->session->unset_userdata('verify');
+        redirect('signin');
+    }
 
 }

@@ -7,6 +7,6 @@
     <title>Admin</title>
 </head>
 <body>
-    WELCOME ADMIN
+    WELCOME ADMIN <?php var_dump($this->session->userdata('verify')) ?>
 </body>
 </html>

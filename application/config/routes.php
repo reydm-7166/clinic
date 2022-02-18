@@ -58,7 +58,8 @@ $route['signin'] = 'Signin_users/index';
 $route['book'] = 'Book_schedules/index';
 $route['index'] = 'Signin_users/user_home';
 $route['logout'] = 'Logout/logout';
+
 $route['login'] = 'Signin_admins/index';                        // admin login //////
-$route['home'] = 'Signin_admins/admin_home';
+$route['dashboard'] = 'Signin_admins/dashboard';
 
 
