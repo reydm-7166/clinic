@@ -17,13 +17,14 @@
         }
 
         public function insert_receipt($insert){
-            $query = "INSERT INTO `receipts`(`customer_id`, `appointment_id`, `billed_to`, `billed_email`) VALUES ()";
-            $data = array($insert['customers_info_id'], $insert['id'], $insert['billed_to'], $insert['billed_email']); 
+            $query = "INSERT INTO receipts (customer_id, appointment_id, billed_to, billed_email) VALUES (?,?,?,?)";
+            $data = array($insert['customer_id'], $insert['appointment_id'], $insert['billed_to'], $insert['billed_email']); 
+            return $this->db->query($query, $data);
         } 
 
-        public function delete($insert){
-            $query = "DELETE FROM `appointments` WHERE id = ?";
-            $data = array($insert);
+        public function delete($delete){
+            $query = "DELETE FROM `approved_appointments` WHERE id = ?";
+            $data = array($delete);
             return $this->db->query($query, $data);
         }
     }

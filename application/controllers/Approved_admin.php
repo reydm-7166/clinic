@@ -21,18 +21,23 @@
             $verify = $this->Approved->get_insert_receipt($id);
             if($verify){
                 $this->session->set_userdata('insert_approved', $verify);
-                var_dump($verify);
-                //redirect('appointment');
+                redirect('Approved_admin/insert_receipt');
             }
         }
         public function insert_receipt(){
-            $verify = $this->Appointment->insert_receipt($this->session->userdata('insert_approved'));
+            $verify = $this->Approved->insert_receipt($this->session->userdata('insert_approved'));
             if($verify){
                 $this->session->set_flashdata('approved', 'Marked as Finished! Moved to receipts');
                 redirect('Approved_admin/delete');
             }
         }
         public function delete(){
-
+            $verify = $this->Approved->delete($this->session->userdata('delete_approved'));
+            if($verify){
+                $this->session->set_flashdata('approved', 'Marked as Done! Moved to Receipt');             
+                redirect('approved');
+            }
         }
     }
+
+    

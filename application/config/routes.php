@@ -68,3 +68,4 @@ $route['receipt'] = 'Receipt_admin/get_data';
 $route['approved'] = 'Approved_admin/get_data';
 $route['finish/(:any)'] = 'Approved_admin/get_insert_receipt/$1';
 
+

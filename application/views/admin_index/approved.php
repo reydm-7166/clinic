@@ -50,7 +50,7 @@
                     <td class="emails"><a href=""><?= $data['patient_email']; ?></a></td>
                     <td><?= $data['treatment_name']; ?></td>
                     <td><?= date("F j, Y g:i A",strtotime($data['appointment_date'])); ?></td>
-                    <td><a href="finish/<?= $data['main_id'] ?>">Finished<?= $data ?></td>
+                    <td><a href="finish/<?= $data['main_id'] ?>">Finished</td>
                 </tr>   
                 <?php }  ?>
             </table>
