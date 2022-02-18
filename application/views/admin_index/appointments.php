@@ -37,7 +37,7 @@
                     <td><?= $data['concern']; ?></td>
                     <td><?= date("F j, Y g:i A",strtotime($data['date'])); ?></td>
                     <td class="edit"><a href="">Edit Data</td>
-                    <td class="approval"><a href="">Approve</td>
+                    <td class="approval"><a href="approve">Approve</td>
                     <td class="history"><a href="">View</a></td>
                 </tr>   
                 <?php } ?>

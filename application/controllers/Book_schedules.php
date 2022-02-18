@@ -25,6 +25,7 @@ date_default_timezone_set('Asia/Manila');
                     } else {
                        $verify = $this->Book_schedule->insert_book($form);
                        if($verify === TRUE){
+                            
                             $_SESSION['notification'] = "Successfully Booked!";
                             redirect('book');
                         }
