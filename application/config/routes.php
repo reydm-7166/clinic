@@ -60,6 +60,6 @@ $route['index'] = 'Signin_users/user_home';
 $route['logout'] = 'Logout/logout';
 
 $route['login'] = 'Signin_admins/index';                        // admin login //////
-$route['dashboard'] = 'Signin_admins/dashboard';
-
+$route['dashboard'] = 'Dashboard_admin/index';
+$route['appointment'] = 'Appointments_admin/index';
 

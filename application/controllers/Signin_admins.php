@@ -22,10 +22,6 @@
             redirect('signin');
         }
     }
-    public function dashboard(){
-        $this->load->view('/admin_index/index');
-    }
-
     public function logout(){
         $this->session->unset_userdata('verify');
         redirect('signin');

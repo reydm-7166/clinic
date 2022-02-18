@@ -1,0 +1,42 @@
+header {
+    width: 20%;
+    height: 100vh;
+    color: hotpink;
+    display: inline-block;
+    text-align: center;
+}
+.panel {
+    text-align: left;
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+h1 {
+    margin-top: 8rem;
+}
+a {
+    margin-top: 8rem;
+    color:antiquewhite;
+    border-bottom: 1px solid antiquewhite;
+}
+a:hover {
+    text-decoration: none;
+}
+h5 {
+    margin-bottom: 1.5rem;
+    padding-bottom: .5rem;
+}
+#logout_admin {
+    border: none;
+    margin-top: 10rem;
+}
+#logout_admin a {
+    border: none;
+}
+#logout_admin a:hover {
+    color: red;  
+    text-decoration: none;
+}
