@@ -20,7 +20,8 @@
         public function insert_receipt(){
             $verify = $this->Appointment->insert_receipts($this->session->userdata('output'));                 // pass the data we fetch above (line 10) and insert it to receipts table
             if($verify){
-                echo "SUCESS INSERTED TO RECEIPT NOW";
+                $this->session->set_flashdata('approved', 'Success! Moved to Appointment History!');
+                redirect('appointment');
             }
         } 
     }

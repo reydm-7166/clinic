@@ -9,13 +9,9 @@
     <link rel="stylesheet" href="../../../user_guide/_static/css/admin_appointment.css">
     <title>Admin</title>
     <style>
-        .notif {
-            width: 40%;
-            margin: auto;
-            text-align: center;
-        }
-        h3 {
-            padding: 10px;
+        .delete a{
+            color: white;
+            border: none;
         }
         
     </style>
@@ -29,33 +25,27 @@
             <input type="submit" name="search_btn" value="SEARCH"></input>
         </form>
         <div>
-            <div class="notif">
-                <?php if (isset($_SESSION['approved'])){ 
-                    echo "<h3 class='text-white ml-5 fs-1 text-center bg-success rounded'>" .$_SESSION['approved']. "</h3>"; 
-                    } unset($_SESSION['approved']); ?></h3>
-            </div>
-            
             <table class="customers">
                 <tr>
                     <th>Number</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Concern</th>
-                    <th>Date Preferred</th>
+                    <th>User ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Contact Number</th>
                     <th>Edit</th>
-                    <th>Approval</th>
-                    <th>History</th>
+                    <th>Action</th>
                 </tr>
                 <?php $count = 1; foreach($this->session->userdata('output') as $data){ ?>
                 <tr>
                     <td><?= $count++; ?></td>
-                    <td><?= $data['name']; ?></td>
-                    <td class="emails"><a href=""><?= $data['email']; ?></a></td>
-                    <td><?= $data['concern']; ?></td>
-                    <td><?= date("F j, Y g:i A",strtotime($data['date'])); ?></td>
-                    <td class="edit"><a href="">Edit Data</td>
-                    <td class="approval"><a href="approve">Approve</td>
-                    <td class="history"><a href="">View</a></td>
+                    <td><?= $data['id']; ?></td>
+                    <td><?= $data['first_name']; ?></a></td>
+                    <td><?= $data['last_name']; ?></a></td>
+                    <td><?= $data['email_address']; ?></td>
+                    <td><?= $data['contact_number']; ?></td>
+                    <td class="edit"><a href="">Edit</td>
+                    <td class="bg-danger delete"><a href="">Delete</a></td>
                 </tr>   
                 <?php } ?>
             </table>

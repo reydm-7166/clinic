@@ -1,4 +1,4 @@
-SELECT receipts.billed_to AS receiptient, receipts.billed_email AS receiptient_email, CONCAT(appointments.patient_firstname, ' ', appointments.patient_lastname) AS patient_name, appointments.patient_email AS patient_email, appointments.appointment_date,
+SELECT receipts.billed_to AS recipient_name, receipts.billed_email AS recipient_email, CONCAT(appointments.patient_firstname, ' ', appointments.patient_lastname) AS patient_name, appointments.patient_email AS patient_email, appointments.appointment_date,
 treatments.treatment_name, treatments.treatment_cost FROM receipts
 
 INNER JOIN appointments ON receipts.appointment_id = appointments.id
