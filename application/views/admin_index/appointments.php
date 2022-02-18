@@ -33,8 +33,7 @@
                 <?php if (isset($_SESSION['approved'])){ 
                     echo "<h3 class='text-white ml-5 fs-1 text-center bg-success rounded'>" .$_SESSION['approved']. "</h3>"; 
                     } unset($_SESSION['approved']); ?></h3>
-            </div>
-            
+            </div> 
             <table class="customers">
                 <tr>
                     <th>Number</th>
@@ -46,9 +45,7 @@
                     <th>Approval</th>
                     <th>History</th>
                 </tr>
-                <?php if(empty($this->session->userdata('output'))) { // 
-                        } else {
-                    
+                <?php if(!empty($this->session->userdata('output'))) { // 
                         $count = 1; foreach($this->session->userdata('output') as $data){ ?>
                 <tr>
                     <td><?= $count++; ?></td>
@@ -57,7 +54,7 @@
                     <td><?= $data['concern']; ?></td>
                     <td><?= date("F j, Y g:i A",strtotime($data['date'])); ?></td>
                     <td class="edit"><a href="">Edit Data</td>
-                    <td class="approval"><a href="approve">Approve</td>
+                    <td class="approval"><a href="move/<?= $data['appointment_id']?>"><?= $data['appointment_id']?></td>
                     <td class="history"><a href="">View</a></td>
                 </tr>   
                 <?php } } ?>

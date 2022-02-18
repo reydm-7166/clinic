@@ -4,20 +4,35 @@
         public function __construct()
         {
             parent::__construct();
-            $this->load->model('Appointment');
+            $this->load->model('Approved');
         }
         public function get_data(){
-            $all_appointment_data = $this->Appointment->get_all_data();
+            $all_appointment_data = $this->Approved->get_all_data();
+            // echo "<pre>";
+            //         print_r($all_appointment_data);
+            // echo "<pre>";
             if($all_appointment_data){
-                $this->session->set_userdata('receipt', $all_appointment_data);                 // store the data in session so we can display it in appointments/index 
+                $this->session->set_userdata('receipt', $all_appointment_data);              
                 $this->load->view('/admin_index/approved');
             }
         }
-        public function insert_receipt(){
-            $verify = $this->Appointment->insert_receipts($this->session->userdata('output'));
+        public function get_insert_receipt($id){
+            $this->session->set_userdata('delete_approved', $id);    
+            $verify = $this->Approved->get_insert_receipt($id);
             if($verify){
-                $this->session->set_flashdata('approved', 'Marked as Done! Moved to receipts');
-                redirect('appointment');
+                $this->session->set_userdata('insert_approved', $verify);
+                var_dump($verify);
+                //redirect('appointment');
             }
-        } 
+        }
+        public function insert_receipt(){
+            $verify = $this->Appointment->insert_receipt($this->session->userdata('insert_approved'));
+            if($verify){
+                $this->session->set_flashdata('approved', 'Marked as Finished! Moved to receipts');
+                redirect('Approved_admin/delete');
+            }
+        }
+        public function delete(){
+
+        }
     }

@@ -62,8 +62,9 @@ $route['logout'] = 'Logout/logout';
 $route['login'] = 'Signin_admins/index';                        // admin login //////
 $route['dashboard'] = 'Dashboard_admin/index';
 $route['appointment'] = 'Appointments_admin/get_data';
-$route['approve'] = 'Approved_admin/insert_receipt';
+$route['move/(:any)'] = 'Appointments_admin/get_data_insert/$1';
 $route['user'] = 'Users_admin/get_data';
 $route['receipt'] = 'Receipt_admin/get_data';
 $route['approved'] = 'Approved_admin/get_data';
+$route['finish/(:any)'] = 'Approved_admin/get_insert_receipt/$1';
 

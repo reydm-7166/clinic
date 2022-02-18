@@ -43,16 +43,16 @@
                     <th>Date Preferred</th>
                     <th>Action</th>
                 </tr>
-                <?php if(!empty($this->session->userdata('output'))) {$count = 1; foreach($this->session->userdata('output') as $data){ ?>
+                <?php $count = 1; foreach($this->session->userdata('receipt') as $data){ ?>
                 <tr>
                     <td><?= $count++; ?></td>
-                    <td><?= $data['name']; ?></td>
-                    <td class="emails"><a href=""><?= $data['email']; ?></a></td>
-                    <td><?= $data['concern']; ?></td>
-                    <td><?= date("F j, Y g:i A",strtotime($data['date'])); ?></td>
-                    <td><a href="approve">Finished</td>
+                    <td><?php echo $data['patient_firstname']. " " . $data['patient_lastname'] ; ?></td>
+                    <td class="emails"><a href=""><?= $data['patient_email']; ?></a></td>
+                    <td><?= $data['treatment_name']; ?></td>
+                    <td><?= date("F j, Y g:i A",strtotime($data['appointment_date'])); ?></td>
+                    <td><a href="finish/<?= $data['main_id'] ?>">Finished<?= $data ?></td>
                 </tr>   
-                <?php } } ?>
+                <?php }  ?>
             </table>
         </div> 
     </main>
