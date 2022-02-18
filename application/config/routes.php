@@ -61,5 +61,6 @@ $route['logout'] = 'Logout/logout';
 
 $route['login'] = 'Signin_admins/index';                        // admin login //////
 $route['dashboard'] = 'Dashboard_admin/index';
-$route['appointment'] = 'Appointments_admin/index';
+$route['appointment'] = 'Appointments_admin/get_data';
+// $route['appointments'] = 'Appointments_admin/index';
 

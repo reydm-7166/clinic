@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 5rem 10rem;
+    text-align: left;
+}
+
+form {
+    border: 1px black solid;
+    width: 30%;
+    min-height: 20vh;
+    margin: auto;
+    text-align: center;
+    padding: 1rem 0;
+    box-sizing: border-box;
+    border-radius: .5rem;
+    background-color: lightblue;
+}
+a {
+    text-decoration: none;
+    font-weight: 600;
+}
+table a {
+    margin: 0 2rem;
+}
+input:not(#submit) {
+    height: 2vh;
+    width: 30%;
+} 
+#submit {
+    cursor: pointer;
+    font-size: 22px;
+    background-color: salmon;
+    border-radius: .5rem;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

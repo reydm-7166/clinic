@@ -5,3 +5,6 @@
 (3) billing /// receipt on panel and INDIVIDUAL history on user accounts panel
 
 (4) periodic reports (number of customers, sales reports, etc.)
+
+
+NOTE: Change the admin log in verifications  (should verify from admin account)

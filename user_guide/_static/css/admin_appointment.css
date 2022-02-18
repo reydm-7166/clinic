@@ -27,7 +27,8 @@
   
   .customers .edit:hover,
   .approval:hover,
-  .emails:hover {
+  .emails:hover,
+  .history:hover {
       cursor: pointer; 
       background-color: rgb(174, 185, 236);
     }
@@ -44,15 +45,11 @@
     text-align: center;
   }
 
-.edit a{
-    color: black;
+.edit a, .approval a, .emails a, .history a{
+    color: blue;
+    border: none;
 }
-
-.approval a{
-    color: black;
-}
-
-.emails a{
+td a:hover {
     color: black;
 }
 form {
