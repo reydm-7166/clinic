@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../user_guide/_static/css/admin_appointment.css">
-    <title>Admin</title>
+    <title>Appointment</title>
     <style>
         .notif {
             width: 40%;
@@ -21,19 +21,22 @@
     </style>
 </head>
 <body>
+    <?php  if(empty($this->session->userdata('admin'))) { redirect('login'); } ?>  <!-- CHECKS IF ADMIN IS LOGGED IN -- IF NOT SEND BACK TO LOGIN PAGE CODE BELOW IS FOR HEADER -->
+                                                                                 
     <?php $this->load->view('/admin_index/admin_headers'); ?>
-
+    
     <main id="container">
         <form action="result.php" method="get" style="text-align: right">
             <input type="text" name="search" id="search" value=""></input>
             <input type="submit" name="search_btn" value="SEARCH"></input>
         </form>
-        <div>
-            <div class="notif">
+                                                                                <!-- FOR NOTIFICATION IN APPROVE/APPOINTMENTS/ETC -->
+        <div class="notif">
                 <?php if (isset($_SESSION['approved'])){ 
                     echo "<h3 class='text-white ml-5 fs-1 text-center bg-success rounded'>" .$_SESSION['approved']. "</h3>"; 
-                    } unset($_SESSION['approved']); ?></h3>
-            </div> 
+                } unset($_SESSION['approved']); ?></h3>
+        </div> 
+        <div>       
             <table class="customers">
                 <tr>
                     <th>Number</th>
@@ -44,8 +47,8 @@
                     <th>Edit</th>
                     <th>Action</th>
                     <th>History</th>
-                </tr>
-                <?php if(!empty($this->session->userdata('appointment_output'))) { // 
+                </tr>                                                             <!-- DISPLAY DATA FROM APPOINTMENTS TABLE -->
+                <?php if(!empty($this->session->userdata('appointment_output'))) {                              
                         $count = 1; foreach($this->session->userdata('appointment_output') as $data){ ?>
                 <tr>
                     <td><?= $count++; ?></td>
@@ -61,5 +64,6 @@
             </table>
         </div> 
     </main>
+    
 </body>
 </html>

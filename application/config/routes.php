@@ -53,6 +53,7 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['default_controller'] = 'Signin_users/user_home';            // users //////
+
 $route['signup'] = 'Signup_users/index';
 $route['signin'] = 'Signin_users/index';
 $route['book'] = 'Book_schedules/index';
@@ -67,5 +68,6 @@ $route['user'] = 'Users_admin/get_data';
 $route['receipt'] = 'Receipt_admin/get_data';
 $route['approved'] = 'Approved_admin/get_data';
 $route['finish/(:any)'] = 'Approved_admin/get_insert_receipt/$1';
+$route['charts'] = 'Charts_admin/index';
 
 

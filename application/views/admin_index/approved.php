@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../user_guide/_static/css/admin_appointment.css">
-    <title>Admin</title>
+    <title>Approved</title>
     <style>
         .notif {
             width: 40%;
@@ -20,6 +20,10 @@
     </style>
 </head>
 <body>
+    
+<?php  if(empty($this->session->userdata('admin'))) { redirect('login'); } ?>  <!-- CHECKS IF ADMIN IS LOGGED IN -- IF NOT SEND BACK TO LOGIN PAGE CODE BELOW IS FOR HEADER -->
+
+
     <?php $this->load->view('/admin_index/admin_headers'); ?>
 
     <main id="container">

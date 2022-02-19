@@ -29,9 +29,11 @@ h5 {
     margin-bottom: 1.5rem;
     padding-bottom: .5rem;
 }
+
 #logout_admin {
     border: none;
     margin-top: 10rem;
+    
 }
 #logout_admin a {
     border: none;

@@ -7,4 +7,10 @@
                                     array($credentials['username'], $credentials['username'], $credentials['password']))->row_array();
         }
 
+        public function check_login_admin($credentials){
+
+            return $this->db->query("SELECT * FROM admin_account WHERE username = ?  AND password = ?", 
+                                    array($credentials['username'], $credentials['password']))->row_array();
+        }
+
     }
