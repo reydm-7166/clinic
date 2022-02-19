@@ -24,14 +24,14 @@
             $all_appointment_data = $this->Appointment->get_insert_data($id);
             if($all_appointment_data){
                 $this->session->set_userdata('insert_data', $all_appointment_data);                 // store the data in session so we can display it in appointments/index       
-                redirect('Appointments_admin/insert_approve');
+                $this->insert_approve();                                                 // redirects to the indicated (insert_approve) method
             }
         }
         public function insert_approve(){
             $verify = $this->Appointment->insert_approve($this->session->userdata('insert_data'));
             $verify_backup = $this->Appointment->insert_to_backup($this->session->userdata('insert_data'));
             if($verify && $verify_backup){
-                redirect('Appointments_admin/delete');
+                $this->delete();                                                 // redirects to the indicated (delete) method
             }
         }
 
