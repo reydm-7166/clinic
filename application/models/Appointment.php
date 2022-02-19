@@ -15,6 +15,13 @@
             $data = array($insert['id'], $insert['customers_info_id'], $insert['treatments_id'], $insert['patient_firstname'], $insert['patient_lastname']
             , $insert['patient_email'], $insert['appointment_date']);
             return $this->db->query($query, $data); 
+        }
+        public function insert_to_backup($insert){
+            
+            $query = "INSERT INTO appointments_backup (id, customers_info_id, treatments_id, patient_firstname, patient_lastname, patient_email, appointment_date) VALUES (?,?,?,?,?,?,?)";
+            $data = array($insert['id'], $insert['customers_info_id'], $insert['treatments_id'], $insert['patient_firstname'], $insert['patient_lastname']
+            , $insert['patient_email'], $insert['appointment_date']);
+            return $this->db->query($query, $data); 
         } 
 
         public function get_insert_data($appointment_id){

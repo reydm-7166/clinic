@@ -37,7 +37,8 @@
                     <th>Treatment Cost</th>
                     <th>Action</th>
                 </tr>
-                <?php if(!empty($this->session->userdata('receipt'))) { $count = 1; foreach($this->session->userdata('receipt') as $data){ ?>
+                <?php if(!empty($this->session->userdata('receipt'))) { 
+                        $count = 1; foreach($this->session->userdata('receipt') as $data){ ?>
                 <tr>
                     <td><?= $count++; ?></td>
                     <td><?= $data['recipient_name']; ?></td>

@@ -14,6 +14,9 @@
                 // echo "<pre>";
                 $this->session->set_userdata('receipt', $all_appointment_data);                 // store the data in session so we can display it in appointments/index 
                 $this->load->view('/admin_index/receipt');
+            }else {
+                $this->session->unset_userdata('receipt');
+                $this->load->view('/admin_index/receipt');
             }
         }
     }

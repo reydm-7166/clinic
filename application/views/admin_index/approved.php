@@ -43,7 +43,9 @@
                     <th>Date Preferred</th>
                     <th>Action</th>
                 </tr>
-                <?php $count = 1; foreach($this->session->userdata('receipt') as $data){ ?>
+                <?php if(!empty($this->session->userdata('approved_data'))) { // 
+                        $count = 1; foreach($this->session->userdata('approved_data') as $data){ ?>
+                <tr>
                 <tr>
                     <td><?= $count++; ?></td>
                     <td><?php echo $data['patient_firstname']. " " . $data['patient_lastname'] ; ?></td>
@@ -52,7 +54,7 @@
                     <td><?= date("F j, Y g:i A",strtotime($data['appointment_date'])); ?></td>
                     <td><a href="finish/<?= $data['main_id'] ?>">Finished</td>
                 </tr>   
-                <?php }  ?>
+                <?php }  } else { $this->session->unset_userdata('appointment_output'); } ?>
             </table>
         </div> 
     </main>

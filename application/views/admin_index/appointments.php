@@ -42,11 +42,11 @@
                     <th>Concern</th>
                     <th>Date Preferred</th>
                     <th>Edit</th>
-                    <th>Approval</th>
+                    <th>Action</th>
                     <th>History</th>
                 </tr>
-                <?php if(!empty($this->session->userdata('output'))) { // 
-                        $count = 1; foreach($this->session->userdata('output') as $data){ ?>
+                <?php if(!empty($this->session->userdata('appointment_output'))) { // 
+                        $count = 1; foreach($this->session->userdata('appointment_output') as $data){ ?>
                 <tr>
                     <td><?= $count++; ?></td>
                     <td><?= $data['name']; ?></td>
@@ -54,10 +54,10 @@
                     <td><?= $data['concern']; ?></td>
                     <td><?= date("F j, Y g:i A",strtotime($data['date'])); ?></td>
                     <td class="edit"><a href="">Edit Data</td>
-                    <td class="approval"><a href="move/<?= $data['appointment_id']?>"><?= $data['appointment_id']?></td>
+                    <td class="approval"><a href="move/<?= $data['appointment_id']?>">Approve</td>
                     <td class="history"><a href="">View</a></td>
                 </tr>   
-                <?php } } ?>
+                <?php } }  ?>
             </table>
         </div> 
     </main>

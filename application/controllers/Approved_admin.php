@@ -12,7 +12,10 @@
             //         print_r($all_appointment_data);
             // echo "<pre>";
             if($all_appointment_data){
-                $this->session->set_userdata('receipt', $all_appointment_data);              
+                $this->session->set_userdata('approved_data', $all_appointment_data);              
+                $this->load->view('/admin_index/approved');
+            } else {
+                $this->session->unset_userdata('approved_data');
                 $this->load->view('/admin_index/approved');
             }
         }
