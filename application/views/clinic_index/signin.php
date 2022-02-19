@@ -9,11 +9,18 @@
     <link rel="stylesheet" href="../../../user_guide/_static/css/signin_style.css">
 </head>
 <body>
+                                                                                <!-- notif class just for notification if success (line 15)   
+                                                                                if user is logged in he will be redirected back to index  (line 22)  
+                                                                                Shows authentication error (line 29)    --> 
         <div class="notif">
             <?php if(isset($_SESSION['notification_error'])){ ?>
                     <h1 class="rounded bg-danger text-white p-1 m-2"><?= $_SESSION['notification_error'] ?></h1>
             <?php } unset($_SESSION['notification_error']);?>
         </div>
+        
+        <?php if(!empty($this->session->userdata('verify'))){
+                redirect('index');
+            } else ?>
     <main>
         <form action="/Signin_users/user_login" method="post">
                 <h1>Sign In</h1>

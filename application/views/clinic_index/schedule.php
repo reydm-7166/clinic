@@ -11,8 +11,12 @@
 </head>
 <body>
         <?php $this->load->view('clinic_index/headers') ?>
-        
-        <div class="notif">
+                                                                            <!-- notif class just for notification if success (line 18)   -->
+                                                                            <!--  just for notification if date is invalid   (line 23)   -->
+                                                                            <!-- Shows validatior error (line 32)   -->
+                                                                            <!-- If user is logged in save it's id in a hidden input for database insertion purpose (line 37)   -->
+                                                           
+        <div class="notif"> 
             <?php if(isset($_SESSION['notification'])){ ?>
                     <h1 class="rounded bg-success text-white p-1 m-2"><?= $_SESSION['notification'] ?></h1>
             <?php } unset($_SESSION['notification']);?>
@@ -28,13 +32,12 @@
             $this->load->library('form_validation');
             echo validation_errors("<div class='text-center lh-1 rounded bg-danger text-white p-0 m-1'>","</div>" ) ;  
             $user = $this->session->userdata('verify');
-            if(!empty($user)){ ?>
-
+                if(!empty($user)){ ?>
         <input type="hidden" name="id" value=" <?= $user['id']; ?> ">
-        <?php } else {
-            redirect('signin');
-        } ?>
-
+            <?php } else {
+                redirect('signin');
+            } ?>
+            
         <label>First Name:</label>
         <input type="text" name="first_name">
 

@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../user_guide/_static/css/signup_style.css">
+    <title>Sign Up</title>
 </head>
 <body>
+                                                                            <!-- notif class just for notification if success (line 15)   
+                                                                                if user is logged in he will be redirected back to index  (line 21)  
+                                                                                Shows authentication error (line 29)    --> 
         <div class="notif">
             <?php if(isset($_SESSION['notification'])){ ?>
                     <h1 class="rounded bg-success text-white p-1 m-2"><?= $_SESSION['notification'] ?></h1>
             <?php } unset($_SESSION['notification']);?>
         </div>
+
+        <?php if(!empty($this->session->userdata('verify'))){
+                redirect('index');
+            } ?>
     
     <form action="/Signup_users/sign_up" method="post">
         <h1>Sign Up</h1>
