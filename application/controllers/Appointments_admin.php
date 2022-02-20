@@ -19,6 +19,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $this->load->view('/admin_index/appointments');
             }
         }
+          /*___________________________________________________________________________________________________________ 
+        |  uses the data we fetch above for insertion in the next method below                                          |
+        |  redirects to the indicated (insert_approve) method line 39                                                   |
+        |___________________________________________________________________________________________________________ */
         public function get_data_insert($id){
             $this->session->set_userdata('delete', $id);
             $all_appointment_data = $this->Appointment->get_insert_data($id);
@@ -27,6 +31,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $this->insert_approve();                                                 // redirects to the indicated (insert_approve) method
             }
         }
+          /*___________________________________________________________________________________________________________ 
+        |  Save the data to appointsment_backup table once it is approved. as well as to approved table               |
+        |  After successful inserting it will proceed to delete the data from APPOINTMENTS table  line(38)            |
+        |___________________________________________________________________________________________________________ */
         public function insert_approve(){
             $verify = $this->Appointment->insert_approve($this->session->userdata('insert_data'));
             $verify_backup = $this->Appointment->insert_to_backup($this->session->userdata('insert_data'));
@@ -34,7 +42,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $this->delete();                                                 // redirects to the indicated (delete) method
             }
         }
-
+        /*______________________________________________________________________________________________________________________________
+        | Deletes data from appointment table as soon as we approve it. By doing so it will also be removed from the table in the index |
+        |_______________________________________________________________________________________________________________________________ */
         public function delete(){
             $verify = $this->Appointment->delete($this->session->userdata('delete'));
             if($verify){

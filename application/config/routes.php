@@ -70,6 +70,8 @@ $route['approved'] = 'Approved_admin/get_data';
 $route['finish/(:any)'] = 'Approved_admin/get_insert_receipt/$1';
 $route['charts'] = 'Charts_admin/index';
 
-$route['edit/(:any)'] = 'Edits_user_account/index/$1';
+$route['edit/(:any)'] = 'Edits_appointment/index/$1';      /// edit appointment
+$route['update'] = 'Edits_appointment/update_appointment';
+$route['edit'] = 'Edits_appointment/view';
 
 
