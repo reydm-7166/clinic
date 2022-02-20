@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 date_default_timezone_set('Asia/Manila');
 
     class Book_schedules extends CI_Controller {

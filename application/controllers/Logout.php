@@ -1,4 +1,5 @@
 <?php 
+defined('BASEPATH') OR exit('No direct script access allowed');
     class Logout extends CI_controller {
         public function logout(){
             $this->session->unset_userdata('verify');

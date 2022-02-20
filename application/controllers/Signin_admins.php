@@ -1,5 +1,5 @@
 <?php 
-
+defined('BASEPATH') OR exit('No direct script access allowed');
     class Signin_admins extends CI_Controller {
         public function index(){
             $this->load->view('/admin_index/login');
@@ -12,11 +12,10 @@
         $credentials['password'] = md5($credentials['password']);
 
         if($credentials['submit'] == 'Login') {
-            $verify = $this->Signin->check_login_admin($credentials);                                   ///////// admin authentication    
-            $admin_image = $this->Signin->get_image($credentials);                                          ///// get admin profile pic
+            $verify = $this->Signin->check_login_admin($credentials);                                   ///////// admin authentication                                            ///// get admin profile pic
             if($verify){
                 $this->session->set_userdata('admin', $verify);
-                $this->session->set_userdata('admin_image', $admin_image);
+
                 redirect('dashboard');
             }
             $_SESSION['notification_error'] = "Wrong Credentials!";

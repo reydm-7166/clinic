@@ -60,7 +60,7 @@ $route['book'] = 'Book_schedules/index';
 $route['index'] = 'Signin_users/user_home';
 $route['logout'] = 'Logout/logout';
 
-$route['login'] = 'Signin_admins/index';                        // admin login //////
+$route['login'] = 'Signin_admins/index';                        // admin //////
 $route['dashboard'] = 'Dashboard_admin/index';
 $route['appointment'] = 'Appointments_admin/get_data';
 $route['move/(:any)'] = 'Appointments_admin/get_data_insert/$1';
@@ -69,5 +69,7 @@ $route['receipt'] = 'Receipt_admin/get_data';
 $route['approved'] = 'Approved_admin/get_data';
 $route['finish/(:any)'] = 'Approved_admin/get_insert_receipt/$1';
 $route['charts'] = 'Charts_admin/index';
+
+$route['edit/(:any)'] = 'Edits_user_account/index/$1';
 
 

@@ -1,5 +1,5 @@
 <?php
-
+defined('BASEPATH') OR exit('No direct script access allowed');
     class Book_schedule extends CI_Model {
         public function insert_book($form){
             $query = "INSERT INTO appointments (customers_info_id, treatments_id, patient_firstname, patient_lastname, patient_email, appointment_date)

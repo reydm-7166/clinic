@@ -11,7 +11,7 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <style>
         header h1 {
-            margin-top: 2rem;
+            margin-top: 10rem;
         }
         h1 a {
             display: block;
@@ -25,12 +25,9 @@
 </head>
 <body>
     <header class="p-2 bg-secondary rounded-right">
-    <?php $data = $this->session->userdata('admin');
-            $data_img = $this->session->userdata('admin_image');
-
-                $data['last_name'] ?>
-        <h1 class="text-white text">WELCOME <a href=""> <?= $data['first_name']?> </a></h1>
-        <?php  echo "<img src='.$data_img.' alt='ayaw lumabas pota'>" ?>
+        <?php $data = $this->session->userdata('admin'); ?>
+            <h1 class="text-white text">WELCOME <a href=""> <?= $data['first_name']?> </a></h1>
+        
         
         <div class="panel">
             <h5><i class="fa fa-list-alt text-white"></i>&ensp;<a href="dashboard">&ensp;Dashboard&ensp;</a></h5>

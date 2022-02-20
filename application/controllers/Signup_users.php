@@ -1,5 +1,5 @@
 <?php 
-
+defined('BASEPATH') OR exit('No direct script access allowed');
     class Signup_users extends CI_Controller{
         public function index(){
             $this->load->view('clinic_index/signup');
