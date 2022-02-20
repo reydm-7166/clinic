@@ -44,8 +44,8 @@
                     <td><?= $data['last_name']; ?></a></td>
                     <td><?= $data['email_address']; ?></td>
                     <td><?= $data['contact_number']; ?></td>
-                    <td class="edit"><a href="">Edit</td>
-                    <td class="bg-danger delete"><a href="">Delete</a></td>
+                    <td class="p-1"><a class="btn m-0 text-white btn-primary" href="">Edit</td>
+                    <td class="p-1"><a class="btn m-0 text-white btn-danger" href="">Delete</a></td>
                 </tr>   
                 <?php } }?>
             </table>

@@ -14,6 +14,11 @@
                     <h1 class="rounded bg-danger text-white p-1 m-2"><?= $_SESSION['notification_error'] ?></h1>
             <?php } unset($_SESSION['notification_error']);?>
         </div>
+
+       <?php if (!empty($this->session->userdata('admin'))){
+                redirect('dashboard');
+       } ?>
+
     <main>
         <form action="/Signin_admins/admin_login" method="post">
                 <h1>Sign In</h1>

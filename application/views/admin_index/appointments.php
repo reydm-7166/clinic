@@ -56,9 +56,9 @@
                     <td class="emails"><a href=""><?= $data['email']; ?></a></td>
                     <td><?= $data['concern']; ?></td>
                     <td><?= date("F j, Y g:i A",strtotime($data['date'])); ?></td>
-                    <td class="edit"><a href="">Edit Data</td>
-                    <td class="approval"><a href="move/<?= $data['appointment_id']?>">Approve</td>
-                    <td class="history"><a href="">View</a></td>
+                    <td><a class="btn m-0 text-white btn-primary" href="">Edit Data</td>
+                    <td><a class="btn m-0 btn-success" href="move/<?= $data['appointment_id']?>">Approve</td>
+                    <td><a class="btn m-0 btn-info" href="">View</a></td>
                 </tr>   
                 <?php } }  ?>
             </table>

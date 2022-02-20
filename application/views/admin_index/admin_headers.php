@@ -9,11 +9,28 @@
     <link rel="stylesheet" href="../../../user_guide/_static/css/admin_header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <style>
+        header h1 {
+            margin-top: 2rem;
+        }
+        h1 a {
+            display: block;
+            font-size: 22px;
+            margin-top: 1rem;
+            border: none;
+        }
+
+    </style>
     
 </head>
 <body>
     <header class="p-2 bg-secondary rounded-right">
-        <h1 class="text-white text">WELCOME ADMIN</h1>
+    <?php $data = $this->session->userdata('admin');
+            $data_img = $this->session->userdata('admin_image');
+
+                $data['last_name'] ?>
+        <h1 class="text-white text">WELCOME <a href=""> <?= $data['first_name']?> </a></h1>
+        <?php  echo "<img src='.$data_img.' alt='ayaw lumabas pota'>" ?>
         
         <div class="panel">
             <h5><i class="fa fa-list-alt text-white"></i>&ensp;<a href="dashboard">&ensp;Dashboard&ensp;</a></h5>

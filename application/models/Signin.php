@@ -12,5 +12,10 @@
             return $this->db->query("SELECT * FROM admin_account WHERE username = ?  AND password = ?", 
                                     array($credentials['username'], $credentials['password']))->row_array();
         }
+        public function get_image($credentials){
+
+            return $this->db->query("SELECT image FROM admin_account WHERE username = ?  AND password = ?", 
+                                    array($credentials['username'], $credentials['password']))->row_array();
+        }
 
     }

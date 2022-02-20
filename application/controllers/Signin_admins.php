@@ -13,8 +13,10 @@
 
         if($credentials['submit'] == 'Login') {
             $verify = $this->Signin->check_login_admin($credentials);                                   ///////// admin authentication    
+            $admin_image = $this->Signin->get_image($credentials);                                          ///// get admin profile pic
             if($verify){
                 $this->session->set_userdata('admin', $verify);
+                $this->session->set_userdata('admin_image', $admin_image);
                 redirect('dashboard');
             }
             $_SESSION['notification_error'] = "Wrong Credentials!";
