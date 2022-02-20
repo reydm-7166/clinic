@@ -12,7 +12,9 @@
         .notif {
             width: 40%;
             margin: auto;
-            text-align: center;
+            height: 6vh;
+            margin-bottom: 1rem;
+            padding: 0;
         }
         h3 {
             padding: 10px;
@@ -25,6 +27,9 @@
                                                                                  
     <?php $this->load->view('/admin_index/admin_headers'); ?>
     
+
+
+    
     <main id="container">
         <form action="result.php" method="get" style="text-align: right">
             <input type="text" name="search" id="search" value=""></input>
@@ -33,9 +38,10 @@
                                                                                 <!-- FOR NOTIFICATION IN APPROVE/APPOINTMENTS/ETC -->
         <div class="notif">
                 <?php if (isset($_SESSION['approved'])){ 
-                    echo "<h3 class='text-white ml-5 fs-1 text-center bg-success rounded'>" .$_SESSION['approved']. "</h3>"; 
+                    echo "<h3 class='text-white m-0 fs-1 text-center bg-success rounded'>" .$_SESSION['approved']. "</h3>"; 
                 } unset($_SESSION['approved']); ?></h3>
         </div> 
+
         <div>       
             <table class="customers">
                 <tr>

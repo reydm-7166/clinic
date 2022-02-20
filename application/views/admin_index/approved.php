@@ -12,7 +12,9 @@
         .notif {
             width: 40%;
             margin: auto;
-            text-align: center;
+            height: 6vh;
+            margin-bottom: 1rem;
+            padding: 0;
         }
         h3 {
             padding: 10px;

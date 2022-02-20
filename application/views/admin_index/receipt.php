@@ -9,13 +9,19 @@
     <link rel="stylesheet" href="../../../user_guide/_static/css/admin_appointment.css">
     <title>Receipts</title>
     <style>
-        .notif {
-            width: 40%;
-            margin: auto;
-            text-align: center;
-        }
+        
         h3 {
             padding: 10px;
+        }
+        a {
+            margin: 0;
+        }
+        #container {
+            overflow-y: scroll;
+            height: 91.5vh;
+        }
+        .customers {
+            width: 100%;
         }
         
     </style>
@@ -51,7 +57,7 @@
                     <td><?= date("F j, Y g:i A",strtotime($data['appointment_date'])); ?></td>
                     <td><?= $data['treatment_name'] ?></td>
                     <td>$<?= $data['treatment_cost']?>.00</td>
-                    <td><a href="">Print/Email</a></td>
+                    <td style="width: 10%"><a class="btn mr-1 mt-0 btn-success href="">Print</a><a class="btn mt-0 btn-primary" href="">Email</a></td>
                 </tr>   
                 <?php } } ?>
             </table>
