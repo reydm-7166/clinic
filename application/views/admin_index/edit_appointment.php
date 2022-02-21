@@ -28,6 +28,7 @@
             margin-bottom: 1.5rem;
             padding: 0;
         }
+        
     </style>
 </head>
 <body>
@@ -50,6 +51,7 @@
                     <th>Number</th>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Age</th>
                     <th>Email</th>
                     <th>Concern</th>
                     <th>Date Preferred</th>
@@ -63,8 +65,9 @@
                             <input type="hidden" name="id" value="<?=$data['id'] ?>">
                             <input type="hidden" name="customer_id" value="<?=$data['customers_info_id'] ?>">
                             <td><?= $count++; ?></td>
-                            <td><input class="border border-success rounded p-2" type="text" name="edit_firstname" value="<?= $data['patient_firstname']?>"></td>
-                            <td><input class="border border-success rounded p-2" type="text" name="edit_lastname" value="<?= $data['patient_lastname']?>"></td>
+                            <td><input class="border border-success rounded p-2" type="text" size="12" name="edit_firstname" value="<?= $data['patient_firstname']?>"></td>
+                            <td><input class="border border-success rounded p-2" type="text" size="12" name="edit_lastname" value="<?= $data['patient_lastname']?>"></td>
+                            <td><input class="border border-success rounded p-2" type="text" size="1" maxlength="2" name="edit_lastname" value="<?= $data['patient_age']?>"></td>
                             <td><input class="border border-success rounded p-2" type="text" name="edit_email" value="<?= $data['patient_email']; ?>"></td>
                             <td>
                                 <select class="border border-success rounded p-2" class="center" name="edit_category">

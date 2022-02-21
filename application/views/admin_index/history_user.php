@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-    <title>User Account</title>
+    <title>History</title>
     <style>
         .delete a{
             color: white;
@@ -24,56 +24,51 @@
             margin-bottom: 1rem;
             padding: 0;
         }
-        h3 {
-            padding: 10px;
+        nav{
+            margin-left: 5rem;
+            text-align: center;
         }
-        
+        h4 {
+            display: inline-block;   
+        }
     </style>
 </head>
 <body>
-    <?php $this->load->view('/admin_index/admin_headers'); ?>
-
+    <?php $this->load->view('/admin_index/admin_headers'); ?>   
     <main id="container">
 
-        <div class="notif">
-                <?php if (isset($_SESSION['approved'])){ 
-                    echo "<h3 class='text-white ml-5 fs-1 text-center bg-success rounded'>" .$_SESSION['approved']. "</h3>"; 
-                    } unset($_SESSION['approved']); 
-                    
-                    if(isset($_SESSION['deleted'])){
-                        echo "<h3 class='rounded text-center bg-danger fw-light text-white p-1'>". $this->session->flashdata('delete') . "</h3>";
-                    } unset($_SESSION['deleted']);
-                    ?>
-
-        </div>
-
+        <nav>
+            <h1>History</h1>
+        </nav>
+        <h4>Total Appointment Visits: <?php echo "<h5 class='fw-bold fst-italic'>" . $_SESSION['appointment_count'] . "</h5>"; ?></h4>
+        
         <div>
             <table class="customers">
                 <tr>
                     <th>Number</th>
-                    <th>User ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email Address</th>
-                    <th>Contact Number</th>
+                    <th>Appointment ID</th>
+                    <th>Patient First Name</th>
+                    <th>Patient Last Name</th>
+                    <th>Patient Email Address</th>
+                    <th>Appointment Date</th>
                     <th>Action</th>
                 </tr>   
-                <?php if(!empty($this->session->userdata('output'))) {$count = 1; foreach($this->session->userdata('output') as $data){ ?>
+                <?php if(!empty($this->session->userdata('history'))) {$count = 1; foreach($this->session->userdata('history') as $data){ ?>
                 <tr>
                     <td><?= $count++; ?></td>
                     <td><?= $data['id']; ?></td>
-                    <td><?= $data['first_name']; ?></td>
-                    <td><?= $data['last_name']; ?></td>
-                    <td><?= $data['email_address']; ?></td>
-                    <td><?= $data['contact_number']; ?></td>
-                    <td class="p-1"> <a class="btn m-0 mr-1 btn-warning" href="editusers/<?= $data['id'] ?>">Edit
-                                    <a class="btn m-0 ml-1 btn-info" href="history/<?= $data['id'] ?>">View</a>
+                    <td><?= $data['patient_firstname']; ?></td>
+                    <td><?= $data['patient_lastname']; ?></td>
+                    <td><?= $data['patient_email']; ?></td>
+                    <td><?= date("F j, Y g:i A",strtotime($data['appointment_date'])); ?></td>
+                    <td class="p-1"> <a class="btn m-0 mr-1 btn-warning" href="">Email
+                                    <a class="btn m-0 ml-1 btn-info" href="">Print</a>
                     </td>
 
                 </tr>   
                 <?php } }?>
             </table>
-        </div> 
+        </div>
     </main>
 </body>
 </html>

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         public function get_all_data(){
             return $this->db->query("SELECT customer_infos.id as customer_id, appointments.id AS appointment_id, CONCAT(customer_infos.first_name, ' ', customer_infos.last_name) AS billed_to, 
-                                    customer_infos.email_address as billed_email, appointments.id AS appointment_id, CONCAT(appointments.patient_firstname, ' ', appointments.patient_lastname) AS name, 
+                                    customer_infos.email_address as billed_email, patient_age AS age, appointments.id AS appointment_id, CONCAT(appointments.patient_firstname, ' ', appointments.patient_lastname) AS name, 
                                     appointments.patient_email as email, treatments.treatment_name as concern ,appointments.appointment_date as date FROM appointments
                                     INNER JOIN treatments ON appointments.treatments_id = treatments.id
                                     INNER JOIN customer_infos ON appointments.customers_info_id = customer_infos.id")->result_array();

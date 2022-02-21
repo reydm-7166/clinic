@@ -29,10 +29,6 @@
     <?php $this->load->view('/admin_index/admin_headers'); ?>
 
     <main id="container">
-        <form action="result.php" method="get" style="text-align: right">
-            <input type="text" name="search" id="search" value=""></input>
-            <input type="submit" name="search_btn" value="SEARCH"></input>
-        </form>
         <div>
             <div class="notif">
                 <?php if (isset($_SESSION['approved'])){ 

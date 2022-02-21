@@ -68,10 +68,18 @@ $route['user'] = 'Users_admin/get_data';
 $route['receipt'] = 'Receipt_admin/get_data';
 $route['approved'] = 'Approved_admin/get_data';
 $route['finish/(:any)'] = 'Approved_admin/get_insert_receipt/$1';
-$route['charts'] = 'Charts_admin/index';
+$route['report'] = 'Reports_admin/index';
 
 $route['edit/(:any)'] = 'Edits_appointment/index/$1';      /// edit appointment
 $route['update'] = 'Edits_appointment/update_appointment';
 $route['edit'] = 'Edits_appointment/view';
 
 
+$route['editusers/(:any)'] = 'Edits_userdata/index/$1';      /// edit useraccount
+$route['editusers'] = 'Edits_userdata/view';
+$route['updateusers'] = 'Edits_userdata/update_user';
+$route['history/(:any)'] = 'Users_history/get_all/$1';
+$route['history'] = 'Users_history/view';
+
+
+$route['manage'] = 'Manages_admin/index';

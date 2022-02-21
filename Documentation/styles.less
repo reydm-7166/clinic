@@ -1,0 +1,98 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+header {
+    position: fixed;
+    width: 20%;
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: skyblue;
+    border-right: solid 2px black;
+    padding: 2.5rem 0px 10rem 0px;
+    text-align: center;
+    h1 {
+        margin-bottom: 25px;
+    }
+    p {
+        margin-bottom: 25px;
+        font-size: 20px;
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            cursor: pointer;
+            color: blue;
+        }
+    }
+}
+section {
+    width: 80%;
+    box-sizing: border-box;
+    height: 540vh;
+    display: inline-block;
+    position: absolute;
+    right: .1px;
+    background-color: grey;
+    border-bottom: solid 1px black;
+    padding-top: 2.5rem;
+    h1 {
+        font-size: 40px;
+        text-align: center;   
+    }
+    div {
+        border-bottom: 3px solid black;
+        margin: auto;
+        width: 60%;
+        margin-top: 50px;
+        height: 25vh;
+        box-sizing: border-box;
+        padding-top: 10px;
+        margin-bottom: 0px; 
+        #hidden, #slide-down, #fade-in{
+            display: none;
+            color: limegreen;
+        }
+        #toggle, #hiding {
+            color: limegreen;
+        }
+        .another_class {
+            color: limegreen;
+            font-style: italic;
+        }
+        .title {   
+            font-size: 45px;
+            text-align: center;
+        }
+        .button {
+            width: auto;
+            display: inline-block;
+            margin: 3rem 1rem 0rem 6rem;
+            height: 40px;
+            text-align: center;
+            padding: 10px 15px;
+            box-sizing: border-box;
+            background-color: rgb(156, 156, 202);
+            border-radius: .5rem;
+            box-shadow: -3px 2px 5px 1px #292828;
+            vertical-align: middle;
+            cursor: pointer;
+            color: blue;   
+        }
+        .details { 
+            display: inline-block;
+            width: 69%;
+            height: 8vh;
+            box-sizing: border-box;
+            vertical-align: top;
+            border: none;
+            padding-top: 0px;
+            p {
+                justify-content: center;
+                line-height: 30px; 
+                font-size: 20px;  
+            }
+        }
+    }
+}

@@ -10,7 +10,7 @@ date_default_timezone_set('Asia/Manila');
             $this->load->library("form_validation");
         }
          /*___________________________________________________________________________________________________________ 
-        |  Fetch data from model (EDit_userdata) and store it in to_edit session data and                             |
+        |  Fetch data from model (Edit_appointment) and store it in to_edit session data and                             |
         |  display it in index, redirects first to view function                                                      |
         |___________________________________________________________________________________________________________ */
         public function index($id){
@@ -21,7 +21,7 @@ date_default_timezone_set('Asia/Manila');
             redirect('edit');                                                         
         }
         /*___________________________________________________________________________________________________________ 
-        |   Fetch data from form and store it in $update_form array and pass it to our model (edit_userdata)        |
+        |   Fetch data from form and store it in $update_form array and pass it to our model (Edit_appointment)     |
         |    and method of update_appointment, if saved is clicked. else redirect to appointments page and          |
         |   leave edit_appointment controller                                                                       |
         |                                                                                                           |

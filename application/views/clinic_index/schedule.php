@@ -51,6 +51,9 @@
         <label>Last Name:</label>
         <input type="text" name="last_name">
 
+        <label>Age:</label>
+        <input type="text" name="age">
+
         <label>Email Address:</label>
         <input type="email" name="email_address"><br>
 

@@ -19,30 +19,26 @@
             margin-top: 1rem;
             border: none;
         }
-
     </style>
     
 </head>
 <body>
     <header class="p-2 bg-secondary rounded-right">
         <?php $data = $this->session->userdata('admin'); ?>
-            <h1 class="text-white text">WELCOME <a href=""> <?= $data['first_name']?> </a></h1>
-        
-        
+            <h1 class="text-white text">WELCOME <a href=""> <?= $data['first_name']?> </a></h1> 
         <div class="panel">
+            
             <h5><i class="fa fa-list-alt text-white"></i>&ensp;<a href="dashboard">&ensp;Dashboard&ensp;</a></h5>
-            <h5><i class="fa fa-area-chart text-white"></i>&ensp;<a href="charts">&ensp;Chart&ensp;</a></h5>
-            <h5><i class="fas fa-receipt text-white"></i>&ensp;<a href="receipt">&ensp;All Receipts&ensp;</a></h5>
+            <h5><i class="fa fa-area-chart text-white"></i>&ensp;<a href="report">&ensp;Periodic Report&ensp;</a></h5>
+            <h5><i class="far fa-edit text-white"></i>&ensp;<a href="manage">&ensp;Manage Contents&ensp;</a></h5>
+            <h5><i class="fas fa-receipt text-white"></i>&ensp;<a href="receipt">&ensp;Receipts&ensp;</a></h5>
             <h5><i class="fa fa-users text-white"></i>&ensp;<a href="user">&ensp;User Accounts&ensp;</a></h5>
             <h5><i class="fa fa-calendar text-white"></i>&ensp;<a href="appointment">&ensp;Appointments&ensp;</a></h5>
             <h5><i class="fa fa-check-circle text-white"></i>&ensp;<a href="approved">&ensp;Approved&ensp;</a></h5>
             <h5 id="logout_admin"><i id="icon" class="fas fa-sign-out-alt text-white"></i>&ensp;<a href="Signin_admins/logout">Logout</a></h5>
-
-            
-        </div>
         
+        </div>   
     </header>
-
 
 </body>
 </html>

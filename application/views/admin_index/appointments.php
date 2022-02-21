@@ -19,7 +19,6 @@
         h3 {
             padding: 10px;
         }
-        
     </style>
 </head>
 <body>
@@ -27,42 +26,36 @@
                                                                                  
     <?php $this->load->view('/admin_index/admin_headers'); ?>
 
-    
     <main id="container">
-        <form action="result.php" method="get" style="text-align: right">
-            <input type="text" name="search" id="search" value=""></input>
-            <input type="submit" name="search_btn" value="SEARCH"></input>
-        </form>
                                                                                 <!-- FOR NOTIFICATION IN APPROVE/APPOINTMENTS/ETC -->
         <div class="notif">
                 <?php if (isset($_SESSION['approved'])){ 
                     echo "<h3 class='text-white m-0 fs-1 text-center bg-success rounded'>" .$_SESSION['approved']. "</h3>"; 
                 } unset($_SESSION['approved']); ?></h3>
         </div> 
-
         <div>       
             <table class="customers">
                 <tr>
                     <th>Number</th>
                     <th>Name</th>
+                    <th>Age</th>
                     <th>Email</th>
                     <th>Concern</th>
                     <th>Date Preferred</th>
-                    <th>Edit</th>
                     <th>Action</th>
-                    <th>History</th>
                 </tr>                                                             <!-- DISPLAY DATA FROM APPOINTMENTS TABLE -->
                 <?php if(!empty($this->session->userdata('appointment_output'))) {                              
                         $count = 1; foreach($this->session->userdata('appointment_output') as $data){ ?>
                 <tr>
                     <td><?= $count++; ?></td>
                     <td><?= $data['name']; ?></td>
+                    <td><?= $data['age']; ?></td>
                     <td class="emails"><a href=""><?= $data['email']; ?></a></td>
                     <td><?= $data['concern']; ?></td>
                     <td><?= date("F j, Y g:i A",strtotime($data['date'])); ?></td>
-                    <td><a class="btn m-0 text-white btn-primary" href="edit/<?= $data['appointment_id'] ?>">Edit Data</td>
-                    <td><a class="btn m-0 btn-success" href="move/<?= $data['appointment_id']?>">Approve</td>
-                    <td><a class="btn m-0 btn-info" href="">View</a></td>
+                    <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="edit/<?= $data['appointment_id'] ?>">Edit Data 
+                            <a class="btn m-0 ml-1 btn-success" href="move/<?= $data['appointment_id']?>">Approve</a>
+                    </td>
                 </tr>   
                 <?php } }  ?>
             </table>

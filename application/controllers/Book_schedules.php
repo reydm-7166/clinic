@@ -20,6 +20,7 @@ date_default_timezone_set('Asia/Manila');
                 $this->form_validation->set_rules("first_name", "First name", "trim|required|alpha");
                 $this->form_validation->set_rules("last_name", "Last name", "trim|required|alpha");
                 $this->form_validation->set_rules("email_address", "Email", "required|valid_email");
+                $this->form_validation->set_rules("age", "Age", "required|numeric|max_length[2]");
                 
                     if($this->form_validation->run() === FALSE) {
                         return $this->load->view('/clinic_index/schedule');

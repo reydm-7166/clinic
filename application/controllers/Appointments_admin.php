@@ -19,6 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $this->load->view('/admin_index/appointments');
             }
         }
+    
         /*______________________________________________________________________________________________________________ 
         |  uses the data we fetch above for insertion in the next method below                                          |
         |  redirects to the indicated (insert_approve) method line 38                                                   |
