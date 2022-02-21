@@ -19,10 +19,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $this->load->view('/admin_index/appointments');
             }
         }
-          /*___________________________________________________________________________________________________________ 
+        /*______________________________________________________________________________________________________________ 
         |  uses the data we fetch above for insertion in the next method below                                          |
-        |  redirects to the indicated (insert_approve) method line 39                                                   |
-        |___________________________________________________________________________________________________________ */
+        |  redirects to the indicated (insert_approve) method line 38                                                   |
+        |______________________________________________________________________________________________________________ */
         public function get_data_insert($id){
             $this->session->set_userdata('delete', $id);
             $all_appointment_data = $this->Appointment->get_insert_data($id);

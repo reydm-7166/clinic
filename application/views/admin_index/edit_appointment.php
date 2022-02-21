@@ -12,11 +12,11 @@
         #container {
             margin-top: 6rem;
         }
-        #actions {
-            width: 20%;
+        table td:last-child{
+            width:100%;
         }
         .customers {
-            width: 90%;
+            width: 89%;
         }
         #date {
             width: 90%;
@@ -25,10 +25,9 @@
             width: 30%;
             margin: auto;
             height: 10vh;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             padding: 0;
         }
-
     </style>
 </head>
 <body>
@@ -84,14 +83,5 @@
             </table>
         </div> 
     </main>
-
-    <?php if(!empty($this->session->userdata('to_edit'))){ ?>
-
-
-
-
-
-
-        <?php } ?>
 </body>
 </html>

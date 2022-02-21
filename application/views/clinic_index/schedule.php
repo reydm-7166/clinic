@@ -8,21 +8,28 @@
     <title>Book a schedule</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../user_guide/_static/css/book_style.css">
+    <style>
+        .notif {
+            margin-bottom: 0;
+            margin-top: .5rem;
+            height: 8vh;
+        }
+    </style>
 </head>
 <body>
         <?php $this->load->view('clinic_index/headers') ?>
                                                                             <!-- notif class just for notification if success (line 18)   -->
                                                                             <!--  just for notification if date is invalid   (line 23)   -->
-                                                                            <!-- Shows validatior error (line 32)   -->
+                                                                            <!-- Shows validatior error (line 32)  -->
                                                                             <!-- If user is logged in save it's id in a hidden input for database insertion purpose (line 37)   -->
                                                            
         <div class="notif"> 
             <?php if(isset($_SESSION['notification'])){ ?>
-                    <h1 class="rounded bg-success text-white p-1 m-2"><?= $_SESSION['notification'] ?></h1>
-            <?php } unset($_SESSION['notification']);?>
+                    <h1 class="rounded bg-success text-white p-1"><?= $_SESSION['notification'] ?></h1>
+            <?php }  unset($_SESSION['notification']); ?>
 
             <?php if(isset($_SESSION['notification_error'])){ ?>
-                    <h3 class="rounded text-center bg-danger fw-light text-white p-1 m-2"><?= $_SESSION['notification_error'] ?></h3>
+                    <h3 class="rounded text-center bg-danger fw-light text-white p-1"><?= $_SESSION['notification_error'] ?></h3>
             <?php } unset($_SESSION['notification_error']);?>
         </div>
     <h3 class="text-center">Schedule</h3>

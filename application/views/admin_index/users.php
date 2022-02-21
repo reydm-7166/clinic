@@ -35,7 +35,7 @@
                     <th>Contact Number</th>
                     <th>Edit</th>
                     <th>Action</th>
-                </tr>
+                </tr>   
                 <?php if(!empty($this->session->userdata('output'))) {$count = 1; foreach($this->session->userdata('output') as $data){ ?>
                 <tr>
                     <td><?= $count++; ?></td>
