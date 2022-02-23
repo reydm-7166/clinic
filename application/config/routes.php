@@ -68,7 +68,7 @@ $route['user'] = 'Users_admin/get_data';
 $route['receipt'] = 'Receipt_admin/get_data';
 $route['approved'] = 'Approved_admin/get_data';
 $route['finish/(:any)'] = 'Approved_admin/get_insert_receipt/$1';
-$route['report'] = 'Reports_admin/index';
+
 
 $route['edit/(:any)'] = 'Edits_appointment/index/$1';      /// edit appointment
 $route['update'] = 'Edits_appointment/update_appointment';
@@ -82,3 +82,7 @@ $route['history/(:any)'] = 'Users_history/get_all/$1';
 $route['history'] = 'Users_history/view';
 
 $route['manage'] = 'Manages_admin/index';
+
+
+$route['report'] = 'Reports_admin/index';                 ///// report
+$route['date_range'] = 'Reports_admin/treatment_data';

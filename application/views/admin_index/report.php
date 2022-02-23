@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../../../user_guide/_static/js/charts.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
     <!-- line 10 import chart js-->
 
     <style>
@@ -33,6 +38,16 @@
             margin-bottom: 5rem;
             
         }
+        form {
+            margin: 1rem 1rem 2rem 1rem;
+            width: 18%;
+            height: 20.5vh;
+            padding-top: 1rem;
+        }
+        form label {
+            margin-top: .3rem;
+        }
+
     </style>
     <title>Chart</title>
 </head>
@@ -40,10 +55,11 @@
 <?php  if(empty($this->session->userdata('admin'))) { redirect('login'); } ?>  <!-- CHECKS IF ADMIN IS LOGGED IN -- IF NOT SEND BACK TO LOGIN PAGE CODE BELOW IS FOR HEADER -->
    
     <?php $this->load->view('/admin_index/admin_headers'); ?>
-
+    
     <main id="container">
         <h1 class="mt-0">Clinic Activity Reports</h1>
-        <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <?php $this->load->view('/admin_index/date_form_partials'); ?>
+        
         <div id="chartContainer5" style="width: 45%; height: 300px;display: inline-block;"></div> 
         <div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
         <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
@@ -51,7 +67,27 @@
         <div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div>
          
     </main>
+        <?php $chart_data = $this->session->userdata('chart');
+                // for($i = 0; $i < count($chart_data['user_count']); $i++){
+                    foreach($chart_data['user_count'] as $data){
 
+                        $users_chart[] = array('y' => intval($data['appointment_count']),
+                                                'legendText' => "Visits:" . $data['appointment_count'],
+                                                'indexLabel' => $data['Name']);
+                    }
+                
+
+                
+            echo "<pre>";
+                print_r($users_chart);
+            echo "<pre>";
+
+            echo json_encode($users_chart);
+            // echo json_encode($chart_data['age_chart']);
+            // echo json_encode($chart_data['treatments_chart']);
+
+        
+        ?>
     <script>
             //     var chart = new CanvasJS.Chart("chartContainer1",
             // {
@@ -92,26 +128,17 @@
             {
                 animationEnabled: true,
                 title:{
-                    text: "Services offered for the month of",
-                    horizontalAlign: "right"
+                    text: "Appointments for the month of",
+                    horizontalAlign: "center"
                 },
                 data: [
                 {
                     type: "doughnut",
                     startAngle: 60,
-                    //innerRadius: 60,
-                    indexLabel: "{label} - #percent%",
-                    toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                    innerRadius: 40,
+                    toolTipContent: "<b>Visits:</b> {y} (#percent%)",
                     showInLegend: true,
-                    dataPoints: [
-                        { y: 4181563, legendText: "PS 3", indexLabel: "PlayStation 3" },
-                        { y: 2175498, legendText: "Wii", indexLabel: "Wii" },
-                        { y: 3125844, legendText: "360", indexLabel: "Xbox 360" },
-                        { y: 1176121, legendText: "DS", indexLabel: "Nintendo DS" },
-                        { y: 1727161, legendText: "PSP", indexLabel: "PSP" },
-                        { y: 4303364, legendText: "3DS", indexLabel: "Nintendo 3DS" },
-                        { y: 1717786, legendText: "Vita", indexLabel: "PS Vita" }
-                    ]
+                    dataPoints: <?php echo json_encode($users_chart); ?>
                 },
                 ]
             });
