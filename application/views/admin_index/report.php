@@ -20,7 +20,7 @@
             display: inline-block;
             vertical-align: top;
             width: 79.5%;
-            min-height: 90vh;
+            height: 90vh;
             margin-top: 1rem;
             text-align: center;
             outline: black 1px solid;
@@ -62,9 +62,9 @@
         
         <div id="chartContainer5" style="width: 45%; height: 300px;display: inline-block;"></div> 
         <div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
-        <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
+        <!-- <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
         <div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div><br/>  
-        <div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div>
+        <div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div> -->
          
     </main>
         <?php $chart_data = $this->session->userdata('chart');
@@ -76,13 +76,6 @@
                                                 'indexLabel' => $data['Name']);
                     }
                 
-
-                
-            echo "<pre>";
-                print_r($users_chart);
-            echo "<pre>";
-
-            echo json_encode($users_chart);
             // echo json_encode($chart_data['age_chart']);
             // echo json_encode($chart_data['treatments_chart']);
 
@@ -128,7 +121,7 @@
             {
                 animationEnabled: true,
                 title:{
-                    text: "Appointments for the month of",
+                    text: "Appointments",
                     horizontalAlign: "center"
                 },
                 data: [
