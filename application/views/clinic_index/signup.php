@@ -24,10 +24,9 @@
     
     <form action="/Signup_users/sign_up" method="post">
         <h1>Sign Up</h1>
-        <?php 
-            $this->load->library('form_validation');
-            echo validation_errors("<div class='text-center lh-1 rounded bg-danger text-white p-0 m-1'>","</div>" );  
-        ?>
+        
+        <?php $this->load->library('form_validation');
+            echo validation_errors("<div class='text-center lh-1 rounded bg-danger text-white p-0 m-1'>","</div>" ); ?>
 
         <label>First Name: </label>
         <input type="text" name="fname"><br><br>

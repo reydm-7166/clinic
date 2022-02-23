@@ -28,8 +28,10 @@
             margin-left: 5rem;
             text-align: center;
         }
-        h4 {
-            display: inline-block;   
+
+        .mb-0 {
+            display: inline-block;
+            margin-left: 5rem;
         }
     </style>
 </head>
@@ -38,9 +40,14 @@
     <main id="container">
 
         <nav>
-            <h1>History</h1>
+            <h1 class="mt-1">History</h1>
         </nav>
-        <h4>Total Appointment Visits: <?php echo "<h5 class='fw-bold fst-italic'>" . $_SESSION['appointment_count'] . "</h5>"; ?></h4>
+
+        <?php if(!empty($this->session->userdata('details'))) { $details = $this->session->userdata('details');?>
+            <h5 class='mb-0 fw-bold fst-italic'>Account Name: <?=  $details['name']?> </h5><br>
+            <h5 class='mb-0 fw-bold fst-italic'>Account ID: <?= $details['id'] ?> </h5><br>
+            <h5 class='mb-0 fw-bold fst-italic'>Total Appointment Visits: <?php echo $details['total'] ?></h5><br>
+        <?php } ?>
         
         <div>
             <table class="customers">

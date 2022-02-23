@@ -18,8 +18,6 @@
             <h2 id="book"><a href="book">Book for schedule</a></h2>
             <h2 id="logout"><a href="logout">Logout</a></h2>
     </header>
-    <?php 
-            $user = $this->session->userdata('verify');
-    ?>  
+    <?php $user = $this->session->userdata('verify'); ?>  
 </body>
 </html>

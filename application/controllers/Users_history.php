@@ -10,7 +10,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $verify = $this->User_history->get_all($id);
             if($verify){
                 $this->session->set_userdata('history', $verify);
-   
                 $this->get_count($id);
             }
         }
@@ -18,8 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         public function get_count($id){
             $verify = $this->User_history->appointment_count($id);
             if($verify){
-                $_SESSION['appointment_count'] = $verify['total'];
-                //$this->session->set_userdata('history', $verify);
+                $this->session->set_userdata('details', $verify);
                 // echo "<pre>";
                 //     print_r($verify);
                 // echo "<pre>";          

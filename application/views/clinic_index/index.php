@@ -11,12 +11,9 @@
 <body>
     <?php $this->load->view('clinic_index/headers') ?>
 
-    <?php 
-        if(empty($this->session->userdata('verify'))){
+    <?php if(empty($this->session->userdata('verify'))){
             redirect('signin');
         }
-            $user = $this->session->userdata('verify');
-    ?>  
-    
+            $user = $this->session->userdata('verify'); ?>
 </body>
 </html>

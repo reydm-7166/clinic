@@ -7,6 +7,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
 
         public function appointment_count($id){
-            return $this->db->query("SELECT COUNT(customers_info_id) AS total FROM appointments_backup WHERE customers_info_id = (?)", array($id))->row_array();
+            return $this->db->query("SELECT COUNT(appointments_backup.customers_info_id) AS total, CONCAT(customer_infos.first_name, ' ', customer_infos.last_name) AS name,
+            customer_infos.id FROM appointments_backup 
+            INNER JOIN customer_infos ON appointments_backup.customers_info_id = customer_infos.id
+            WHERE customers_info_id = (?)", array($id))->row_array();
         }
     }
