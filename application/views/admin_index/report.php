@@ -71,9 +71,16 @@
                 // for($i = 0; $i < count($chart_data['user_count']); $i++){
                     foreach($chart_data['user_count'] as $data){
 
-                        $users_chart[] = array('y' => intval($data['appointment_count']),
-                                                'legendText' => "Visits:" . $data['appointment_count'],
-                                                'indexLabel' => $data['Name']);
+                    $users_chart[] = array('y' => intval($data['appointment_count']),
+                                            'legendText' => $data['Name'],
+                                            'indexLabel' => " Visits: (". $data['appointment_count'] . ")");
+                    }
+
+                    foreach($chart_data['age_chart'] as $data){
+                        
+                    $ages_chart[] = array('y' => intval($data['patient_age']),
+                                            'legendText' => "Ages:" . $data['ages'],
+                                            'indexLabel' => "Ages (" . $data['ages'] . "): " . $data['patient_age'] );
                     }
                 
             // echo json_encode($chart_data['age_chart']);
@@ -120,6 +127,7 @@
             var chart = new CanvasJS.Chart("chartContainer2",
             {
                 animationEnabled: true,
+                animationDuration: 800,
                 title:{
                     text: "Appointments",
                     horizontalAlign: "center"
@@ -128,7 +136,7 @@
                 {
                     type: "doughnut",
                     startAngle: 60,
-                    innerRadius: 40,
+                    innerRadius: 25,
                     toolTipContent: "<b>Visits:</b> {y} (#percent%)",
                     showInLegend: true,
                     dataPoints: <?php echo json_encode($users_chart); ?>
@@ -140,27 +148,19 @@
             var chart = new CanvasJS.Chart("chartContainer5",
             {
                 animationEnabled: true,
+                animationDuration: 800,
                 title:{
-                    text: "Treatments",
-                    horizontalAlign: "left"
+                    text: "Patient Ages",
+                    horizontalAlign: "center"
                 },
                 data: [
                 {
                     type: "doughnut",
                     startAngle: 60,
-                    //innerRadius: 60,
-                    indexLabel: "{label} - #percent%",
+                    innerRadius: 25,
                     toolTipContent: "<b>{label}:</b> {y} (#percent%)",
                     showInLegend: true,
-                    dataPoints: [
-                        { y: 4181563, legendText: "PS 3", indexLabel: "PlayStation 3" },
-                        { y: 2175498, legendText: "Wii", indexLabel: "Wii" },
-                        { y: 3125844, legendText: "360", indexLabel: "Xbox 360" },
-                        { y: 1176121, legendText: "DS", indexLabel: "Nintendo DS" },
-                        { y: 1727161, legendText: "PSP", indexLabel: "PSP" },
-                        { y: 4303364, legendText: "3DS", indexLabel: "Nintendo 3DS" },
-                        { y: 1717786, legendText: "Vita", indexLabel: "PS Vita" }
-                    ]
+                    dataPoints: <?php echo json_encode($ages_chart); ?>
                 },
                 ]
             });

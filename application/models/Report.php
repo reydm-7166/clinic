@@ -23,10 +23,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             |________________________________________________________________________________________________________________________________________*/
 
 
-            $age_chart = $this->db->query("SELECT patient_age, COUNT(patient_age) AS patient_age FROM appointments
+            $age_chart = $this->db->query("SELECT patient_age AS ages, COUNT(patient_age) AS patient_age FROM appointments_backup
                             WHERE appointment_date BETWEEN (?) AND (?)
-                            GROUP BY patient_age", array($date_range['$date_from'], $date_range['$date_to']))->result_array();
+                            GROUP BY ages", array($date_range['$date_from'], $date_range['$date_to']))->result_array();
 
+
+             /*________________________________________________________________________________________________________________________________________
+            | this query gets the *ages of patients that books a schedule from the selected month and save it to a variable                          |
+            |________________________________________________________________________________________________________________________________________*/
 
             $treatments_chart = $this->db->query("SELECT treatments.treatment_name, COUNT(treatments_id) AS count FROM appointments
                                                 INNER JOIN treatments on treatments.id = appointments.treatments_id
