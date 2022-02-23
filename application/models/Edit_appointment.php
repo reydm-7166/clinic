@@ -8,10 +8,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          public function update_data($updated_form){
              $query = "UPDATE appointments 
                         SET customers_info_id = (?), treatments_id = (?), patient_firstname = (?),
-                         patient_lastname = (?), patient_email= (?), appointment_date = (?) WHERE id = (?)";
+                         patient_lastname = (?), patient_age= (?), patient_email = (?), appointment_date = (?) WHERE id = (?)";
 
             $data = array($updated_form['customer_id'], $updated_form['edit_category'], $updated_form['edit_firstname'], $updated_form['edit_lastname'], 
-                    $updated_form['edit_email'], $updated_form['edit_date'], $updated_form['id']);
+            $updated_form['edit_age'], $updated_form['edit_email'], $updated_form['edit_date'], $updated_form['id']);
             return $this->db->query($query, $data);
         }
     }

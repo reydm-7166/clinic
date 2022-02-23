@@ -59,8 +59,8 @@
         <label class="center">Choose Category:</label>
         <select class="center" name="category">
             <option value="1">CANCER</option>
-            <option value="2">MALALA</option>
-            <option value="3">WALA</option>
+            <option value="2">BUGBOG</option>
+            <option value="3">STROKE</option>
         </select>
         
         <label class="center">Choose preferred date:</label>

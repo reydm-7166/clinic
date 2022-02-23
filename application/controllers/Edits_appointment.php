@@ -30,15 +30,19 @@ date_default_timezone_set('Asia/Manila');
         |___________________________________________________________________________________________________________ */    
         public function update_appointment(){
             $updated_form = $this->input->post();
+
+            print_r($updated_form);
+
             if($this->input->post('Save')){
                 $today = date('m-d-Y h:i: A', strtotime("+1 day"));                                     
                 $time_dummy = date("m-d-Y h:i: A",strtotime($updated_form['edit_date']));
-
+                $this->output->enable_profiler(TRUE);
                 if($time_dummy > $today){
                     $this->form_validation->set_rules("edit_firstname", "First name", "trim|required|alpha");
-                    $this->form_validation->set_rules("edit_lastname", "Last name", "trim|required|alpha");
+                    $this->form_validation->set_rules("edit_lastname", "Last name", "trim|required");
+                    $this->form_validation->set_rules("edit_age", "Age", "trim|required|numeric");
                     $this->form_validation->set_rules("edit_email", "Email", "required|valid_email");
-
+                        
                     if($this->form_validation->run() === FALSE) {                   ///// if there is error in the validation, data won't go to the database
                         return $this->load->view('admin_index/edit_appointment');
                     } else {
