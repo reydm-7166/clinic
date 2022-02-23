@@ -12,5 +12,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             return $this->db->query("SELECT * FROM admin_account WHERE username = ?  AND password = ?", 
                                     array($credentials['username'], $credentials['password']))->row_array();
         }
-
     }

@@ -28,8 +28,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             return $this->db->query($query, $data);
         }
     }
-
-        
-    // $query ="INSERT INTO `receipts`(`customer_id`, `appointment_id`, `billed_to`, `billed_email`) VALUES (?,?,?,?);";
-    //         $data = "";
-    //         return $this->db->query();

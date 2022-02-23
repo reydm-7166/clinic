@@ -81,5 +81,4 @@ $route['updateusers'] = 'Edits_userdata/update_user';
 $route['history/(:any)'] = 'Users_history/get_all/$1';
 $route['history'] = 'Users_history/view';
 
-
 $route['manage'] = 'Manages_admin/index';

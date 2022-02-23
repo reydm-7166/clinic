@@ -20,7 +20,6 @@
             border: none;
         }
     </style>
-    
 </head>
 <body>
     <header class="p-2 bg-secondary rounded-right">

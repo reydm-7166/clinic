@@ -5,7 +5,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->session->unset_userdata('verify');
             redirect('signin');
         }
-
         public function admin_logout(){
             $this->session->unset_userdata('verify');
             redirect('login');

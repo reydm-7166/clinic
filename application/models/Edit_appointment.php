@@ -14,5 +14,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     $updated_form['edit_email'], $updated_form['edit_date'], $updated_form['id']);
             return $this->db->query($query, $data);
         }
-
     }
