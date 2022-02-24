@@ -24,22 +24,24 @@
             margin-top: 1rem;
             text-align: center;
             text-overflow: scroll; 
+            border: 1px solid black;
         }
         #container h1 {
             margin-bottom: 9rem;
         }
         div {
+            margin: 0rem 0 2rem 0;
+        }
+        #chartContainer5, #chartContainer2, #chartContainer1, 
+         {
             height: 40vh;
             width: 55%;
-            border: 1px solid black;
             display: inline-block;
-            margin: 1rem 1rem;
-            width: 44%; 
-            height: 300px;
+            
         }
         #date {
             position: absolute;
-            right: 2rem;
+            right: 5rem;
             top: 1rem;
             margin: 1rem;
             width: 15%;
@@ -51,9 +53,8 @@
         #date #submit {
             margin-top: -1rem;
         }
-
-
     </style>
+
     <title>Chart</title>
 </head>
 <body>
@@ -65,10 +66,10 @@
         <h1 class="mt-0">Clinic Activity Reports</h1>
         <?php $this->load->view('/partials/date_form_partials'); ?>
         
-        <div id="chartContainer5"></div> 
-        <div id="chartContainer2"></div><br/>
-        <div id="chartContainer1"></div> 
-        <div id="chartContainer3"></div><br/>  
+        <div id="chartContainer5" style="width: 45%; height: 300px;display: inline-block;"></div> 
+        <div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
+        <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
+        <div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div><br/>  
         <!-- <div id="chartContainer4"></div>  -->
          
     </main>
@@ -105,7 +106,6 @@
                 title:{
                     text:"Treatments"
                 },
-                
                 axisX:{
                     interval: 1
                 },
@@ -113,6 +113,9 @@
                     interlacedColor: "rgba(1,77,101,.2)",
                     gridColor: "rgba(1,77,101,.1)",
                     title: "Number of Treatmens Performed",
+                },
+                toolTip:{
+                    content:"x: {x}, y: {y}" ,
                 },
                 data: [{
                     type: "bar",
@@ -131,7 +134,6 @@
                 title:{
                     text: "Appointments",
                     horizontalAlign: "center",
-
                 },
                 data: [
                 {
