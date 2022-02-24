@@ -1,4 +1,4 @@
-<form  action="date_range" method="post">
+<form id="date" action="date_range" method="post">
     Month <select class="center" name="month_from">
             <option value="1">January</option>
             <option value="2">February</option>
@@ -14,8 +14,6 @@
             <option value="12">December</option>
             </select>
     Day <input type="number" min="1" max="31" size="1" name="day_from">
-
-    <label>TO</label><br>
 
     Month <select class="center" name="month_to">
             <option value="1">January</option>

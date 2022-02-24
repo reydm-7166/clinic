@@ -20,30 +20,38 @@
             display: inline-block;
             vertical-align: top;
             width: 79.5%;
-            min-height: 100vh;
+            height: 98vh;
             margin-top: 1rem;
             text-align: center;
-            text-overflow: scroll;
-            
+            text-overflow: scroll; 
         }
-        #chartContainer {
-            height: 40vh;
-            width: 55%;
-            padding: 0;
-            margin: 3rem 1rem 0;
+        #container h1 {
+            margin-bottom: 9rem;
         }
         div {
-            margin-bottom: 5rem;
+            height: 40vh;
+            width: 55%;
+            border: 1px solid black;
+            display: inline-block;
+            margin: 1rem 1rem;
+            width: 44%; 
+            height: 300px;
         }
-        form {
-            margin: 1rem 1rem 2rem 1rem;
-            width: 18%;
-            height: 20.5vh;
-            padding-top: 1rem;
+        #date {
+            position: absolute;
+            right: 2rem;
+            top: 1rem;
+            margin: 1rem;
+            width: 15%;
+            height: 15vh;
         }
-        form label {
-            margin-top: .3rem;
+        #date input{
+            margin-bottom: .5rem;
         }
+        #date #submit {
+            margin-top: -1rem;
+        }
+
 
     </style>
     <title>Chart</title>
@@ -57,11 +65,11 @@
         <h1 class="mt-0">Clinic Activity Reports</h1>
         <?php $this->load->view('/partials/date_form_partials'); ?>
         
-        <div id="chartContainer5" style="width: 45%; height: 300px;display: inline-block;"></div> 
-        <div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
-        <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
-        <div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div><br/>  
-        <!-- <div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div>  -->
+        <div id="chartContainer5"></div> 
+        <div id="chartContainer2"></div><br/>
+        <div id="chartContainer1"></div> 
+        <div id="chartContainer3"></div><br/>  
+        <!-- <div id="chartContainer4"></div>  -->
          
     </main>
         <?php $chart_data = $this->session->userdata('chart');
@@ -97,13 +105,14 @@
                 title:{
                     text:"Treatments"
                 },
+                
                 axisX:{
                     interval: 1
                 },
                 axisY2:{
                     interlacedColor: "rgba(1,77,101,.2)",
                     gridColor: "rgba(1,77,101,.1)",
-                    title: "Number of Treatmens Performed"
+                    title: "Number of Treatmens Performed",
                 },
                 data: [{
                     type: "bar",
@@ -121,7 +130,8 @@
                 animationDuration: 500,
                 title:{
                     text: "Appointments",
-                    horizontalAlign: "center"
+                    horizontalAlign: "center",
+
                 },
                 data: [
                 {
@@ -142,7 +152,7 @@
                 animationDuration: 500,
                 title:{
                     text: "Patient Ages",
-                    horizontalAlign: "center"
+                    horizontalAlign: "center",
                 },
                 data: [
                 {
@@ -175,11 +185,11 @@
             //     {
             //         type: "line",
             //         dataPoints: [
-            //             { x: new Date(2012, 00, 1), y: 450 },
+            //             { x: new Date(2012, 00, 1), y: 440 },
             //             { x: new Date(2012, 01, 1), y: 414 },
             //             { x: new Date(2012, 02, 1), y: 520, indexLabel: "highest", markerColor: "red", markerType: "triangle" },
             //             { x: new Date(2012, 03, 1), y: 460 },
-            //             { x: new Date(2012, 04, 1), y: 450 },
+            //             { x: new Date(2012, 04, 1), y: 440 },
             //             { x: new Date(2012, 05, 1), y: 500 },
             //             { x: new Date(2012, 06, 1), y: 480 },
             //             { x: new Date(2012, 07, 1), y: 480 },
@@ -193,37 +203,6 @@
             // });
             // chart.render();
 
-            // var chart = new CanvasJS.Chart("chartContainer4",
-            // {
-            //     animationEnabled: true,
-            //     title: {
-            //         text: "Column Chart"
-            //     },
-            //     axisX: {
-            //         interval: 10,
-            //     },
-            //     data: [
-            //     {
-            //         type: "column",
-            //         legendMarkerType: "triangle",
-            //         legendMarkerColor: "green",
-            //         color: "rgba(255,12,32,.3)",
-            //         showInLegend: true,
-            //         legendText: "Country wise population",
-            //         dataPoints: [
-            //             { x: 10, y: 297571, label: "India" },
-            //             { x: 20, y: 267017, label: "Saudi" },
-            //             { x: 30, y: 175200, label: "Canada" },
-            //             { x: 40, y: 154580, label: "Iran" },
-            //             { x: 50, y: 116000, label: "Russia" },
-            //             { x: 60, y: 97800, label: "UAE" },
-            //             { x: 70, y: 20682, label: "US" },
-            //             { x: 80, y: 20350, label: "China" }
-            //         ]
-            //     },
-            //     ]
-            // });
-            // chart.render();
 
         </script>
 

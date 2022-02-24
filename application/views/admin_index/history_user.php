@@ -61,9 +61,9 @@
                     <h2 class='m-0 fw-bold text-white'> <?= $_SESSION['empty_history']?> </h2><br>
                 </div>
 
-        <?php } ;
+        <?php }  unset($_SESSION['empty_history']);
                /*
-               *        
+               *       notify 
                *       that it has no history yet
                */ 
             if(!empty($this->session->userdata('details'))) { $details = $this->session->userdata('details');?>
