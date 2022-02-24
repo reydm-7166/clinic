@@ -25,7 +25,7 @@
 <body>
     <?php  if(empty($this->session->userdata('admin'))) { redirect('login'); } ?>  <!-- CHECKS IF ADMIN IS LOGGED IN -- IF NOT SEND BACK TO LOGIN PAGE CODE BELOW IS FOR HEADER -->
                                                                                     
-                                                                                    <?php $this->load->view('/admin_index/admin_headers'); ?>
+                                                                                    <?php $this->load->view('/partials/admin_headers'); ?>
 
         <main id="container">                                                                     <!-- FOR NOTIFICATION IN APPROVE/APPOINTMENTS/ETC -->
             <div>       

@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-        <?php $this->load->view('clinic_index/headers') ?>
+        <?php $this->load->view('partials/headers') ?>
                                                                             <!-- notif class just for notification if success (line 18)   -->
                                                                             <!--  just for notification if date is invalid   (line 23)   -->
                                                                             <!-- Shows validatior error (line 32)  -->

@@ -51,11 +51,11 @@
 <body>
 <?php  if(empty($this->session->userdata('admin'))) { redirect('login'); } ?>  <!-- CHECKS IF ADMIN IS LOGGED IN -- IF NOT SEND BACK TO LOGIN PAGE CODE BELOW IS FOR HEADER -->
    
-    <?php $this->load->view('/admin_index/admin_headers'); ?>
+    <?php $this->load->view('/partials/admin_headers'); ?>
     
     <main id="container">
         <h1 class="mt-0">Clinic Activity Reports</h1>
-        <?php $this->load->view('/admin_index/date_form_partials'); ?>
+        <?php $this->load->view('/partials/date_form_partials'); ?>
         
         <div id="chartContainer5" style="width: 45%; height: 300px;display: inline-block;"></div> 
         <div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>

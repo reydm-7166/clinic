@@ -29,7 +29,7 @@
             <option value="9">September</option>
             <option value="10">October</option>
             <option value="11">November</option>
-            <option value="12">December</option>
+            <option value="12" selected>December</option>
             </select>
     Day <input type="number" min="1" max="31" size="1" name="day_to"><br><br>
     <input class="btn btn-primary" type="submit" value="Submit" name="submit">

@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-    <?php $this->load->view('/admin_index/admin_headers'); ?>
+    <?php $this->load->view('/partials/admin_headers'); ?>
 
     <main id="container">
 

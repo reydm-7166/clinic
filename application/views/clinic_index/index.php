@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../../user_guide/_static/css/index.css">
 </head>
 <body>
-    <?php $this->load->view('clinic_index/headers') ?>
+    <?php $this->load->view('partials/headers') ?>
 
     <?php if(empty($this->session->userdata('verify'))){
             redirect('signin');
