@@ -33,6 +33,13 @@
             display: inline-block;
             margin-left: 5rem;
         }
+        .warning {
+            height: 5vh;
+            width: 45%;
+            text-align: center;
+            margin: 1.5rem auto 1rem auto;
+        }
+
     </style>
 </head>
 <body>
@@ -42,12 +49,28 @@
         <nav>
             <h1 class="mt-1">History</h1>
         </nav>
+                                                                    <!-- /*
+                                                                    *       session[empty_history] is if a user has no appointment history, it will display warning 
+                                                                    *       that it has no history yet
+                                                                    */ -->
+        <?php if(isset($_SESSION['empty_history'])) { 
+                $this->session->unset_userdata('details'); 
+                $this->session->unset_userdata('history');?>
+                
+                <div class="warning rounded bg-danger">
+                    <h2 class='m-0 fw-bold text-white'> <?= $_SESSION['empty_history']?> </h2><br>
+                </div>
 
-        <?php if(!empty($this->session->userdata('details'))) { $details = $this->session->userdata('details');?>
-            <h5 class='mb-0 fw-bold fst-italic'>Account Name: <?=  $details['name']?> </h5><br>
-            <h5 class='mb-0 fw-bold fst-italic'>Account ID: <?= $details['id'] ?> </h5><br>
-            <h5 class='mb-0 fw-bold fst-italic'>Total Appointment Visits: <?php echo $details['total'] ?></h5><br>
-        <?php } ?>
+        <?php } ;
+               /*
+               *        
+               *       that it has no history yet
+               */ 
+            if(!empty($this->session->userdata('details'))) { $details = $this->session->userdata('details');?>
+                <h5 class='mb-0 fw-bold fst-italic'>Account Name: <?=  $details['name']?> </h5><br>
+                <h5 class='mb-0 fw-bold fst-italic'>Account ID: <?= $details['id'] ?> </h5><br>
+                <h5 class='mb-0 fw-bold fst-italic'>Total Appointment Visits: <?php echo $details['total'] ?></h5><br>
+            <?php } ?>
         
         <div>
             <table class="customers">

@@ -23,7 +23,7 @@ date_default_timezone_set('Asia/Manila');
         } 
         
         public function update_user(){
-            $updated_form = $this->input->post();
+            $updated_form = $this->input->post(NULL, TRUE);
 
             if($this->input->post('Save')){
                 $this->form_validation->set_rules("edit_firstname", "First name", "trim|required|alpha");

@@ -6,7 +6,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }   
         public function admin_login(){                                                            
         $credentials = $this->input->post(NULL, TRUE);
-        $this->output->enable_profiler(TRUE);
         $this->load->model('Signin');
         $this->load->library("form_validation");
         $credentials['password'] = md5($credentials['password']);

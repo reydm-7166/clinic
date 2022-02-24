@@ -20,10 +20,9 @@
             display: inline-block;
             vertical-align: top;
             width: 79.5%;
-            height: 90vh;
+            min-height: 100vh;
             margin-top: 1rem;
             text-align: center;
-            outline: black 1px solid;
             text-overflow: scroll;
             
         }
@@ -31,12 +30,10 @@
             height: 40vh;
             width: 55%;
             padding: 0;
-            outline: dotted black 1px;
             margin: 3rem 1rem 0;
         }
         div {
             margin-bottom: 5rem;
-            
         }
         form {
             margin: 1rem 1rem 2rem 1rem;
@@ -62,9 +59,9 @@
         
         <div id="chartContainer5" style="width: 45%; height: 300px;display: inline-block;"></div> 
         <div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
-        <!-- <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
+        <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
         <div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div><br/>  
-        <div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div> -->
+        <!-- <div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div>  -->
          
     </main>
         <?php $chart_data = $this->session->userdata('chart');
@@ -82,52 +79,46 @@
                                             'legendText' => "Ages:" . $data['ages'],
                                             'indexLabel' => "Ages (" . $data['ages'] . "): " . $data['patient_age'] );
                     }
-                
+
+                    foreach($chart_data['treatments_chart'] as $data){
+                        $treatments_chart[] = array('y' => intval($data['count']),
+                                                'label' => $data['treatment_name']);
+                        }
+                // echo json_encode($treatments_chart);
             // echo json_encode($chart_data['age_chart']);
-            // echo json_encode($chart_data['treatments_chart']);
+            
 
         
         ?>
     <script>
-            //     var chart = new CanvasJS.Chart("chartContainer1",
-            // {
-            //     animationEnabled: true,
-            //     title: {
-            //         text: "Spline Area Chart"
-            //     },
-            //     axisX: {
-            //         interval: 10,
-            //     },
-            //     data: [
-            //     {
-            //         type: "splineArea",
-            //         color: "rgba(255,12,32,.3)",
-            //         dataPoints: [
-            //             { x: new Date(1992, 0), y: 2506000 },
-            //             { x: new Date(1993, 0), y: 2798000 },
-            //             { x: new Date(1994, 0), y: 3386000 },
-            //             { x: new Date(1995, 0), y: 6944000 },
-            //             { x: new Date(1996, 0), y: 6026000 },
-            //             { x: new Date(1997, 0), y: 2394000 },
-            //             { x: new Date(1998, 0), y: 1872000 },
-            //             { x: new Date(1999, 0), y: 2140000 },
-            //             { x: new Date(2000, 0), y: 7289000 },
-            //             { x: new Date(2001, 0), y: 4830000 },
-            //             { x: new Date(2002, 0), y: 2009000 },
-            //             { x: new Date(2003, 0), y: 2840000 },
-            //             { x: new Date(2004, 0), y: 2396000 },
-            //             { x: new Date(2005, 0), y: 1613000 },
-            //             { x: new Date(2006, 0), y: 2821000 }
-            //         ]
-            //     },
-            //     ]
-            // });
-            // chart.render();
+            var chart = new CanvasJS.Chart("chartContainer1", {
+                animationEnabled: true,
+                
+                title:{
+                    text:"Treatments"
+                },
+                axisX:{
+                    interval: 1
+                },
+                axisY2:{
+                    interlacedColor: "rgba(1,77,101,.2)",
+                    gridColor: "rgba(1,77,101,.1)",
+                    title: "Number of Treatmens Performed"
+                },
+                data: [{
+                    type: "bar",
+                    name: "companies",
+                    axisYType: "secondary",
+                    color: "#014D65",
+                    dataPoints: <?php echo json_encode($treatments_chart);  ?>
+                }]
+            });
+            chart.render();
 
             var chart = new CanvasJS.Chart("chartContainer2",
             {
                 animationEnabled: true,
-                animationDuration: 800,
+                animationDuration: 500,
                 title:{
                     text: "Appointments",
                     horizontalAlign: "center"
@@ -136,7 +127,7 @@
                 {
                     type: "doughnut",
                     startAngle: 60,
-                    innerRadius: 25,
+                    innerRadius: 50,
                     toolTipContent: "<b>Visits:</b> {y} (#percent%)",
                     showInLegend: true,
                     dataPoints: <?php echo json_encode($users_chart); ?>
@@ -148,7 +139,7 @@
             var chart = new CanvasJS.Chart("chartContainer5",
             {
                 animationEnabled: true,
-                animationDuration: 800,
+                animationDuration: 500,
                 title:{
                     text: "Patient Ages",
                     horizontalAlign: "center"
@@ -157,7 +148,7 @@
                 {
                     type: "doughnut",
                     startAngle: 60,
-                    innerRadius: 25,
+                    innerRadius: 50,
                     toolTipContent: "<b>{label}:</b> {y} (#percent%)",
                     showInLegend: true,
                     dataPoints: <?php echo json_encode($ages_chart); ?>
@@ -233,6 +224,7 @@
             //     ]
             // });
             // chart.render();
+
         </script>
 
 </body>

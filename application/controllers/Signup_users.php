@@ -6,7 +6,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
         public function sign_up(){
             $form = $this->input->post(NULL, TRUE);
-            //$this->output->enable_profiler(TRUE);
             $this->load->model('Signup');
             $this->load->library("form_validation");
 

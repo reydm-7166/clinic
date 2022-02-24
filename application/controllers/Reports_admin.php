@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->load->view('/admin_index/report');
         }
         public function treatment_data(){
-            $date_range = $this->input->post();
+            $date_range = $this->input->post(NULL, TRUE);
             $verify = $this->Report->treatment_data($date_range);
 
             $this->session->set_userdata('chart', $verify);

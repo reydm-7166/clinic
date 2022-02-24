@@ -32,8 +32,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             | this query gets the *ages of patients that books a schedule from the selected month and save it to a variable                          |
             |________________________________________________________________________________________________________________________________________*/
 
-            $treatments_chart = $this->db->query("SELECT treatments.treatment_name, COUNT(treatments_id) AS count FROM appointments
-                                                INNER JOIN treatments on treatments.id = appointments.treatments_id
+            $treatments_chart = $this->db->query("SELECT treatments.treatment_name, COUNT(treatments_id) AS count FROM appointments_backup
+                                                INNER JOIN treatments on treatments.id = appointments_backup.treatments_id
                                                 WHERE appointment_date BETWEEN (?) AND (?)
                                                 GROUP BY treatments_id
                                                 ORDER BY treatments_id ASC", array($date_range['$date_from'], $date_range['$date_to']))->result_array();

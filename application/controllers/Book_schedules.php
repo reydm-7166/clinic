@@ -9,7 +9,6 @@ date_default_timezone_set('Asia/Manila');
 
         public function book(){
             $form = $this->input->post(NULL, TRUE);
-            $this->output->enable_profiler(TRUE);
             $this->load->model('Book_schedule');
             $this->load->library("form_validation");
 

@@ -29,7 +29,7 @@ date_default_timezone_set('Asia/Manila');
         |   have any inconsist and invalid data in database                                                         |
         |___________________________________________________________________________________________________________ */    
         public function update_appointment(){
-            $updated_form = $this->input->post();
+            $updated_form = $this->input->post(NULL, TRUE);
 
             print_r($updated_form);
 
