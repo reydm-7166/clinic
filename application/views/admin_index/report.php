@@ -74,7 +74,7 @@
          
     </main>
         <?php $chart_data = $this->session->userdata('chart');
-                // for($i = 0; $i < count($chart_data['user_count']); $i++){
+                
                     foreach($chart_data['user_count'] as $data){
 
                     $users_chart[] = array('y' => intval($data['appointment_count']),
@@ -93,10 +93,6 @@
                         $treatments_chart[] = array('y' => intval($data['count']),
                                                 'label' => $data['treatment_name']);
                         }
-                // echo json_encode($treatments_chart);
-            // echo json_encode($chart_data['age_chart']);
-            
-
         
         ?>
     <script>
@@ -115,7 +111,7 @@
                     title: "Number of Treatmens Performed",
                 },
                 toolTip:{
-                    content:"x: {x}, y: {y}" ,
+                    content:"<b>{label}:</b> Y: {y}" ,
                 },
                 data: [{
                     type: "bar",
@@ -161,7 +157,7 @@
                     type: "doughnut",
                     startAngle: 60,
                     innerRadius: 50,
-                    toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                    toolTipContent: "<b>{indexLabel}</b> (#percent%)",
                     showInLegend: true,
                     dataPoints: <?php echo json_encode($ages_chart); ?>
                 },

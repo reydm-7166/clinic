@@ -33,5 +33,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
                 return $this->db->query($query, $data);
         }
+        public function delete($id){
+            return $this->db->query("DELETE FROM treatments WHERE id = (?)", $id);
+        }
 
     }

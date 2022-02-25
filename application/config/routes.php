@@ -73,6 +73,7 @@ $route['finish/(:any)'] = 'Approved_admin/get_insert_receipt/$1';
 $route['edit/(:any)'] = 'Edits_appointment/index/$1';      /// edit appointment
 $route['update'] = 'Edits_appointment/update_appointment';
 $route['edit'] = 'Edits_appointment/view';
+$route['delete_appointment/(:any)'] = 'Edits_appointment/delete_data/$1';
 
 
 $route['editusers/(:any)'] = 'Edits_userdata/index/$1';      /// edit useraccount
@@ -84,7 +85,7 @@ $route['history'] = 'Users_history/view';
 
 $route['manage'] = 'Manages_admin/index';                    /// manage content
 $route['manage/(:any)'] = 'Manages_admin/edit/$1';
-// $route['manage/delete/(:any)'] = 'Manages_admin/delete/$1';
+$route['manage/delete/(:any)'] = 'Manages_admin/delete/$1';
 $route['editcontent'] = 'Manages_admin/content';
 $route['insert'] = 'Manages_admin/edit_insert';
 

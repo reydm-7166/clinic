@@ -58,6 +58,19 @@ date_default_timezone_set('Asia/Manila');
             } 
        redirect('appointment');                                            ///// if cancelled button is clicked redirect back to appointment
     }  
+
+     /*___________________________________________________________________________________________________________ 
+        |  DELETE DATA FROM APPOINTMENTS // references:: Edit_appointment (MODEL)                                 |
+        |________________________________________________________________________________________________________ */   
+
+        public function delete_data($id){
+            $verify = $this->Edit_appointment->delete_data($id);
+            if($verify){
+                $_SESSION['deleted'] = "Successfully deleted!";
+                redirect('appointment');
+            }
+        }
+
         public function view(){
             $this->load->view('admin_index/edit_appointment');
         }

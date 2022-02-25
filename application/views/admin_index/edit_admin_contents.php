@@ -13,13 +13,13 @@
             margin-top: 6rem;
         }
         table td:last-child{
-            width:15%;
+            width:10%;
         }
         table td:first-child{
             width:5%;
         }
         .customers {
-            width: 85%;
+            width: 75%;
         }
         #date {
             width: 90%;
@@ -70,14 +70,9 @@
                             <td><?= $count++; ?></td>
                             <td><input class="border border-success rounded p-2" type="text" name="edit_treatmentsname" value="<?= $data['treatment_name']; ?>"></td>
                             <td>$ <input class="border border-success rounded p-2" type="text" name="edit_treatmentscost" value="<?= $data['treatment_cost']; ?>"></td>
-                            <td>
-
-                                <input type="file" name="userfile" size="20" />
-
-                            </td>
+                            <td><input type="file" name="userfile" size="20" /></td>
                             <td><?= $data['category_title']; ?></td>
-                            <td>    <input class="btn btn-primary rounded p-2" type="submit" name="submit" value="Save">
-                                    <input class="btn btn-danger rounded p-2" type="submit" name="submit" value="Delete"></td>
+                            <td>    <input class="btn btn-primary rounded p-2" type="submit" name="submit" value="Save"></td>
                         </tr> 
                     <?php echo form_close(); ?>
 

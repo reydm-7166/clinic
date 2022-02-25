@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
     <link rel="stylesheet" href="../../../user_guide/_static/css/admin_appointment.css">
     <style>
         .notif {
@@ -19,8 +23,7 @@
             text-align: center;
         }
         #container {
-            border: 1px solid black;
-            margin-top: 4rem;
+            margin-top: 2rem;
             text-overflow: scroll;
             overflow-y: scroll;
         }
@@ -50,8 +53,14 @@
                                                                                     
                                                                                     <?php $this->load->view('/partials/admin_headers'); ?>
 
-        <main id="container">   
-        <h1>Treatments</h1>                                                           <!-- FOR NOTIFICATION IN APPROVE/APPOINTMENTS/ETC -->
+                                                                                    
+        <main id="container"> 
+            <div class="notif">
+                <?php if(isset($_SESSION['success'])){ 
+                    echo "<h1 class='text-white m-0 fs-1 text-center bg-success rounded'>" .$_SESSION['success']. "</h1>"; 
+                } unset($_SESSION['success']); ?></h3>
+            </div>   
+        <h1 class="mb-3">Treatments</h1>                                                           <!-- FOR NOTIFICATION IN APPROVE/APPOINTMENTS/ETC -->
             <div>   
                 <table class="customers">
                     
@@ -66,14 +75,16 @@
                     <?php if(!empty($this->session->userdata('treatment_contents'))) {                              
                             $count = 1; foreach($this->session->userdata('treatment_contents') as $data){ ?>
                     <tr>
+                    <form action="manage/delete/<?= $data['treatments_id']?>" method="post">
                         <td><?= $count++; ?></td>
                         <td><?= $data['treatment_name']; ?></td>
                         <td>$<?= $data['treatment_cost']; ?></td>
                         <td><a href="../../uploads/<?= $data['treatments_image']?>" target="_blank"><?= $data['treatments_image'] ?></a></td>
                         <td><?= $data['category_title']; ?></td>
-                        <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="Manages_admin/edit/<?= $data['treatments_id'] ?>">Edit Data 
-                                <a class="btn m-0 ml-1 text-white btn-danger" href="manage/delete/<?= $data['treatments_id']?>">Delete</a>
+                        <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="Manages_admin/edit/<?= $data['treatments_id'] ?>">Edit Data </a>
+                                            <?php $this->load->view('admin_index/delete_modal'); ?>
                         </td>
+                    </form>
                     </tr>   
                     <?php } }  ?>
                 </table>
@@ -81,9 +92,8 @@
             </div> 
 
             <div>   
-            <h1>Services</h1>      
-            <table class="customers">
-                    
+            <h1 class="mb-3">Services</h1>      
+            <table class="customers">      
                     <tr>
                         <th>Number</th>
                         <th>Name</th>
@@ -95,15 +105,18 @@
                     <?php if(!empty($this->session->userdata('services_contents'))) {                              
                             $count = 1; foreach($this->session->userdata('services_contents') as $data){ ?>
                     <tr>
+                    <form action="manage/delete/<?= $data['treatments_id']?>" method="post">
                         <td><?= $count++; ?></td>
                         <td><?= $data['treatment_name']; ?></td>
                         <td>$<?= $data['treatment_cost']; ?></td>
                         <td><a href="../../uploads/<?= $data['treatments_image']?>" target="_blank"><?= $data['treatments_image'] ?></a></td>
                         <td><?= $data['category_title']; ?></td>
-                        <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="Manages_admin/edit/<?= $data['treatments_id'] ?>">Edit Data 
-                                <a class="btn m-0 ml-1 text-white btn-danger" href="manage/delete/<?= $data['treatments_id']?>">Delete</a>
+                        <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="Manages_admin/edit/<?= $data['treatments_id'] ?>">Edit Data </a>
+                                    <?php $this->load->view('admin_index/delete_modal'); ?>
+                    </form>
                         </td>
-                    </tr>   
+                   
+                    </tr> 
                     <?php } }  ?>
                 </table>
                 <a id="add_new" href="">Add New</a>

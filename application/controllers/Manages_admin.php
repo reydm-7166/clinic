@@ -28,7 +28,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
            }
         }
         public function content(){
-                $this->load->view('/admin_index/edit_admin_contents');
+            $this->load->view('/admin_index/edit_admin_contents');
+        }
+        public function delete($id){
+           $verify = $this->get_treatment_option->delete($id);
+           if($verify){
+               echo "deleted";
+           }
         }
 
         public function edit_insert(){
@@ -47,17 +53,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 if($this->upload->do_upload('userfile')) {
                     $data['file_name'] = $_FILES['userfile']['name'];
                     $verify = $this->get_treatment_option->edit_treatments($data);
-
-                    if($verify){
-                        $_SESSION['success'] = "Successfully updated!";
-                    }
                 } else {
                     $data['file_name'] = $data['treatments_image'];
                     $verify = $this->get_treatment_option->edit_treatments($data); 
-
                 }
+                $_SESSION['success'] = "Successfully updated!";
                 redirect('manage');
-
             }
                 // $this->load->view('/admin_index/edit_admin_contents');
         }
