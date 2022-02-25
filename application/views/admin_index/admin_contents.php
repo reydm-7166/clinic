@@ -30,26 +30,25 @@
         <main id="container">                                                                     <!-- FOR NOTIFICATION IN APPROVE/APPOINTMENTS/ETC -->
             <div>       
                 <table class="customers">
+                    <h1>Treatments</h1>
                     <tr>
                         <th>Number</th>
                         <th>Name</th>
-                        <th>Age</th>
-                        <th>Email</th>
-                        <th>Concern</th>
-                        <th>Date Preferred</th>
+                        <th>Cost</th>
+                        <th>Edit Image</th>
+                        <th>Category</th>
                         <th>Action</th>
                     </tr>                                                             <!-- DISPLAY DATA FROM APPOINTMENTS TABLE -->
-                    <?php if(!empty($this->session->userdata('appointment_output'))) {                              
-                            $count = 1; foreach($this->session->userdata('appointment_output') as $data){ ?>
+                    <?php if(!empty($this->session->userdata('treatment_contents'))) {                              
+                            $count = 1; foreach($this->session->userdata('treatment_contents') as $data){ ?>
                     <tr>
                         <td><?= $count++; ?></td>
-                        <td><?= $data['name']; ?></td>
-                        <td><?= $data['age']; ?></td>
-                        <td class="emails"><a href=""><?= $data['email']; ?></a></td>
-                        <td><?= $data['concern']; ?></td>
-                        <td><?= date("F j, Y g:i A",strtotime($data['date'])); ?></td>
-                        <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="edit/<?= $data['appointment_id'] ?>">Edit Data 
-                                <a class="btn m-0 ml-1 btn-success" href="move/<?= $data['appointment_id']?>">Approve</a>
+                        <td><?= $data['treatment_name']; ?></td>
+                        <td>$<?= $data['treatment_cost']; ?></td>
+                        <td>//</td>
+                        <td><?= $data['category_title']; ?></td>
+                        <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="edit/<?= $data['treatments_id'] ?>">Edit Data 
+                                <a class="btn m-0 ml-1 btn-success" href="move/<?= $data['treatments_id']?>">Save</a>
                         </td>
                     </tr>   
                     <?php } }  ?>

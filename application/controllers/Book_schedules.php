@@ -9,7 +9,6 @@ date_default_timezone_set('Asia/Manila');
             $this->load->model('Book_schedule');
             $signup_verify = $this->get_treatment_option->get_all();
             if($signup_verify){
-                
                 $this->session->set_userdata('contents', $signup_verify);
            }
         }

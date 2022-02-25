@@ -6,8 +6,13 @@ date_default_timezone_set('Asia/Manila');
         public function __construct()
         {
             parent::__construct();
-            $this->load->model('Edit_userdata');
             $this->load->library("form_validation");
+            $this->load->model('Edit_userdata');
+            $this->load->model('get_treatment_option');
+            $signup_verify = $this->get_treatment_option->get_all();
+            if($signup_verify){
+                $this->session->set_userdata('contents', $signup_verify);
+           }
         }
          /*___________________________________________________________________________________________________________ 
         |  Fetch data from model (EDit_userdata) and store it in to_edit session data and                             |
