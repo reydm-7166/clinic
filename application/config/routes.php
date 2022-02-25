@@ -88,6 +88,7 @@ $route['manage/(:any)'] = 'Manages_admin/edit/$1';
 $route['manage/delete/(:any)'] = 'Manages_admin/delete/$1';
 $route['editcontent'] = 'Manages_admin/content';
 $route['insert'] = 'Manages_admin/edit_insert';
+$route['add'] = 'Manages_admin/add';
 
 
 $route['report'] = 'Reports_admin/index';                 ///// report

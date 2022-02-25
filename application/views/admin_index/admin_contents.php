@@ -84,11 +84,13 @@
                         <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="Manages_admin/edit/<?= $data['treatments_id'] ?>">Edit Data </a>
                                             <?php $this->load->view('admin_index/delete_modal'); ?>
                         </td>
-                    </form>
+                        </form>
                     </tr>   
                     <?php } }  ?>
                 </table>
-                <a id="add_new" href="">Add New</a>
+                
+                <?php $this->load->view('admin_index/add_treatment_service_modal'); ?>
+               
             </div> 
 
             <div>   
@@ -119,7 +121,7 @@
                     </tr> 
                     <?php } }  ?>
                 </table>
-                <a id="add_new" href="">Add New</a>
+                <?php $this->load->view('admin_index/add_treatment_service_modal'); ?>
             </div> 
         
         

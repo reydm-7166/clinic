@@ -37,4 +37,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             return $this->db->query("DELETE FROM treatments WHERE id = (?)", $id);
         }
 
+        /*
+        *   This models are straigtforward from their method names.
+        *
+        */
     }
