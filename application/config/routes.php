@@ -81,7 +81,12 @@ $route['updateusers'] = 'Edits_userdata/update_user';
 $route['history/(:any)'] = 'Users_history/get_all/$1';
 $route['history'] = 'Users_history/view';
 
-$route['manage'] = 'Manages_admin/index';
+
+$route['manage'] = 'Manages_admin/index';                    /// manage content
+$route['manage/(:any)'] = 'Manages_admin/edit/$1';
+// $route['manage/delete/(:any)'] = 'Manages_admin/delete/$1';
+$route['editcontent'] = 'Manages_admin/content';
+$route['insert'] = 'Manages_admin/edit_insert';
 
 
 $route['report'] = 'Reports_admin/index';                 ///// report

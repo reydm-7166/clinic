@@ -16,9 +16,32 @@
             padding: 0;
         }
         h1 {
-            padding: 10px;
             text-align: center;
         }
+        #container {
+            border: 1px solid black;
+            margin-top: 4rem;
+            text-overflow: scroll;
+            overflow-y: scroll;
+        }
+        #container h1 {
+            margin: 0;
+        }
+        .customers {
+            margin-bottom: .8rem;
+        }
+        #add_new {
+            color: blue;
+            margin-left: 10rem;
+        }
+        .customers {
+            width: 80%; 
+        }
+        .customers a {
+            color: blue;
+            border: none;
+        }
+
     </style>
     <title>Manage Contents</title>
 </head>
@@ -27,15 +50,16 @@
                                                                                     
                                                                                     <?php $this->load->view('/partials/admin_headers'); ?>
 
-        <main id="container">                                                                     <!-- FOR NOTIFICATION IN APPROVE/APPOINTMENTS/ETC -->
-            <div>       
+        <main id="container">   
+        <h1>Treatments</h1>                                                           <!-- FOR NOTIFICATION IN APPROVE/APPOINTMENTS/ETC -->
+            <div>   
                 <table class="customers">
-                    <h1>Treatments</h1>
+                    
                     <tr>
                         <th>Number</th>
                         <th>Name</th>
                         <th>Cost</th>
-                        <th>Edit Image</th>
+                        <th>Image Name</th>
                         <th>Category</th>
                         <th>Action</th>
                     </tr>                                                             <!-- DISPLAY DATA FROM APPOINTMENTS TABLE -->
@@ -45,15 +69,47 @@
                         <td><?= $count++; ?></td>
                         <td><?= $data['treatment_name']; ?></td>
                         <td>$<?= $data['treatment_cost']; ?></td>
-                        <td>//</td>
+                        <td><a href="../../uploads/<?= $data['treatments_image']?>" target="_blank"><?= $data['treatments_image'] ?></a></td>
                         <td><?= $data['category_title']; ?></td>
-                        <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="edit/<?= $data['treatments_id'] ?>">Edit Data 
-                                <a class="btn m-0 ml-1 btn-success" href="move/<?= $data['treatments_id']?>">Save</a>
+                        <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="Manages_admin/edit/<?= $data['treatments_id'] ?>">Edit Data 
+                                <a class="btn m-0 ml-1 text-white btn-danger" href="manage/delete/<?= $data['treatments_id']?>">Delete</a>
                         </td>
                     </tr>   
                     <?php } }  ?>
                 </table>
+                <a id="add_new" href="">Add New</a>
             </div> 
+
+            <div>   
+            <h1>Services</h1>      
+            <table class="customers">
+                    
+                    <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Cost</th>
+                        <th>Image Name</th>
+                        <th>Category</th>
+                        <th>Action</th>
+                    </tr>                                                             <!-- DISPLAY DATA FROM APPOINTMENTS TABLE -->
+                    <?php if(!empty($this->session->userdata('services_contents'))) {                              
+                            $count = 1; foreach($this->session->userdata('services_contents') as $data){ ?>
+                    <tr>
+                        <td><?= $count++; ?></td>
+                        <td><?= $data['treatment_name']; ?></td>
+                        <td>$<?= $data['treatment_cost']; ?></td>
+                        <td><a href="../../uploads/<?= $data['treatments_image']?>" target="_blank"><?= $data['treatments_image'] ?></a></td>
+                        <td><?= $data['category_title']; ?></td>
+                        <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="Manages_admin/edit/<?= $data['treatments_id'] ?>">Edit Data 
+                                <a class="btn m-0 ml-1 text-white btn-danger" href="manage/delete/<?= $data['treatments_id']?>">Delete</a>
+                        </td>
+                    </tr>   
+                    <?php } }  ?>
+                </table>
+                <a id="add_new" href="">Add New</a>
+            </div> 
+        
+        
         </main>
     
 </body>

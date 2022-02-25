@@ -29,6 +29,7 @@
     <?php $this->load->view('/partials/admin_headers'); ?>
 
     <main id="container">
+        <h1>Approved</h1>
         <div>
             <div class="notif">
                 <?php if (isset($_SESSION['approved'])){ 
