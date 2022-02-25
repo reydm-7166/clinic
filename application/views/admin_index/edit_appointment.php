@@ -71,9 +71,10 @@
                             <td><input class="border border-success rounded p-2" type="text" name="edit_email" value="<?= $data['patient_email']; ?>"></td>
                             <td>
                                 <select class="border border-success rounded p-2" class="center" name="edit_category">
-                                    <option value="1">CANCER</option>
-                                    <option value="2">MALALA</option>
-                                    <option value="3">WALA</option>
+                                <?php 
+                                        if($this->session->userdata('contents')) foreach($this->session->userdata('contents') as $data) { ?>
+                                            <option value="<?=$data['id'] ?>"><?= $data['treatment_name'] ?></option>
+                                        <?php }   ?>
                                 </select>
                             </td>
                             <td><input id="date" class="border border-success rounded p-2" type="datetime-local" name="edit_date"></td>

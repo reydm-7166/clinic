@@ -3,13 +3,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 date_default_timezone_set('Asia/Manila');
 
     class Book_schedules extends CI_Controller {
-        public function index(){
-            $this->load->view('/clinic_index/schedule');
+        public function __construct(){
+            parent::__construct();
+            $this->load->model('get_treatment_option');
+            $this->load->model('Book_schedule');
+            $signup_verify = $this->get_treatment_option->get_all();
+            if($signup_verify){
+                
+                $this->session->set_userdata('contents', $signup_verify);
+           }
         }
 
+        public function index(){
+            $this->load->view('/clinic_index/schedule');
+            
+        }
         public function book(){
             $form = $this->input->post(NULL, TRUE);
-            $this->load->model('Book_schedule');
+            
             $this->load->library("form_validation");
 
             $today = date('m-d-Y h:i: A', strtotime("+1 day"));                                     ///// user can only book 1 day ahead of booking for shedule ///

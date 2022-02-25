@@ -58,9 +58,10 @@
 
         <label class="center">Choose Category:</label>
         <select class="center" name="category">
-            <option value="1">CANCER</option>
-            <option value="2">BUGBOG</option>
-            <option value="3">STROKE</option>
+            <?php 
+                if($this->session->userdata('contents')) foreach($this->session->userdata('contents') as $data) { ?>
+                    <option value="<?=$data['id'] ?>"><?= $data['treatment_name'] ?></option>
+                 <?php }   ?>
         </select>
         
         <label class="center">Choose preferred date:</label>
