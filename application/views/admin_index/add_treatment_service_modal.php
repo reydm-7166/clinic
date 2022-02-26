@@ -1,13 +1,18 @@
 <style>
     label {
         margin-top: 1rem;
-        font-size: 20px;
+        font-size: 19px;
     }
     #exampleModalLabel {
         font-size: 27px;
     }
     #add {
         margin-left: 9.5rem;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
 
 </style>
@@ -24,13 +29,14 @@
           <span aria-hidden="true">&times;</span>
         </button>
         </div>
+
         <div class="modal-body">
         <?php echo form_open_multipart('add');?>
                 <label>Name</label>
-                <input class="form-control" type="text" placeholder="Treament/Service Name">
+                <input class="form-control" type="text" name="name" placeholder="Treament/Service Name">
 
                 <label>Cost</label>
-                <input class="form-control" type="text" placeholder="Treament/Service Cost">
+                <input class="form-control" type="number" name="cost" placeholder="Treament/Service Cost">
 
                 <label>Select Category</label>
                 <select class="form-control" name="category">
@@ -39,12 +45,12 @@
                 </select>
 
                 <label class="fs-1">Example file input</label>
-                <input type="file" class="form-control-file" name="userfile" id="exampleFormControlFile1">
+                <input type="file" required class="form-control-file" name="userfile" id="exampleFormControlFile1">
         </div>
 
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Add to list</button>
+            <input type="submit" name="submit" class="btn btn-primary" value="Add to list">
             <?php echo form_close(); ?>
         </div>
     </div>

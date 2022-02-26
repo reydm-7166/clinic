@@ -85,7 +85,7 @@ $route['history'] = 'Users_history/view';
 
 $route['manage'] = 'Manages_admin/index';                    /// manage content
 $route['manage/(:any)'] = 'Manages_admin/edit/$1';
-$route['manage/delete/(:any)'] = 'Manages_admin/delete/$1';
+$route['delete_offer/(:any)'] = 'Manages_admin/delete/$1';
 $route['editcontent'] = 'Manages_admin/content';
 $route['insert'] = 'Manages_admin/edit_insert';
 $route['add'] = 'Manages_admin/add';

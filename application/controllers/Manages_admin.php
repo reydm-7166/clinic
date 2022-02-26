@@ -14,9 +14,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->load->model('get_treatment_option');
             $treatments = $this->get_treatment_option->get_all_treatments();
             $services = $this->get_treatment_option->get_all_services();
-
-            if($treatments && $services){
+            if($treatments){
                 $this->session->set_userdata('treatment_contents', $treatments);
+           }
+            if($services){
                 $this->session->set_userdata('services_contents', $services);
            }
         }
@@ -27,25 +28,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         * Takes a parameter of $id which will came ffrom the form in edit page of manage contents.
         * We will use the id for reference later in the database when we edit the data
         * if editing of data is successful redirect to manage content index and display a notification that it was edited successfully.
+        * REDIRECTS TO CONTENT METHOD BELOW TO SHOW THE TABLE FOR EDITING
         */
         public function edit($id){
             $verify = $this->get_treatment_option->edit($id);
-            echo $id . "<br>";
             if($verify){
                 $this->session->set_userdata('edit_contents', $verify);
-                redirect('manage');
-           }
+                redirect('editcontent');
+            }
         }
-
+        /*
+        * The content method shows the data of the selected $id row above (reference:: edit method line 32)
+        * Showing the row of the $id above for editing. 
+        */
+        public function content(){
+            $this->load->view('/admin_index/edit_admin_contents');
+        }
         /*
         * This method takes again 1 parameter coming from the edit page of manage contents which will be
         *  referenced for deleting the row in the database ($id)
-        * 
         */
         public function delete($id){
+            var_dump($id);
            $verify = $this->get_treatment_option->delete($id);
            if($verify){
-               echo "deleted";
+               $_SESSION['deleted_treatment'] = "Successfully Deleted!";
+               redirect('manage');
            }
         }
         /*
@@ -64,7 +72,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $config['max_height']           = 2468;
 
                 $this->upload->initialize($config);
-                   var_dump($data);
                 if($this->upload->do_upload('userfile')) {
                     $data['file_name'] = $_FILES['userfile']['name'];
                     $verify = $this->get_treatment_option->edit_treatments($data);
@@ -77,8 +84,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             }
                 // $this->load->view('/admin_index/edit_admin_contents');
         }
+        /*
+        * This inserts new data to treatments table just like the [EDIT INSERT METHOD::reference line 62]
+        */
         public function add(){
-            $this->load->view('admin_index/add_treatment_service');
+            $data = $this->input->post(NULL, TRUE);
+            if($data['submit']){
+                $config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 10000;
+                $config['max_width']            = 2024;
+                $config['max_height']           = 2468;
+
+                $this->upload->initialize($config);
+                if($this->upload->do_upload('userfile')) {
+                    $data['file_name'] = $_FILES['userfile']['name'];
+                    $verify = $this->get_treatment_option->add($data);
+
+                    if($verify){
+                        $_SESSION['added_success'] = "Added Succesfully!";
+                        redirect('manage');
+                    }
+                }
+
+            }
         }
         
     }

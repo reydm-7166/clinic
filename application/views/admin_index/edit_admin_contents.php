@@ -66,7 +66,7 @@
 
                         <tr>
                             <input type="hidden" name="id" value="<?= $data['treatments_id']; ?>">
-                            <input type="hidden" name="treatments_image" value="<?= $data['treatments_image']; ?>">
+                            <input type="hidden" name="treatment_image" value="<?= $data['treatment_image']; ?>">
                             <td><?= $count++; ?></td>
                             <td><input class="border border-success rounded p-2" type="text" name="edit_treatmentsname" value="<?= $data['treatment_name']; ?>"></td>
                             <td>$ <input class="border border-success rounded p-2" type="text" name="edit_treatmentscost" value="<?= $data['treatment_cost']; ?>"></td>

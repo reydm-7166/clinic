@@ -58,7 +58,15 @@
             <div class="notif">
                 <?php if(isset($_SESSION['success'])){ 
                     echo "<h1 class='text-white m-0 fs-1 text-center bg-success rounded'>" .$_SESSION['success']. "</h1>"; 
-                } unset($_SESSION['success']); ?></h3>
+                } unset($_SESSION['success']); ?>
+
+                <?php if(isset($_SESSION['added_success'])){ 
+                    echo "<h1 class='text-white m-0 fs-1 text-center bg-success rounded'>" . $_SESSION['added_success']. "</h1>"; 
+                } unset($_SESSION['added_success']); ?>
+
+                <?php if(isset($_SESSION['deleted_treatment'])){ 
+                    echo "<h1 class='text-white m-0 fs-1 text-center bg-danger rounded'>" . $_SESSION['deleted_treatment']. "</h1>"; 
+                } unset($_SESSION['deleted_treatment']); ?>
             </div>   
         <h1 class="mb-3">Treatments</h1>                                                           <!-- FOR NOTIFICATION IN APPROVE/APPOINTMENTS/ETC -->
             <div>   
@@ -79,18 +87,17 @@
                         <td><?= $count++; ?></td>
                         <td><?= $data['treatment_name']; ?></td>
                         <td>$<?= $data['treatment_cost']; ?></td>
-                        <td><a href="../../uploads/<?= $data['treatments_image']?>" target="_blank"><?= $data['treatments_image'] ?></a></td>
+                        <td><a href="../../uploads/<?= $data['treatment_image']?>" target="_blank"><?= $data['treatment_image'] ?></a></td>
                         <td><?= $data['category_title']; ?></td>
                         <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="Manages_admin/edit/<?= $data['treatments_id'] ?>">Edit Data </a>
-                                            <?php $this->load->view('admin_index/delete_modal'); ?>
+                                <a class="btn m-0 mr-1 text-white btn-danger" href="Manages_admin/delete/<?= $data['treatments_id'] ?>">Delete </a>
                         </td>
                         </form>
                     </tr>   
                     <?php } }  ?>
                 </table>
-                
                 <?php $this->load->view('admin_index/add_treatment_service_modal'); ?>
-               
+
             </div> 
 
             <div>   
@@ -111,13 +118,12 @@
                         <td><?= $count++; ?></td>
                         <td><?= $data['treatment_name']; ?></td>
                         <td>$<?= $data['treatment_cost']; ?></td>
-                        <td><a href="../../uploads/<?= $data['treatments_image']?>" target="_blank"><?= $data['treatments_image'] ?></a></td>
+                        <td><a href="../../uploads/<?= $data['treatment_image']?>" target="_blank"><?= $data['treatment_image'] ?></a></td>
                         <td><?= $data['category_title']; ?></td>
                         <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="Manages_admin/edit/<?= $data['treatments_id'] ?>">Edit Data </a>
-                                    <?php $this->load->view('admin_index/delete_modal'); ?>
+                                <a class="btn m-0 mr-1 text-white btn-danger" href="Manages_admin/delete/<?= $data['treatments_id'] ?>">Delete </a>
                     </form>
                         </td>
-                   
                     </tr> 
                     <?php } }  ?>
                 </table>
