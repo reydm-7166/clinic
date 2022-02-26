@@ -71,18 +71,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $config['max_width']            = 2024;
                 $config['max_height']           = 2468;
 
+                // echo "<pre>";
+                //     print_r($data);
+                // echo "<pre>";
                 $this->upload->initialize($config);
-                if($this->upload->do_upload('userfile')) {
-                    $data['file_name'] = $_FILES['userfile']['name'];
-                    $verify = $this->get_treatment_option->edit_treatments($data);
-                } else {
-                    $data['file_name'] = $data['treatments_image'];
+                if (empty($_FILES['userfile']['name'])) {
+                    $data['file_name'] = $data['treatment_image'];
                     $verify = $this->get_treatment_option->edit_treatments($data); 
+                }else {
+                    if($this->upload->do_upload('userfile')) {
+                        $data['file_name'] = $_FILES['userfile']['name'];
+                        $verify = $this->get_treatment_option->edit_treatments($data);
+                    } 
                 }
                 $_SESSION['success'] = "Successfully updated!";
                 redirect('manage');
-            }
-                // $this->load->view('/admin_index/edit_admin_contents');
+            }      // $this->load->view('/admin_index/edit_admin_contents');
         }
         /*
         * This inserts new data to treatments table just like the [EDIT INSERT METHOD::reference line 62]
