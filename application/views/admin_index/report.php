@@ -92,10 +92,10 @@
                     foreach($chart_data['services_chart'] as $data){
                         $services_chart[] = array('y' => intval($data['count']),
                                                 'label' => $data['treatment_name']);
-                        }
-        
-        ?>
-    <script>
+                        }?>
+    <script type="text/javascript">
+        window.onload = function () {
+            <?php if (!empty($treatments_chart)) { ?>
             var chart = new CanvasJS.Chart("chartContainer1", {
                 animationEnabled: true,
                 animationDuration: 500,
@@ -124,6 +124,9 @@
             });
             chart.render();
 
+            <?php }  // ?>
+            
+            <?php if (!empty($users_chart)) { ?>
             var chart = new CanvasJS.Chart("chartContainer2",
             {
                 animationEnabled: true,
@@ -144,7 +147,8 @@
                 ]
             });
             chart.render();
-
+            <?php }  // ?>
+            <?php if (!empty($ages_chart)) { ?>
             var chart = new CanvasJS.Chart("chartContainer5",
             {
                 animationEnabled: true,
@@ -165,8 +169,10 @@
                 ]
             });
             chart.render();
+            <?php } // ?>
 
-            var chart = new CanvasJS.Chart("chartContainer3", {
+                <?php if (!empty($services_chart)) { ?>
+                var chart = new CanvasJS.Chart("chartContainer3", {
                 animationEnabled: true,
                 animationDuration: 500,
                 
@@ -193,8 +199,8 @@
                 }]
             });
             chart.render();
-
-
+            <?php }  // ?>
+        }
         </script>
 
 </body>

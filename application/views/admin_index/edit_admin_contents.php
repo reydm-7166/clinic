@@ -36,6 +36,8 @@
 </head>
 <body>
 <?php $this->load->view('/partials/admin_headers'); ?>
+
+<?php $this->load->view('/partials/go_back'); ?>     
 <main id="container">
 
         <div>
@@ -69,7 +71,7 @@
                             <input type="hidden" name="treatment_image" value="<?= $data['treatment_image']; ?>">
                             <td><?= $count++; ?></td>
                             <td><input class="border border-success rounded p-2" type="text" name="edit_treatmentsname" value="<?= $data['treatment_name']; ?>"></td>
-                            <td>$ <input class="border border-success rounded p-2" type="text" name="edit_treatmentscost" value="<?= $data['treatment_cost']; ?>"></td>
+                            <td>₱ <input class="border border-success rounded p-2" type="text" name="edit_treatmentscost" value="<?= $data['treatment_cost']; ?>"></td>
                             <td><input type="file" name="userfile" size="20" /></td>
                             <td><input type="text" class="form-control" size="6 " readonly value="<?= $data['category_title']; ?>"></td>
                             <td>    <input class="btn btn-primary rounded p-2" type="submit" name="submit" value="Save"></td>

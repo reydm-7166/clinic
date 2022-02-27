@@ -50,6 +50,7 @@
 </head>
 <body>
 <?php $this->load->view('/partials/admin_headers'); ?>
+        
 <main id="container">
 
         <div>

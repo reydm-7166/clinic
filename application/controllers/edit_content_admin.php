@@ -8,11 +8,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             if($signup_verify){
                 $this->session->set_userdata('contents', $signup_verify);
            }
-        }
-        
+        }    
         public function index(){
             $this->load->view('/admin_index/admin_contents');
         } 
-
 
     }

@@ -51,9 +51,9 @@
 <body>
     <?php  if(empty($this->session->userdata('admin'))) { redirect('login'); } ?>  <!-- CHECKS IF ADMIN IS LOGGED IN -- IF NOT SEND BACK TO LOGIN PAGE CODE BELOW IS FOR HEADER -->
                                                                                     
-                                                                                    <?php $this->load->view('/partials/admin_headers'); ?>
+               <?php $this->load->view('/partials/admin_headers'); ?>
 
-                                                                                    
+                                                                                   
         <main id="container"> 
             <div class="notif">
                 <?php if(isset($_SESSION['success'])){ 
@@ -86,7 +86,7 @@
                     <form action="manage/delete/<?= $data['treatments_id']?>" method="post">
                         <td><?= $count++; ?></td>
                         <td><?= $data['treatment_name']; ?></td>
-                        <td>$<?= $data['treatment_cost']; ?></td>
+                        <td>₱<?= $data['treatment_cost']; ?></td>
                         <td><a href="../../uploads/<?= $data['treatment_image']?>" target="_blank"><?= $data['treatment_image'] ?></a></td>
                         <td><?= $data['category_title']; ?></td>
                         <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="Manages_admin/edit/<?= $data['treatments_id'] ?>">Edit Data </a>
@@ -117,7 +117,7 @@
                     <form action="manage/delete/<?= $data['treatments_id']?>" method="post">
                         <td><?= $count++; ?></td>
                         <td><?= $data['treatment_name']; ?></td>
-                        <td>$<?= $data['treatment_cost']; ?></td>
+                        <td>₱<?= $data['treatment_cost']; ?></td>
                         <td><a href="../../uploads/<?= $data['treatment_image']?>" target="_blank"><?= $data['treatment_image'] ?></a></td>
                         <td><?= $data['category_title']; ?></td>
                         <td>    <a class="btn m-0 mr-1 text-white btn-primary" href="Manages_admin/edit/<?= $data['treatments_id'] ?>">Edit Data </a>
