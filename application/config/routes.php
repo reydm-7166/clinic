@@ -95,4 +95,4 @@ $route['report'] = 'Reports_admin/index';                 ///// report
 $route['date_range'] = 'Reports_admin/treatment_data';
 
 
-$route['dash-date'] = 'Dashboard_admin/treatment_data';      ///// dashboard
+$route['dash-date'] = 'Dashboard_admin/dashboard_data';      ///// dashboard

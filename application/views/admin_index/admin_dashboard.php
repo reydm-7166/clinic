@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="../../../user_guide/_static/css/"> -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://kit.fontawesome.com/14990fae2a.js" crossorigin="anonymous"></script>
     <style>
         #container {
             display: inline-block;
@@ -45,7 +46,6 @@
             margin-top: -1rem;
         }
         nav {
-            border: 1px solid black;
             height: 77vh;
             width: 100%;
             text-align: left;
@@ -59,7 +59,7 @@
         }
         section {
             margin-top: 4rem;
-            border: 1px solid black;
+
             width: 50%;
         }
         .bg-gradient-succ {
@@ -74,10 +74,32 @@
         }
         #chartContainer {
             position: absolute;
-            border: 1px solid black;
+            border: 2px solid #E3B99F;
             vertical-align: top;
             right: 3.5rem;
-            top: 15.7rem;
+            top: 11.5rem;
+        }
+        h2 {
+            position: relative;
+            bottom: 4rem;
+            left: 7rem;
+            text-decoration: underline;
+            font-style: italic;
+            color: #0072B5;
+            cursor: pointer;
+        }
+        #appointment{
+            left: 11rem;
+        }
+        #user {
+            bottom: 3.5rem;
+            left: 11rem;
+            text-decoration: none;
+        }
+        #offer {
+            bottom: 3.4rem;
+            left: 10.5rem;
+            text-decoration: none;
         }
     </style>
     <title>Dashboard</title>
@@ -90,66 +112,79 @@
     <main id="container">
         <?php $this->load->view('/partials/dashboard_date_form_partials'); ?>
         <h1 class="mt-0">Dashboard</h1>
-    
+        
         <nav class="ml-3">
             <section>
-            <div class="revenue bg-success bg-gradient-succ shadow rounded border">
-                    Total revenue
+            <?php if(!empty($this->session->userdata('dashboard'))) { $stats = $this->session->userdata('dashboard'); 
+                    
+            ?>
+            <div class="revenue bg-success bg-gradient-succ shadow rounded border pt-5 pl-5">
+                    <i class="fa-7x d-inline text-dark fa-solid fa-peso-sign"></i>
+                    <h4 class="d-inline align-top ml-3">Revenue</h4>
+                    <h2 id="revenue"><?= $stats[2]['total_revenue'] ?></h2>
             </div>
 
-            <div class="appointments bg-info bg-gradient-info shadow rounded border">
-                    Total appointments
+            <div class="appointments bg-info bg-gradient-info shadow rounded border pt-5 pl-4">
+                    <i class="fa-7x d-inline text-dark fa-solid fa-calendar-check"></i>
+                    <h4 class="d-inline align-top ml-4">Appointments</h4>
+                    <h2 id="appointment"><?= $stats[1]['total_appointment'] ?></h2>
             </div>
 
-            <div id="chartContainer" style="width: 35%; height: 565px;display: inline-block;">
-                    Total revenue
+            <div id="chartContainer" class="shadow-sm border-top-0 border-right-0" style="width: 35%; height: 565px;display: inline-block;">
+                    
             </div>
             
-            <div class="users bg-light shadow bg-gradient-light rounded border">
-                    Total users
+            <div class="users bg-light shadow bg-gradient-light rounded border pt-5 pl-4">
+                    <i class="fa-6x d-inline text-dark fa-solid fa-users"></i>
+                    <h4 class="d-inline ml-2 align-top">Total Users</h4>
+                    <h2 id="user"><?= $stats[0]['user_count'] ?></h2>
             </div>
             
-            <div class="offers bg-light shadow bg-gradient-light rounded border">
-                    Total offers
+            <div class="offers bg-light shadow bg-gradient-light rounded border border pt-5 pl-4">
+                    <i class="fa-6x d-inline text-dark fa-solid fa-stethoscope"></i>
+                    <h4 class="d-inline ml-2 align-top">Total offers</h4>
+                    <h2 id="offer"><?= $stats[3]['offer_count'] ?></h2>
             </div>
-                
+            <?php } ?>
             </section>
-
+        
             
         </nav>
     </main>
     <script>
         window.onload = function () {
 
-        var chart = new CanvasJS.Chart("chartContainer", {
+            var chart = new CanvasJS.Chart("chartContainer", {
+            theme: "light3",
+            animationDuration: 500,
             animationEnabled: true,
-            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            height: 460,
+            width: 650,
             title:{
-                text: "Top Oil Reserves"
+                text: "Patient Satisfactory Rate"
             },
-            axisY: {
-                title: "Reserves(MMbbl)"
+            legend:{
+                cursor: "pointer",
+               
             },
-            data: [{        
-                type: "column",  
-                showInLegend: true, 
-                legendMarkerColor: "grey",
-                legendText: "MMbbl = one million barrels",
-                dataPoints: [      
-                    { y: 300878, label: "Venezuela" },
-                    { y: 266455,  label: "Saudi" },
-                    { y: 169709,  label: "Canada" },
-                    { y: 158400,  label: "Iran" },
-                    { y: 142503,  label: "Iraq" },
-                    { y: 101500, label: "Kuwait" },
-                    { y: 97800,  label: "UAE" },
-                    { y: 80000,  label: "Russia" }
+            data: [{
+                type: "doughnut",
+                radius:  "70%",
+                innerRadius: 85,
+                showInLegend: true,
+                toolTipContent: "<b>{name}</b>: {y} (#percent%)",
+                indexLabel: "{name} - #percent%",
+                dataPoints: [
+                    { y: 46, name: "Excellent" },
+                    { y: 10, name: "Very Good" },
+                    { y: 16, name: "Acceptable" },
+                    { y: 0, name: "Less Acceptable" },
+                    { y: 0, name: "Poor Management" },
                 ]
             }]
         });
         chart.render();
-
         }
-</script>
+    </script>
 </body>
 </html>

@@ -16,12 +16,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->load->view('/admin_index/admin_dashboard');
         }
         /*________________________________________________________________________________________________________________________________________
-        | this initializes the database/model that we need when the page loads                                                                    |
+        | Get data from database depending on the date from the form
+        | 
         |________________________________________________________________________________________________________________________________________*/
-        public function treatment_data(){
+        public function dashboard_data(){
             $date_range = $this->input->post(NULL, TRUE);
-            $verify = $this->Report->dashboard_data($date_range);   
-            $this->session->set_userdata('chart', $verify);
-            redirect('report');
+            $verify = $this->Report->dashboard_data($date_range);
+            
+            $this->session->set_userdata('dashboard', $verify);
+            redirect('dashboard');
         } 
     }
