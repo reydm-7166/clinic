@@ -44,7 +44,7 @@
             color: blue;
             border: none;
         }
-
+        
     </style>
     <title>Manage Contents</title>
 </head>

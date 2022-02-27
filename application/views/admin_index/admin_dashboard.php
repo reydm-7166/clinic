@@ -130,9 +130,7 @@
                     <h2 id="appointment"><?= $stats[1]['total_appointment'] ?></h2>
             </div>
 
-            <div id="chartContainer" class="shadow-sm border-top-0 border-right-0" style="width: 35%; height: 565px;display: inline-block;">
-                    
-            </div>
+            <div id="chartContainer" class="shadow-sm border-top-0 border-right-0" style="width: 35%; height: 565px;display: inline-block;"></div> 
             
             <div class="users bg-light shadow bg-gradient-light rounded border pt-5 pl-4">
                     <i class="fa-6x d-inline text-dark fa-solid fa-users"></i>

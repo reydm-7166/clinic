@@ -26,6 +26,9 @@
         table td:last-child{
             width:25%;
         }
+        #container {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -33,8 +36,8 @@
                                                                                  
     <?php $this->load->view('/partials/admin_headers'); ?>
 
-    <main id="container">
-                                                                                <!-- FOR NOTIFICATION IN APPROVE/APPOINTMENTS/ETC -->
+    <main id="container" class="pt-0">
+        <h1 class="mt-0">Appointments</h1>                                                                         <!-- FOR NOTIFICATION IN APPROVE/APPOINTMENTS/ETC -->
         <div class="notif">
                 <?php if (isset($_SESSION['approved'])){ 
                     echo "<h3 class='text-white m-0 fs-1 text-center bg-success rounded'>" .$_SESSION['approved']. "</h3>"; 
@@ -43,7 +46,8 @@
                 <?php if (isset($_SESSION['deleted'])){ 
                     echo "<h3 class='text-white m-0 fs-1 text-center bg-danger rounded'>" .$_SESSION['deleted']. "</h3>"; 
                 } unset($_SESSION['deleted']); ?>
-        </div> 
+        </div>
+        
         <div>       
             <table class="customers">
                 <tr>

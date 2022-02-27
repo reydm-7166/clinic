@@ -27,6 +27,9 @@
         h3 {
             padding: 10px;
         }
+        #container {
+            text-align: center;
+        }
         
     </style>
 </head>
@@ -34,7 +37,7 @@
     <?php $this->load->view('/partials/admin_headers'); ?>
 
     <main id="container">
-
+        <h1 class="mt-0">User Accounts</h1>
         <div class="notif">
                 <?php if (isset($_SESSION['approved'])){ 
                     echo "<h3 class='text-white ml-5 fs-1 text-center bg-success rounded'>" .$_SESSION['approved']. "</h3>"; 

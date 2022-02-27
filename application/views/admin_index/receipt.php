@@ -17,11 +17,14 @@
             margin: 0;
         }
         #container {
-            overflow-y: scroll;
             height: 91.5vh;
         }
         .customers {
             width: 100%;
+            
+        }
+        #container {
+            text-align: center;
         }
         
     </style>
@@ -32,9 +35,10 @@
 
     <?php $this->load->view('/partials/admin_headers'); ?>
 
-    <main id="container">
+    <main id="container" class="pt-0 mt-3">
+        <h1 class="mt-0">Receipt</h1>   
         <div> 
-            <table class="customers">
+            <table class="customers mt-4">
                 <tr>
                     <th>Number</th>
                     <th>Recipient Name</th>
