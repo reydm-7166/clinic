@@ -22,8 +22,6 @@
             height: 98vh;
             margin-top: 1rem;
             text-align: center;
-            text-overflow: scroll; 
-            border: 1px solid black;
         }
         #container h1 {
             margin-bottom: 9rem;
@@ -36,7 +34,6 @@
             height: 40vh;
             width: 55%;
             display: inline-block;
-            
         }
         #date {
             position: absolute;
@@ -69,7 +66,6 @@
         <div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
         <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
         <div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div><br/>  
-        <!-- <div id="chartContainer4"></div>  -->
          
     </main>
         <?php $chart_data = $this->session->userdata('chart');
@@ -92,11 +88,17 @@
                         $treatments_chart[] = array('y' => intval($data['count']),
                                                 'label' => $data['treatment_name']);
                         }
+
+                    foreach($chart_data['services_chart'] as $data){
+                        $services_chart[] = array('y' => intval($data['count']),
+                                                'label' => $data['treatment_name']);
+                        }
         
         ?>
     <script>
             var chart = new CanvasJS.Chart("chartContainer1", {
                 animationEnabled: true,
+                animationDuration: 500,
                 
                 title:{
                     text:"Treatments"
@@ -107,14 +109,14 @@
                 axisY2:{
                     interlacedColor: "rgba(1,77,101,.2)",
                     gridColor: "rgba(1,77,101,.1)",
-                    title: "Number of Treatmens Performed",
+                    title: "Number of Treatments Performed",
                 },
                 toolTip:{
-                    content:"<b>{label}:</b> Y: {y}" ,
+                    content:"<b>({label})</b> Count: {y}" ,
                 },
                 data: [{
                     type: "bar",
-                    name: "companies",
+                    name: "treatments",
                     axisYType: "secondary",
                     color: "#014D65",
                     dataPoints: <?php echo json_encode($treatments_chart);  ?>
@@ -164,41 +166,33 @@
             });
             chart.render();
 
-            // var chart = new CanvasJS.Chart("chartContainer3",
-            // {
-            //     animationEnabled: true,
-            //     title: {
-            //         text: "Line Chart"
-            //     },
-            //     axisX: {
-            //         valueFormatString: "MMM",
-            //         interval: 1,
-            //         intervalType: "month"
-            //     },
-            //     axisY: {
-            //         includeZero: false
-            //     },
-            //     data: [
-            //     {
-            //         type: "line",
-            //         dataPoints: [
-            //             { x: new Date(2012, 00, 1), y: 440 },
-            //             { x: new Date(2012, 01, 1), y: 414 },
-            //             { x: new Date(2012, 02, 1), y: 520, indexLabel: "highest", markerColor: "red", markerType: "triangle" },
-            //             { x: new Date(2012, 03, 1), y: 460 },
-            //             { x: new Date(2012, 04, 1), y: 440 },
-            //             { x: new Date(2012, 05, 1), y: 500 },
-            //             { x: new Date(2012, 06, 1), y: 480 },
-            //             { x: new Date(2012, 07, 1), y: 480 },
-            //             { x: new Date(2012, 08, 1), y: 410, indexLabel: "lowest", markerColor: "DarkSlateGrey", markerType: "cross" },
-            //             { x: new Date(2012, 09, 1), y: 500 },
-            //             { x: new Date(2012, 10, 1), y: 480 },
-            //             { x: new Date(2012, 11, 1), y: 510 }
-            //         ]
-            //     }
-            //     ]
-            // });
-            // chart.render();
+            var chart = new CanvasJS.Chart("chartContainer3", {
+                animationEnabled: true,
+                animationDuration: 500,
+                
+                title:{
+                    text:"Treatments"
+                },
+                axisX:{
+                    interval: 1
+                },
+                axisY2:{
+                    interlacedColor: "rgba(1,77,101,.2)",
+                    gridColor: "rgba(1,77,101,.1)",
+                    title: "Number of Services Performed",
+                },
+                toolTip:{
+                    content:"<b>({label})</b> Count: {y}" ,
+                },
+                data: [{
+                    type: "bar",
+                    name: "services",
+                    axisYType: "secondary",
+                    color: "#014D65",
+                    dataPoints: <?php echo json_encode($services_chart);  ?>
+                }]
+            });
+            chart.render();
 
 
         </script>

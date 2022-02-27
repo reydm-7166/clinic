@@ -93,3 +93,6 @@ $route['add'] = 'Manages_admin/add';
 
 $route['report'] = 'Reports_admin/index';                 ///// report
 $route['date_range'] = 'Reports_admin/treatment_data';
+
+
+$route['dash-date'] = 'Dashboard_admin/treatment_data';      ///// dashboard

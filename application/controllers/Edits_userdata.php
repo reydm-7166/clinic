@@ -9,6 +9,7 @@ date_default_timezone_set('Asia/Manila');
             $this->load->library("form_validation");
             $this->load->model('Edit_userdata');
             $this->load->model('get_treatment_option');
+            $this->load->library('email');
             $signup_verify = $this->get_treatment_option->get_all();
             if($signup_verify){
                 $this->session->set_userdata('contents', $signup_verify);
@@ -33,7 +34,8 @@ date_default_timezone_set('Asia/Manila');
             if($this->input->post('Save')){
                 $this->form_validation->set_rules("edit_firstname", "First name", "trim|required|alpha");
                 $this->form_validation->set_rules("edit_lastname", "Last name", "trim|required|alpha");
-                $this->form_validation->set_rules("edit_email", "Email", "required|valid_email");
+                $this->form_validation->set_rules("edit_email", "Email", "required");
+                $this->email->valid_email("email");
                 $this->form_validation->set_rules("edit_number", "Contact Number", "required|numeric|exact_length[11]");
                 $this->form_validation->set_rules("edit_password", "Password", "required|min_length[8]");
 

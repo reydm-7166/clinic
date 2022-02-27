@@ -8,6 +8,7 @@ date_default_timezone_set('Asia/Manila');
             parent::__construct();
             $this->load->model('Edit_appointment');
             $this->load->library("form_validation");
+            $this->load->model('Get_treatment_option');
         }
          /*___________________________________________________________________________________________________________ 
         |  Fetch data from model (Edit_appointment) and store it in to_edit session data and                             |
@@ -31,8 +32,6 @@ date_default_timezone_set('Asia/Manila');
         public function update_appointment(){
             $updated_form = $this->input->post(NULL, TRUE);
 
-            print_r($updated_form);
-
             if($this->input->post('Save')){
                 $today = date('m-d-Y h:i: A', strtotime("+1 day"));                                     
                 $time_dummy = date("m-d-Y h:i: A",strtotime($updated_form['edit_date']));
@@ -41,7 +40,7 @@ date_default_timezone_set('Asia/Manila');
                     $this->form_validation->set_rules("edit_firstname", "First name", "trim|required|alpha");
                     $this->form_validation->set_rules("edit_lastname", "Last name", "trim|required");
                     $this->form_validation->set_rules("edit_age", "Age", "trim|required|numeric");
-                    $this->form_validation->set_rules("edit_email", "Email", "required|valid_email");
+                    $this->form_validation->set_rules("edit_email", "Email", "required");
                         
                     if($this->form_validation->run() === FALSE) {                   ///// if there is error in the validation, data won't go to the database
                         return $this->load->view('admin_index/edit_appointment');

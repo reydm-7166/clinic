@@ -84,14 +84,15 @@
                         <tr>
                             <input type="hidden" name="id" value="<?= $data['id']?>">
                             <td><?= $count++; ?></td>
-                            <td><input id="name"  class="border border-success rounded p-2" type="text" name="edit_firstname" value="<?= $data['first_name']?>"></td>
-                            <td><input id="name"  class="border border-success rounded p-2" type="text" name="edit_lastname" value="<?= $data['last_name']?>"></td>
+                            <td><input id="name" class="border border-success rounded p-2" type="text" name="edit_firstname" value="<?= $data['first_name']?>"></td>
+                            <td><input id="name" class="border border-success rounded p-2" type="text" name="edit_lastname" value="<?= $data['last_name']?>"></td>
                             <td><input id="email" class="border border-success rounded p-2" type="text" name="edit_email" value="<?= $data['email_address']; ?>"></td>
                             <td><input id="number"  class="border border-success rounded p-2" type="text" name="edit_number" value="<?= $data['contact_number']; ?>"></td>
                             <td><input id="pass" class="border border-success rounded p-2" type="text" name="edit_password" value=""></td>
                             <td id="actions">   <input class="btn m-0 btn-warning" type="button" onClick="randomPassword(15);" name="NewPass" id="reset" value="Reset Password"> 
                                                         <?php $this->load->view('/admin_index/confirm_modal'); ?> 
                                                 <input class="btn m-0 btn-danger" type="submit" name="Cancel" value="Cancel">
+                                                
                             </td>
                         </tr>
                     </form>

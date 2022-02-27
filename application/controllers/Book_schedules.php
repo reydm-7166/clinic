@@ -5,9 +5,10 @@ date_default_timezone_set('Asia/Manila');
     class Book_schedules extends CI_Controller {
         public function __construct(){
             parent::__construct();
-            $this->load->model('get_treatment_option');
+            $this->load->model('Get_treatment_option');
             $this->load->model('Book_schedule');
-            $signup_verify = $this->get_treatment_option->get_all();
+            $this->load->library('email');
+            $signup_verify = $this->Get_treatment_option->get_all();
             if($signup_verify){
                 $this->session->set_userdata('contents', $signup_verify);
            }
@@ -29,6 +30,7 @@ date_default_timezone_set('Asia/Manila');
                 $this->form_validation->set_rules("first_name", "First name", "trim|required|alpha");
                 $this->form_validation->set_rules("last_name", "Last name", "trim|required|alpha");
                 $this->form_validation->set_rules("email_address", "Email", "required|valid_email");
+                $this->email->valid_email("email");
                 $this->form_validation->set_rules("age", "Age", "required|numeric|max_length[2]");
                 
                     if($this->form_validation->run() === FALSE) {

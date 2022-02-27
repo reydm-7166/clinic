@@ -86,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 }
                 $_SESSION['success'] = "Successfully updated!";
                 redirect('manage');
-            }      // $this->load->view('/admin_index/edit_admin_contents');
+            }      
         }
         /*
         * This inserts new data to treatments table just like the [EDIT INSERT METHOD::reference line 62]

@@ -71,7 +71,7 @@
                             <td><input class="border border-success rounded p-2" type="text" name="edit_treatmentsname" value="<?= $data['treatment_name']; ?>"></td>
                             <td>$ <input class="border border-success rounded p-2" type="text" name="edit_treatmentscost" value="<?= $data['treatment_cost']; ?>"></td>
                             <td><input type="file" name="userfile" size="20" /></td>
-                            <td><?= $data['category_title']; ?></td>
+                            <td><input type="text" class="form-control" size="6 " readonly value="<?= $data['category_title']; ?>"></td>
                             <td>    <input class="btn btn-primary rounded p-2" type="submit" name="submit" value="Save"></td>
                         </tr> 
                     <?php echo form_close(); ?>
