@@ -52,12 +52,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['default_controller'] = 'Signin_users/user_home';            // users //////
+$route['default_controller'] = 'Visitors/index';           
+
+                                // visitors //////
+$route['about'] = 'Visitors/about';
+$route['services'] = 'Visitors/services';
+$route['contact'] = 'Visitors/contact';
+$route['faqs'] = 'Visitors/faqs';
+
+                                // users //////
 
 $route['signup'] = 'Signup_users/index';
 $route['signin'] = 'Signin_users/index';
-$route['book'] = 'Book_schedules/index';
-$route['index'] = 'Signin_users/user_home';
+$route['home/book'] = 'Book_schedules/index';
+$route['home'] = 'Signin_users/user_home';
+$route['service'] = 'Signin_users/services_home';
+$route['faq'] = 'Signin_users/faqs_home';
 $route['logout'] = 'Logout/logout';
 
 $route['login'] = 'Signin_admins/index';                        // admin //////

@@ -14,14 +14,13 @@ form {
     border: 1px solid black;
     border-radius: .5rem;
     width: 22%;
-    text-align: right;
+    text-align: left;
     margin: auto;
 }
 form *:not(h1) {
     font-size: 1rem;
 }
 #login {
-
     color: white;
     background-color: blue;
     border-radius: .2rem;

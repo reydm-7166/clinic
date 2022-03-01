@@ -26,6 +26,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     public function user_home(){
         $this->load->view('/clinic_index/index');
     }
+    public function services_home(){
+        $this->load->view('/clinic_index/services');
+    }
+    public function faqs_home(){
+        $this->load->view('/clinic_index/faqs');
+    }
     public function logout(){
         $this->session->unset_userdata('verify');
         redirect('signin');

@@ -24,8 +24,6 @@
         }
         #container {
             margin-top: 2rem;
-            text-overflow: scroll;
-            overflow-y: scroll;
         }
         #container h1 {
             margin: 0;

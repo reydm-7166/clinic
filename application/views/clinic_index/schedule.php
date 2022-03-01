@@ -16,12 +16,21 @@
     </style>
 </head>
 <body>
-        <?php $this->load->view('partials/headers') ?>
+        <div class="parallax">
+                <div class="topnav">
+                <div class="topnav-logo"><a href="/"><img src="../../../user_guide/_images/Logo.png" width='250' height='40'></a></div>
+                <ul>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="service">Services</a></li>
+                    <li><a href="faq">FAQs</a></li>
+                    <li><a href="home/book">Book A Schedule</a></li>
+                </ul>
+                </div>
+            </div>
                                                                             <!-- notif class just for notification if success (line 18)   -->
                                                                             <!--  just for notification if date is invalid   (line 23)   -->
                                                                             <!-- Shows validatior error (line 32)  -->
-                                                                            <!-- If user is logged in save it's id in a hidden input for database insertion purpose (line 37)   -->
-                                                           
+                                                                            <!-- If user is logged in save it's id in a hidden input for database insertion purpose (line 37)   -->                                       
         <div class="notif"> 
             <?php if(isset($_SESSION['notification'])){ ?>
                     <h1 class="rounded bg-success text-white p-1"><?= $_SESSION['notification'] ?></h1>
