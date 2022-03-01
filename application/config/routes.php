@@ -64,7 +64,7 @@ $route['faqs'] = 'Visitors/faqs';
 
 $route['signup'] = 'Signup_users/index';
 $route['signin'] = 'Signin_users/index';
-$route['home/book'] = 'Book_schedules/index';
+$route['book'] = 'Book_schedules/index';
 $route['home'] = 'Signin_users/user_home';
 $route['service'] = 'Signin_users/services_home';
 $route['faq'] = 'Signin_users/faqs_home';

@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-<title>Page Title</title>
+<title>Services</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../user_guide/_static/css/style.css">
@@ -10,27 +10,26 @@
 
 </head>
 <body>
+<?php if(!empty($this->session->userdata('verify'))){
+            redirect('home');
+        } ?>
   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></i></button>  
 
   <div class="parallax">
-    <div class="topnav">
-      <div class="topnav-logo"><a href="/"><img src="../../../user_guide/_images/Logo.png" width='250' height='40'></a></div>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a class="current" href="services">Services</a></li>
-        <li><a href="contact">Contact</a></li>
-        <li><a href="faqs">FAQs</a></li>
-        <li><a href="about">About Us</a></li>
-        <li><a href="signin">Login</a></li>
-        <li><a href="signup">Register</a></li>
-      </ul>
+        <div class="topnav">
+        <div class="topnav-logo"><a href="home"><img src="../../../user_guide/_images/Logo.png" width='250' height='40'></a></div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="services" class="current">Services</a></li>
+          <li><a href="contact">Contact</a></li>
+          <li><a href="faqs">FAQs</a></li>
+          <li><a href="about">About Us</a></li>
+          <li><a href="signin">Sign in</a></li>
+          <li><a href="signup">Register</a></li>
+        </ul>
+        </div>
     </div>
   
-    <div class="icons">
-      <a href="#" class="fa fa-facebook"></a>
-      <a href="#" class="fa fa-youtube"></a>
-      <a href="#" class="fa fa-google"></a>
-    </div>
   </div>
   
   <div class="content-services">

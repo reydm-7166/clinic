@@ -1,0 +1,85 @@
+
+.intro {
+    text-align: center;
+    background-color: white;
+}
+    .note {
+        /* border: 1px solid black; */
+        height: 12vh;
+        width: 23%;
+        display: inline-block;
+        margin: 4.5rem 4rem 0 0;
+        vertical-align: top;
+        text-align: left;
+        background-color: #8ee6d6;
+        border-radius: .3rem;
+        padding-top: 0;
+    }
+    .intro h2 {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 3rem;
+        margin-bottom: 4rem;
+    }
+
+
+nav {
+    height: 50vh;
+    text-align: center;
+}
+    .about-you {
+        text-align: left;
+        width: 71%;
+        margin: auto;
+        margin-top: 5rem;
+        border-bottom: 2px solid black;
+        padding-bottom: 1.5rem;
+    }
+    .about-you h2 {
+        font-weight: 700;
+        font-size: 2.5rem;
+    }
+    .row-3 {
+        display: inline-block;
+        height: 25vh;
+        width: 22.4%;
+        margin: 2rem 1.5rem 0 0;
+        text-align: left;
+        padding: 0;
+        vertical-align: top;
+    }
+    h3.care {
+        margin: 0;
+        font-weight: 600;
+    }
+    p {
+        margin-top: 2rem;
+        line-height: 2;
+    }
+
+main {
+    height: 73.6vh;
+    text-align: center;
+    background-color: #a3e1b3;
+}
+    #carouselExampleIndicators {
+        text-align: center;
+        color: black;
+    }
+    main img {
+        height: 63vh;
+        margin: 1rem auto;
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+        filter: invert(100%);
+    }
+    .carousel-item h2 {
+        font-family: 'Bebas Neue';
+        font-size: 2rem;
+    }
+    .carousel-indicators {
+        bottom: -30px;
+    }
+
+    

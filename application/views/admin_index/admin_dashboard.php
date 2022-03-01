@@ -87,6 +87,7 @@
             font-style: italic;
             color: #0072B5;
             cursor: pointer;
+            text-decoration: none;
         }
         #appointment{
             left: 11rem;
@@ -94,12 +95,10 @@
         #user {
             bottom: 3.5rem;
             left: 11rem;
-            text-decoration: none;
         }
         #offer {
             bottom: 3.4rem;
             left: 10.5rem;
-            text-decoration: none;
         }
     </style>
     <title>Dashboard</title>

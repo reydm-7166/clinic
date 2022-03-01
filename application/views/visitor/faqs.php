@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-<title>Page Title</title>
+<title>Frequently Asked Questions</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../user_guide/_static/css/style.css">
@@ -9,6 +9,9 @@
 
 </head>
 <body>
+<?php if(!empty($this->session->userdata('verify'))){
+            redirect('home');
+        } ?>
   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></i></button>  
 
   <div class="parallax">
@@ -20,7 +23,7 @@
         <li><a href="contact">Contact</a></li>
         <li><a class="current" href="faqs">FAQs</a></li>
         <li><a href="about">About Us</a></li>
-        <li><a href="signin">Login</a></li>
+        <li><a href="signin">Sign in</a></li>
         <li><a href="signup">Register</a></li>
       </ul>
     </div>

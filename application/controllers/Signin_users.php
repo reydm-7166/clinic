@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             
             if($verify){                                                                    /// store user data in session when logged in
                 $this->session->set_userdata('verify', $verify);
-                redirect('index');
+                redirect('home');
             }
             $_SESSION['notification_error'] = "Wrong Credentials!";                          /// redirects back when user || pass is wrong
             redirect('signin');
