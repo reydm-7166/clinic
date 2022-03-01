@@ -4,115 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../user_guide/_static/css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../user_guide/_static/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body>
-<?php if(!empty($this->session->userdata('verify'))){
-            redirect('home');
-        } ?>
-  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></i></button>  
+  <?php if(!empty($this->session->userdata('verify'))){
+    redirect('home');
+    } ?>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></i></button>  
 
-  <div class="parallax">
-    <div class="topnav">
-      <div class="topnav-logo"><a href="/"><img src="../../../user_guide/_images/Logo.png" width='250' height='40'></a></div>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="services">Services</a></li>
-        <li><a href="contact">Contact</a></li>
-        <li><a href="faqs">FAQs</a></li>
-        <li><a class="current" href="about">About Us</a></li>
-        <li><a href="signin">Sign in</a></li>
-        <li><a href="signup">Register</a></li>
-      </ul>
-    </div>
-  
-    <div class="icons">
-      <a href="#" class="fa fa-facebook"></a>
-      <a href="#" class="fa fa-youtube"></a>
-      <a href="#" class="fa fa-google"></a>
+    <div class="parallax">
+      <div class="topnav">
+        <div class="topnav-logo"><a href="/"><img src="../../../user_guide/_images/Logo.png" width='250' height='40'></a></div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="services">Services</a></li>
+          <li><a href="contact">Contact</a></li>
+          <li><a href="faqs">FAQs</a></li>
+          <li><a class="current" href="about">About Us</a></li>
+          <li><a href="signin">Sign in</a></li>
+          <li><a href="signup">Register</a></li>
+        </ul>
     </div>
   </div>
-  
+
   <div class="intro">
-    
-  </div>
+    <h1>About Us</h1>
+    <div class="container-intro">
+      <div class="row">
+        <div class="col-sm">
+          <h3>Our Vision</h3>
+          <p>To inspire and empower people to have a long, healthy and sustainable life through traditional holistic wellness</p>
+        </div>
 
-  <div class="content">
-    <h2>Content</h2>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-    <p>A topnav, content and a footer.</p>
-  </div>
-  
-  <div class="footer">
-    <div class="footer">
-      <div class="footer">
-        <footer class="site-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12 col-md-6">
-                <h6>Get in Touch</h6>
-                </div>
-    
-              <div class="col-xs-6 col-md-3">
-                <h6>Our Services</h6>
-                <ul class="footer-links">
-                  <li><a href="services">Services</a></li>
-                  <li><a href="services">Treatments</a></li>
-                </ul>
-              </div>
-    
-              <div class="col-xs-6 col-md-3">
-                <h6>Quick Links</h6>
-                <ul class="footer-links">
-                  <li><a href="index">Home</a></li>
-                  <li><a href="about">About Us</a></li>
-                  <li><a href="services">Services</a></li>
-                  <li><a href="contact">Contact Us</a></li>
-                  <li><a href="faqs">FAQs</a></li>
-                  <li><a href="faqs">Login/Register</a></li>
-                </ul>
-              </div>
-            </div>
-            <hr>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8 col-sm-6 col-xs-12">
-                <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
-             Wellness First Naturopathic</a>.
-                </p>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <div class="col-sm">
+          <h3>Our Purpose</h3>
+          <p>To provide a life-changing world-class services with evidence inspired holistic wellness interventions.</p>
+        </div>
       </div>
     </div>
   </div>
 
+  <div class="content-about">
+    <!-- Carousel -->
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg">
+            <div class="card">
+              <img src="../../../user_guide/_images/doc.jpg" alt="Avatar" style="width:100%">
+                <div class="container-carousel">
+                  <h4><b>Dr. Henry Cardinez N.D</b></h4> 
+                  <p>Doctor of Naturopathic</p> 
+                </div>
+            </div>
+          </div>  
+
+          <div class="col-sm">
+            <div class="card">
+              <img src="../../../user_guide/_images/brian.jpg" alt="Avatar" style="width:100%">
+                <div class="container-carousel">
+                  <h4><b>Brian Cardinez</b></h4> 
+                  <p>Managing Partner</p> 
+                </div>
+            </div>
+          </div>  
+
+          <div class="col-sm">
+            <div class="card">
+              <img src="../../../user_guide/_images/dra.jpg" alt="Avatar" style="width:100%">
+              <div class="container-carousel">
+                <h4><b>Dra. Susana Balingit M.D</b></h4> 
+                <p>Doctor of Medicine</p> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <div class="card">
+              <img src="../../../user_guide/_images/armand.jpg" alt="Avatar" style="width:100%">
+                <div class="container-carousel">
+                  <h4><b>Armando Bensorto R.N</b></h4> 
+                  <p>Head Nurse</p> 
+                </div>
+            </div>
+          </div>  
+
+          <div class="col-sm">
+            <div class="card">
+              <img src="../../../user_guide/_images/princess.jpg" alt="Avatar" style="width:100%">
+                <div class="container-carousel">
+                  <h4><b>Princess Apsay</b></h4> 
+                  <p>Administrative Assistant</p> 
+                </div>
+            </div>
+          </div>  
+
+          <div class="col-sm">
+            <div class="card">
+              <img src="../../../user_guide/_images/joy.jpg" alt="Avatar" style="width:100%">
+              <div class="container-carousel">
+                <h4><b>Joy Lasquite</b></h4> 
+                <p>Colonic Therapist</p> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+  </div>
+  
+  <?php $this->load->view('partials/footer_home'); ?>
+  
   <script>
     //Get the button
     var mybutton = document.getElementById("myBtn");
@@ -134,6 +168,7 @@
       document.documentElement.scrollTop = 0;
     }
     </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

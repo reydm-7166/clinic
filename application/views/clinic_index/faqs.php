@@ -10,7 +10,7 @@
 
 </head>
 <body>
-  <?php if(empty($this->session->userdata('verify'))){
+<?php if(empty($this->session->userdata('verify'))){
             redirect('signin');
         } ?>
   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></i></button>  
@@ -23,7 +23,7 @@
             <li><a href="service">Services</a></li>
             <li><a href="faq" class="current">FAQs</a></li>
             <li><a href="book">Book Schedule</a></li>
-            <li><a href="logout" class="text-warning">Logout</a></li>
+            <li><a href="logout" class="text-warning border text-warning rounded">Logout</a></li>
         </ul>
         </div>
     </div>
@@ -81,49 +81,7 @@
     
   </div>
   
-  <div class="footer">
-    <div class="footer">
-      <footer class="site-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 col-md-6">
-              <h6>Get in Touch</h6>
-             </div>
-  
-            <div class="col-xs-6 col-md-3">
-              <h6>Our Services</h6>
-              <ul class="footer-links">
-                <li><a href="services">Services</a></li>
-                <li><a href="services">Treatments</a></li>
-              </ul>
-            </div>
-  
-            <div class="col-xs-6 col-md-3">
-              <h6>Quick Links</h6>
-              <ul class="footer-links">
-                <li><a href="index">Home</a></li>
-                <li><a href="about">About Us</a></li>
-                <li><a href="services">Services</a></li>
-                <li><a href="contact">Contact Us</a></li>
-                <li><a href="faqs">FAQs</a></li>
-                <li><a href="faqs">Login/Register</a></li>
-              </ul>
-            </div>
-          </div>
-          <hr>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 col-sm-6 col-xs-12">
-              <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
-           Wellness First Naturopathic</a>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>
+  <?php $this->load->view('partials/footer_home'); ?>
 
   <script>
     //Get the button

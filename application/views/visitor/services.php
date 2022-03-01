@@ -17,7 +17,7 @@
 
   <div class="parallax">
         <div class="topnav">
-        <div class="topnav-logo"><a href="home"><img src="../../../user_guide/_images/Logo.png" width='250' height='40'></a></div>
+        <div class="topnav-logo"><a href="/"><img src="../../../user_guide/_images/Logo.png" width='250' height='40'></a></div>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="services" class="current">Services</a></li>
@@ -73,49 +73,7 @@
 
   </div>
 
-  <div class="footer">
-    <div class="footer">
-      <footer class="site-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 col-md-6">
-              <h6>Get in Touch</h6>
-              </div>
-  
-            <div class="col-xs-6 col-md-3">
-              <h6>Our Services</h6>
-              <ul class="footer-links">
-                <li><a href="services">Services</a></li>
-                <li><a href="services">Treatments</a></li>
-              </ul>
-            </div>
-  
-            <div class="col-xs-6 col-md-3">
-              <h6>Quick Links</h6>
-              <ul class="footer-links">
-                <li><a href="index">Home</a></li>
-                <li><a href="about">About Us</a></li>
-                <li><a href="services">Services</a></li>
-                <li><a href="contact">Contact Us</a></li>
-                <li><a href="faqs">FAQs</a></li>
-                <li><a href="faqs">Login/Register</a></li>
-              </ul>
-            </div>
-          </div>
-          <hr>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 col-sm-6 col-xs-12">
-              <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
-           Wellness First Naturopathic</a>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>
+  <?php $this->load->view('partials/footer_home'); ?>
   
   <script>
     //Get the button
