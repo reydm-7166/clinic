@@ -69,7 +69,9 @@ $route['schedule'] = 'Book_schedules/book';
 $route['home'] = 'Signin_users/user_home';
 $route['service'] = 'Signin_users/services_home';
 $route['faq'] = 'Signin_users/faqs_home';
+$route['abouts'] = 'Visitors/abouts';
 $route['logout'] = 'Logout/logout';
+
 
 $route['login'] = 'Signin_admins/index';                        // admin //////
 $route['dashboard'] = 'Dashboard_admin/index';

@@ -93,6 +93,7 @@
                         $services_chart[] = array('y' => intval($data['count']),
                                                 'label' => $data['treatment_name']);
                         }?>
+
     <script type="text/javascript">
         window.onload = function () {
             <?php if (!empty($treatments_chart)) { ?>
@@ -148,6 +149,7 @@
             });
             chart.render();
             <?php }  // ?>
+
             <?php if (!empty($ages_chart)) { ?>
             var chart = new CanvasJS.Chart("chartContainer5",
             {
@@ -171,13 +173,13 @@
             chart.render();
             <?php } // ?>
 
-                <?php if (!empty($services_chart)) { ?>
+            <?php if (!empty($services_chart)) { ?>
                 var chart = new CanvasJS.Chart("chartContainer3", {
                 animationEnabled: true,
                 animationDuration: 500,
                 
                 title:{
-                    text:"Treatments"
+                    text:"Services"
                 },
                 axisX:{
                     interval: 1

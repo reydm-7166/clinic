@@ -43,6 +43,7 @@
         }
 
     </style>
+    <link rel="shortcut icon" href="../../../user_guide/_images/doctor.ico"/>
 </head>
 <body>
                                                                             <!-- notif class just for notification if success (line 15)   

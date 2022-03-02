@@ -60,7 +60,7 @@
                     <td><?= $data['patient_email']; ?></td>
                     <td><?= date("F j, Y g:i A",strtotime($data['appointment_date'])); ?></td>
                     <td><?= $data['treatment_name'] ?></td>
-                    <td>$<?= $data['treatment_cost']?>.00</td>
+                    <td>₱<?= $data['treatment_cost']?>.00</td>
                     <td style="width: 10%"><a class="btn mr-1 mt-0 btn-success href="">Print</a><a class="btn mt-0 btn-primary" href="">Email</a></td>
                 </tr>   
                 <?php } } ?>

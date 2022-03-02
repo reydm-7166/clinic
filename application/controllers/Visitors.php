@@ -30,4 +30,5 @@
         public function register(){
             redirect('signup');
         }
+
     }

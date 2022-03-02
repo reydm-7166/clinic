@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../../user_guide/_static/css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../user_guide/_images/doctor.ico"/>
 
 </head>
 <body>
@@ -113,11 +114,11 @@
             </div>
           <div class="col-xs-6 col-md-3">
             <ul class="footer-links">
-              <li><a href="index">Home</a></li>
-              <li><a href="about">About Us</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href="services">Services</a></li>
               <li><a href="contact">Contact Us</a></li>
               <li><a href="faqs">FAQs</a></li>
+              <li><a href="about">About Us</a></li>
             </ul>
           </div>
         </div>

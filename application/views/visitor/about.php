@@ -7,12 +7,10 @@
     <link rel="stylesheet" href="../../../user_guide/_static/css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="shortcut icon" href="../../../user_guide/_images/doctor.ico"/>
 </head>
 <body>
-<?php if(!empty($this->session->userdata('verify'))){
-            redirect('home');
-        } ?>
+
   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></i></button>  
 
   <div class="parallax">
@@ -69,17 +67,17 @@
         <div class="row">
           <div class="col-lg">
             <div class="card">
-              <img src="doc.jpg" alt="Avatar" style="width:100%">
+              <img src="../../../user_guide/_images/reymond.jpg" alt="Avatar" style="width:100%">
                 <div class="container-carousel">
                   <h4><b>Reymond Domingo</b></h4> 
-                  <p>Back-End Developer</p> 
+                  <p>Back-End Developer/Database Admin</p> 
                 </div>
             </div>
           </div>  
 
           <div class="col-sm">
             <div class="card">
-              <img src="images/darius.jpg" alt="Avatar" style="width:100%">
+              <img src="../../../user_guide/_images/darius.jpg" alt="Avatar" style="width:100%">
                 <div class="container-carousel">
                   <h4><b>Darius Laurente</b></h4> 
                   <p>Front-End Developer</p> 
@@ -96,7 +94,7 @@
         <div class="row">
           <div class="col-sm">
             <div class="card">
-              <img src="images/suset.jpg" alt="Avatar" style="width:100%">
+              <img src="../../../user_guide/_images/suzze.jpg" alt="Avatar" style="width:100%">
                 <div class="container-carousel">
                   <h4><b>Suzzette Borreta</b></h4> 
                   <p>UI Designer</p> 
@@ -106,7 +104,7 @@
 
           <div class="col-sm">
             <div class="card">
-              <img src="joy.jpg" alt="Avatar" style="width:100%">
+              <img src="../../../user_guide/_images/daniel.jpg" alt="Avatar" style="width:100%">
               <div class="container-carousel">
                 <h4><b>Daniel Serrano</b></h4> 
                 <p>Front-End Developer</p> 
@@ -160,11 +158,11 @@
             </div>
           <div class="col-xs-6 col-md-3">
             <ul class="footer-links">
-              <li><a href="index">Home</a></li>
-              <li><a href="about">About Us</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href="services">Services</a></li>
               <li><a href="contact">Contact Us</a></li>
               <li><a href="faqs">FAQs</a></li>
+              <li><a href="about">About Us</a></li>
             </ul>
           </div>
         </div>
