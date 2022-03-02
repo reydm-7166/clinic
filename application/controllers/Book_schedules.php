@@ -35,6 +35,7 @@ date_default_timezone_set('Asia/Manila');
                 
                     if($this->form_validation->run() === FALSE) {
                         return $this->load->view('/clinic_index/schedule');
+                        
                     } else {
                        $verify = $this->Book_schedule->insert_book($form);
                        if($verify === TRUE){

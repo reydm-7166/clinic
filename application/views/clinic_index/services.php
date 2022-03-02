@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../user_guide/_static/css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
@@ -71,65 +71,7 @@
 
   </div>
 
-  <div class="footer">
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-1 col-md-6">
-            <h6>Get in Touch</h6>
-          </div>
-
-          <div class="col-sm-1 col-md-5">
-            <h6>Quick Links</h6>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-1 col-md-1">
-            <i class="fa fa-envelope-o"></i><br><br>
-            <i class="fa fa-phone"></i><br><br>
-            <i class="fa fa-map-marker"></i><br>
-          </div>
-
-          <div class="col-xs-5 col-md-5">
-            <p>wellnessfirst@gmail.com</p><br>
-            <p>Front Desk <a href="tel: +63 995 714 3195">+63 995 714 3195</a></p>
-				    <p>Consultant <a href="tel: +63 936 951 5888">+63 936 951 5888</a></p>
-            
-            <p>Unit 521 One Oasis Hub B, Ortigas Ave. Ext. Pasig City, Philippines</p>
-
-            </div>
-          <div class="col-xs-6 col-md-3">
-            <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="faqs.html">FAQs</a></li>
-              <li><a href="faqs.html">Login/Register</a></li>
-            </ul>
-          </div>
-        </div>
-        <hr>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
-         Wellness First Naturopathic</a>.
-            </p>
-          </div>
-          
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <ul class="social-icons">
-              <li><a class="facebook" href="https://www.facebook.com/wellnessfirstphilippines/"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="google" href="info.wellnessfirst@gmail.com"><i class="fa fa-google"></i></a></li> 
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
+  <?php $this->load->view('partials/footer_home') ?>
   
   <script>
     //Get the button

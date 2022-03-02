@@ -7,7 +7,7 @@
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                  <form class="mx-1 mx-md-4" action="/Book_schedules/book" method="post">
+                  <form class="mx-1 mx-md-4" action="schedule" method="post">
 
                   <?php $user = $this->session->userdata('verify'); if(!empty($user)){ ?>
                     <input type="hidden" name="id" value=" <?= $user['id']; ?> ">
@@ -18,7 +18,6 @@
                   <p class="text-center h1 fw-bold mb-4 mx-1 mx-md-4 mt-0">Book Schedule</p>  
                   
                     <div class="d-flex flex-row align-items-center mb-3">
-                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label " for="form3Example1c">First Name</label>
                         <input type="text" id="form3Example1c" name="first_name" class="form-control" />
@@ -26,7 +25,6 @@
                     </div>
   
                     <div class="d-flex flex-row align-items-center mb-3">
-                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example1c">Last Name</label>
                         <input type="text" id="form3Example1c" name="last_name" class="form-control" />
@@ -34,7 +32,6 @@
                     </div>
   
                     <div class="d-flex flex-row align-items-center mb-3">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example3c">Age</label>
                         <input type="number" id="form3Example3c" name="age" class="form-control" />
@@ -42,7 +39,6 @@
 
                     </div>
                     <div class="d-flex flex-row align-items-center mb-3">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example3c">Email Address</label>
                         <input type="email" id="form3Example3c" name="email_address" class="form-control" />
@@ -50,7 +46,6 @@
                     </div>
 
                     <div class="d-flex flex-row align-items-center mb-3">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example3c">Choose Category</label>
                         <select class="form-control" name="category" aria-label="Default select example">
@@ -68,14 +63,14 @@
                     <div class="d-flex flex-row align-items-center mb-4">
                         <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example3c">Choose Preferred Date</label>
-                            <input placeholder="Select date" type="datetime-local" name="date_pref" id="example" class="form-control">
+                            <input type="datetime-local" name="date_pref" class="form-control">
                             <small class="form-text text-muted"><i>Expect this to change...</i></small>
                         </div>
                     </div>
 
   
-                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                        <input class="btn btn-success btn-block btn-lg text-body rounded" type="submit" id="submit" name="submit" value="Register">
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <input class="btn btn-success btn-block btn-lg text-body rounded" type="submit" id="submit" name="submit" value="Submit">
                     </div>
 
 
