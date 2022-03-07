@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../user_guide/_static/css/admin_appointment.css">
-    <title>Edit Appointment</title>
+    <script src="https://kit.fontawesome.com/14990fae2a.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../../../user_guide/_images/doctor.ico"/>
+    <title>Edit Content</title>
     <style>
         #container {
             margin-top: 6rem;
@@ -19,7 +22,7 @@
             width:5%;
         }
         .customers {
-            width: 75%;
+            width: 80%;
         }
         #date {
             width: 90%;
@@ -37,7 +40,8 @@
 <body>
 <?php $this->load->view('/partials/admin_headers'); ?>
 
-<?php $this->load->view('/partials/go_back'); ?>     
+<?php $this->load->view('/partials/go_back'); ?>  
+
 <main id="container">
 
         <div>
@@ -55,6 +59,7 @@
                 <tr>
                     <th>Number</th>
                     <th>Name</th>
+                    <th>Details</th>
                     <th>Cost</th>
                     <th>Edit Image</th>
                     <th>Category</th>
@@ -71,8 +76,9 @@
                             <input type="hidden" name="treatment_image" value="<?= $data['treatment_image']; ?>">
                             <td><?= $count++; ?></td>
                             <td><input class="border border-success rounded p-2" type="text" name="edit_treatmentsname" value="<?= $data['treatment_name']; ?>"></td>
-                            <td>₱ <input class="border border-success rounded p-2" type="text" name="edit_treatmentscost" value="<?= $data['treatment_cost']; ?>"></td>
-                            <td><input type="file" name="userfile" size="20" /></td>
+                            <td><input type="text" class="border border-success rounded p-2" name="edit_treatmentsdetails" value="<?= $data['treatment_details']; ?>"></td>
+                            <td><input class="border border-success rounded p-2" size="4" type="text" name="edit_treatmentscost" value="<?= $data['treatment_cost']; ?>"></td>
+                            <td width="5%"><input type="file" name="userfile"/></td>
                             <td><input type="text" class="form-control" size="6 " readonly value="<?= $data['category_title']; ?>"></td>
                             <td>    <input class="btn btn-primary rounded p-2" type="submit" name="submit" value="Save"></td>
                         </tr> 

@@ -55,7 +55,7 @@
             <?php } unset($_SESSION['notification']);?>
         </div>
         <?php if(!empty($this->session->userdata('verify'))){
-                redirect('index');
+                redirect('/');
         } ?>
 
         <div class="notif">

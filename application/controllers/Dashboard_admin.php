@@ -22,7 +22,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         public function dashboard_data(){
             $date_range = $this->input->post(NULL, TRUE);
             $verify = $this->Report->dashboard_data($date_range);
-            
+
+            // echo "<pre>";
+            //     print_r($date_range);
+            // echo "<pre>";
             $this->session->set_userdata('dashboard', $verify);
             redirect('dashboard');
         } 

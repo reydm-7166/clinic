@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $services = $this->get_treatment_option->get_all_services();
             if($treatments){
                 $this->session->set_userdata('treatment_contents', $treatments);
-           }
+            }
             if($services){
                 $this->session->set_userdata('services_contents', $services);
            }

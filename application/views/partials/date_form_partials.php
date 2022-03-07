@@ -14,6 +14,13 @@
             <option value="12">December</option>
             </select>
     Day <input type="number" min="1" max="31" size="1" name="day_from">
+    Year <select class="center" name="year_from">
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+        </select>
 
     Month <select class="center" name="month_to">
             <option value="1">January</option>
@@ -29,6 +36,13 @@
             <option value="11">November</option>
             <option value="12" selected>December</option>
             </select>
-    Day <input type="number" min="1" max="31" size="1" name="day_to"><br><br>
+    Day <input type="number" min="1" max="31" size="1" name="day_to">
+    Year <select class="center" name="year_to">
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+        </select><br><br>
     <input class="btn btn-primary" type="submit" value="Submit" name="submit">
 </form>

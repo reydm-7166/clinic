@@ -70,7 +70,7 @@ $route['home'] = 'Signin_users/user_home';
 $route['service'] = 'Signin_users/services_home';
 $route['faq'] = 'Signin_users/faqs_home';
 $route['abouts'] = 'Visitors/abouts';
-$route['logout'] = 'Logout/logout';
+$route['logout'] = 'Logout/user_logout';
 
 
 $route['login'] = 'Signin_admins/index';                        // admin //////
@@ -81,6 +81,10 @@ $route['user'] = 'Users_admin/get_data';
 $route['receipt'] = 'Receipt_admin/get_data';
 $route['approved'] = 'Approved_admin/get_data';
 $route['finish/(:any)'] = 'Approved_admin/get_insert_receipt/$1';
+
+
+$route['approve'] = 'Mails/good';                               // emails //////
+$route['receipt_send'] = 'Mails/receipt_send';
 
 
 $route['edit/(:any)'] = 'Edits_appointment/index/$1';      /// edit appointment

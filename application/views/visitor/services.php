@@ -43,7 +43,7 @@
         <?php foreach($this->session->userdata('services') as $services1) { ?>
         <div class="single-service">
           <div class="social">
-            <i class="fa fa-stethoscope"></i>
+            <i class="fa fa-stethoscope fa-4x"></i>
           </div>
           <span></span>
           <h3><?= $services1['treatment_name']?></h3>
@@ -57,7 +57,7 @@
         <?php foreach($this->session->userdata('treatments') as $treatments1) { ?>
           <div class="single-service">
             <div class="social">
-              <i class="fa fa-stethoscope"></i>
+              <i class="fa fa-stethoscope fa-4x"></i>
             </div>
             <span></span>
             <h3><?= $treatments1['treatment_name']?></h3>

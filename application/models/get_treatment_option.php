@@ -30,8 +30,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     WHERE treatments.id = (?)", $id)->result_array();
         }
         public function edit_treatments($data){
-                $query = "UPDATE treatments SET treatment_name = (?), treatment_cost = (?), treatment_image = (?) WHERE id = (?)";
-                $data = array($data['edit_treatmentsname'], $data['edit_treatmentscost'], $data['file_name'], $data['id']);
+                $query = "UPDATE treatments SET treatment_name = (?), treatment_details = (?), treatment_cost = (?), treatment_image = (?) WHERE id = (?)";
+                $data = array($data['edit_treatmentsname'], $data['edit_treatmentsdetails'], $data['edit_treatmentscost'], $data['file_name'], $data['id']);
                 
                 return $this->db->query($query, $data);
         }

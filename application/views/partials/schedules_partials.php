@@ -1,7 +1,7 @@
 <section class="vh-100" style="background-color: #eee;">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-50">
-        <div class="col-lg-12 col-xl-11 w-10">
+        <div class="col-lg-12 col-xl-11 w-100">
           <div class="card text-black mt-5" style="border-radius: 25px;">
             <div class="card-body p-md-3">
               <div class="row justify-content-center">
@@ -77,7 +77,7 @@
                   </form>
   
                 </div>
-                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 no-img">
                     
                   <img src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30162438/361.png" style="height: 600px; width: 660px;" class="img-fluid" alt="Sample image">
   

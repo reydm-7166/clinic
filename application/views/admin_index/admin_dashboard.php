@@ -8,15 +8,8 @@
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="https://kit.fontawesome.com/14990fae2a.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="../../../user_guide/_images/doctor.ico"/>
     <style>
-        #container {
-            display: inline-block;
-            vertical-align: top;
-            width: 79.5%;
-            height: 90vh;
-            margin-top: 1rem;
-            text-align: center;
-        }
         #container {
             display: inline-block;
             vertical-align: top;
@@ -36,7 +29,7 @@
             right: 5rem;
             top: 1rem;
             margin: 1rem;
-            width: 15%;
+            width: 21%;
             height: 15vh;
         }
         #date input{

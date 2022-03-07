@@ -3,6 +3,6 @@
     #Back {
         position: absolute;
         top: 10rem;
-        left: 33.7rem;
+        left: 31rem;
     }
 </style>

@@ -11,6 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/14990fae2a.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="../../../user_guide/_images/doctor.ico"/>
     <title>History</title>
     <style>
         .delete a{
@@ -81,7 +83,6 @@
                     <th>Patient Last Name</th>
                     <th>Patient Email Address</th>
                     <th>Appointment Date</th>
-                    <th>Action</th>
                 </tr>   
                 <?php if(!empty($this->session->userdata('history'))) {$count = 1; foreach($this->session->userdata('history') as $data){ ?>
                 <tr>
@@ -91,9 +92,6 @@
                     <td><?= $data['patient_lastname']; ?></td>
                     <td><?= $data['patient_email']; ?></td>
                     <td><?= date("F j, Y g:i A",strtotime($data['appointment_date'])); ?></td>
-                    <td class="p-1"> <a class="btn m-0 mr-1 btn-warning" href="">Email
-                                    <a class="btn m-0 ml-1 btn-info" href="">Print</a>
-                    </td>
 
                 </tr>   
                 <?php } }?>

@@ -27,6 +27,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $this->load->view('/clinic_index/index');
     }
     public function services_home(){
+        $this->load->model('Service');
+
+        $verify_1 = $this->Service->get_treatments();
+        $verify_2 = $this->Service->get_services();
+        if($verify_1 && $verify_2){
+
+            $this->session->set_userdata('user_treatments', $verify_1);
+            $this->session->set_userdata('user_services', $verify_2);
+        }
         $this->load->view('/clinic_index/services');
     }
     public function faqs_home(){

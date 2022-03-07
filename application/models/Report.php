@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         public function treatment_data($date_range){
         
-            $date_range['$date_from'] = "2022-". $date_range['month_from'] . "-" . $date_range['day_from'];
-            $date_range['$date_to'] = "2022-". $date_range['month_to'] . "-" . $date_range['day_to'];
+            $date_range['$date_from'] = $date_range['year_from'] ."-". $date_range['month_from'] . "-" . $date_range['day_from'];
+            $date_range['$date_to'] = $date_range['year_to'] ."-". $date_range['month_to'] . "-" . $date_range['day_to'];
 
 
             /*________________________________________________________________________________________________________________________________________
@@ -53,8 +53,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
         
         public function dashboard_data($date_range){
-            $date_range['$date_from'] = "2022-". $date_range['month_from'] . "-" . $date_range['day_from'];
-            $date_range['$date_to'] = "2022-". $date_range['month_to'] . "-" . $date_range['day_to'];
+            $date_range['$date_from'] = $date_range['year_from'] ."-". $date_range['month_from'] . "-" . $date_range['day_from'];
+            $date_range['$date_to'] = $date_range['year_to'] ."-". $date_range['month_to'] . "-" . $date_range['day_to'];
 
             $user_count = $this->db->query("SELECT COUNT(*) AS user_count FROM customer_infos")->row_array();
 

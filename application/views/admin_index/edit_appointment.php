@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../user_guide/_static/css/admin_appointment.css">
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://kit.fontawesome.com/14990fae2a.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../../../user_guide/_images/doctor.ico"/>
     <title>Edit Appointment</title>
     <style>
         #container {
             margin-top: 6rem;
         }
-        table td:last-child{
-            width:100%;
-        }
+
         .customers {
-            width: 89%;
+            width: 96%;
         }
         #date {
             width: 90%;
@@ -55,7 +57,7 @@
                     <th>Email</th>
                     <th>Concern</th>
                     <th>Date Preferred</th>
-                    <th>Action</th>
+                    <th id="last">Action</th>
                 </tr>                                                             <!-- DISPLAY DATA FROM APPOINTMENTS TABLE -->
                 
                     <?php if(!empty($this->session->userdata('to_edit'))){                  

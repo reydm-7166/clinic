@@ -11,6 +11,9 @@
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../user_guide/_static/css/admin_appointment.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://kit.fontawesome.com/14990fae2a.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="../../../user_guide/_images/doctor.ico"/>
     <title>Edit Users</title>
     <style>
         #container {
